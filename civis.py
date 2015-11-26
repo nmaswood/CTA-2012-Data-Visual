@@ -3,7 +3,7 @@ import sqlite3 as sql
 
 class populate_table(object):
 
-	def __init__(self,db_name,table_name):
+	def __init__(self,db_name="bus_data.db",table_name="CTA1012"):
 		self.db_name = db_name
 		self.table_name = table_name
 		self.start = self.start_queries()
@@ -31,7 +31,8 @@ class populate_table(object):
 		alightings		FLOAT,
 		latitude		DECIMAL,
 		longitude		DECIMAL
-		);''' % self.table_name}
+		);''' % self.table_name,
+		"SELECT" : """SELECT * FROM %s""" % self.table_name}
 		
 
 	def initialize_table(self):
@@ -63,7 +64,7 @@ class populate_table(object):
 		try:
 			connection = sql.connect(self.db_name)
 			cursor = connection.cursor()
-			rows = cursor.execute("""SELECT * FROM %s""" % self.table_name)
+			rows = cursor.execute(self.start["SELECT"])
 			print 'stop_id,on_street,cross_street,routes,boardings,alightings,latitude,longitude'
 			for row in rows:
 				print row
@@ -71,16 +72,42 @@ class populate_table(object):
 		except sql.Error as e:
 			print "Something wrong happened %s" % e
 
+class aggregate_data(object):
+
+	def __init__(self,db_name="bus_data.db",table_name="CTA1012"):
+		self.db_name = db_name
+		self.table_name = table_name
+		self.agg = self.agg_queries()
+		print "hi"
+	def agg_queries(self):
+		return {
+		"ALL": "SELECT * FROM %s" % self.table_name,
+
+		"ROUTE" :  """SELECT stop_id,routes, COUNT(routes)
+		 FROM %s GROUP BY routes ORDER BY stop_id DESC LIMIT 10
+		 """ % self.table_name,
+		 "STOP" : """ SELECT stop_id, on_street, COUNT(on_street)
+			FROM %s GROUP BY on_street ORDER BY COUNT(on_street) DESC LIMIT 10
+			""" % self.table_name
+		}
+
+	def agg_data(self,query):
+		connection = sql.connect(self.db_name)
+		cursor = connection.cursor()
+		DATA = cursor.execute(self.agg[query])
+		for line in DATA:
+			print line
 
 
 
+aggregate_data = aggregate_data()
+aggregate_data.agg_data("STOP")
 
-populate_table = populate_table(db_name="bus_data.db",table_name="CTA1012")
+#populate_table = populate_table()
 
-populate_table.initialize_table()
+#populate_table.initialize_table()
 
-
-populate_table.view_table()
+#populate_table.view_table()
 
 
 #find the longest bus route by number of stops
