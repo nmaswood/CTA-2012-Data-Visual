@@ -92,7 +92,42 @@ class Map(object):
         </script>
     </body>
 </html>
-"""}
+""",
+        "verbose_visual":
+        """
+        <!DOCTYPE html>
+        <html>
+            <head>
+                <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+                <meta charset="utf-8">
+                <title>Verbose Map</title>
+                <style>
+                    html, body {{
+                    height: 100%;
+                    margin: 0;
+                    padding: 0;
+                    }}
+                    #map {{
+                    height: 100%;
+                    }}
+                </style>
+            </head>
+            <body>
+                <div id="map"></div>
+                    <script>
+
+                        function initMap() {{
+                        var map = new google.maps.Map(document.getElementById('map'), {{
+                        zoom: 12,
+                        center: {{lat: {center_lat}, lng: {center_lon}}}
+                        }});
+                        {map_points}
+                        }}
+                    </script>
+                    <script async defer
+                        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDTFj3XyhkCRZ5n6qPE23iwre3qFQgn3NI&signed_in=true&callback=initMap"></script>
+            </body>
+            </html>"""}
     def add_point(self, coordinates):
         self._points.append(coordinates)
 
@@ -215,41 +250,9 @@ class Map(object):
         """.format(index =index, lat=x[1], lon=x[2], name=x[0][0], count=x[0][1], avg_alight=x[0][2], avg_board=x[0][4], pinColor=self.assign_colors(x[0][1])) for index,x in enumerate(data_list)])
 
 
-        print map_points
-        return """
-        <!DOCTYPE html>
-        <html>
-            <head>
-                <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
-                <meta charset="utf-8">
-                <title>Verbose Map</title>
-                <style>
-                    html, body {{
-                    height: 100%;
-                    margin: 0;
-                    padding: 0;
-                    }}
-                    #map {{
-                    height: 100%;
-                    }}
-                </style>
-            </head>
-            <body>
-                <div id="map"></div>
-                    <script>
 
-                        function initMap() {{
-                        var map = new google.maps.Map(document.getElementById('map'), {{
-                        zoom: 12,
-                        center: {{lat: {center_lat}, lng: {center_lon}}}
-                        }});
-                        {map_points}
-                        }}
-                    </script>
-                    <script async defer
-                        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDTFj3XyhkCRZ5n6qPE23iwre3qFQgn3NI&signed_in=true&callback=initMap"></script>
-            </body>
-            </html>""".format(map_points=map_points, center_lat=center_lat, center_lon=center_lon)
+        print map_points
+        return self.html_text["verbose_visual"].format(map_points=map_points, center_lat=center_lat, center_lon=center_lon)
 
 
 
