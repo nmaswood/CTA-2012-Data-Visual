@@ -46,7 +46,7 @@ class load_data(object):
 			stop_id,
 			on_street,
 		 	cross_street,
-		 	routes,
+		 	route,
 		 	boardings,
 		 	alightings,
 		 	latitude,
@@ -58,7 +58,7 @@ class load_data(object):
 			stop_id  		INT PRIMARY KEY NOT NULL,
        		on_street		VARCHAR(50),
 			cross_street 	VARCHAR(30),
-       		routes       	VARCHAR(10),
+       		route       	VARCHAR(10),
        		boardings    	FLOAT,
 			alightings		FLOAT,
 			latitude		DECIMAL,
@@ -112,7 +112,7 @@ class aggregate_data(object):
 	def queries(self):
 		return {
 
-		"CREATEROUTE" : """CREATE TABLE routeagg(
+		"CREATE_ROUTE" : """CREATE TABLE ROUTE_AGG(
 			route varchar(10),
 			route_count int,
 			sum_alight FLOAT,
@@ -121,7 +121,7 @@ class aggregate_data(object):
 			avg_board FLOAT);
 		 """,
 
-		 "INSERTROUTE": """INSERT INTO routeagg(
+		 "INSERT_ROUTE": """INSERT INTO ROUTE_AGG(
 		 	route,
 		 	route_count,
 		 	sum_alight,
@@ -131,34 +131,34 @@ class aggregate_data(object):
 		 	?,?,?,?,?,?)""",
 
 		"ROUTE" :  """SELECT 
-			routes,
-			COUNT(routes),
+			route,
+			COUNT(route),
 		 	SUM(alightings),
 		 	AVG(alightings),
 		 	SUM(boardings),
 		 	AVG(boardings)
-		 FROM %s GROUP BY routes ORDER BY routes DESC
+		 FROM %s GROUP BY route ORDER BY route 
 		 """ % self.table_name,
 
-		 "CREATESTOP" : """CREATE TABLE stopagg(
+		 "CREATE_ON_STREET" : """CREATE TABLE ON_STREET_AGG(
 			on_street varchar(50),
-			stop_count int,
+			on_street_count int,
 			sum_alight FLOAT,
 			avg_alight FLOAT,
 			sum_board FLOAT,
 			avg_board FLOAT);
 		 """,
 
-		 "INSERTSTOP": """INSERT INTO stopagg(
+		 "INSERT_ON_STREET": """INSERT INTO ON_STREET_AGG(
 		 	on_street,
-		 	stop_count,
+		 	on_street_count,
 		 	sum_alight,
 		 	avg_alight,
 		 	sum_board,
 		 	avg_board) VALUES(
 		 	?,?,?,?,?,?)""",
 
-		 "STOP" : """ SELECT 
+		 "ON_STREET" : """ SELECT 
 		 	on_street,
 		 	COUNT(on_street),
 		 	SUM(alightings),
@@ -175,10 +175,10 @@ class aggregate_data(object):
 		cursor1 = connection.cursor()
 		cursor2 = connection.cursor()
 		try:
-			cursor2.execute(self.agg["CREATE" + query])
+			cursor2.execute(self.agg["CREATE_" + query])
 			data = cursor1.execute(self.agg[query])
 			for line in data:
-				cursor2.execute(self.agg["INSERT" + query], line)
+				cursor2.execute(self.agg["INSERT_" + query], line)
 			connection.commit()
 
 		except sql.Error as e:
@@ -188,13 +188,13 @@ class aggregate_data(object):
 			connection = sql.connect(self.db_name)
 			cursor = connection.cursor()
 
-			tables = {"ROUTE": "routeagg", "STOP":"stopagg"}
+			tables = {"ROUTE": "ROUTE_AGG", "ON_STREET":"ON_STREET_AGG"}
 
 			select = " SELECT * FROM %s"  % tables[type]
 			if order:
-				type_row = {"ROUTE":"route_count", "STOP":"stop_count"}
-				select+= " ORDER BY %s" % type_row[type]
 
+				type_row = {"ROUTE":"route_count", "ON_STREET":"on_street_count"}
+				select+= " ORDER BY %s" % type_row[type]
 
 
 			rows = cursor.execute(select)
@@ -209,10 +209,16 @@ class aggregate_data(object):
 
 
 aggregate_data = aggregate_data()
+load_data = load_data()
+
+#load_data.view()
+
+#aggregate_data.initialize("ON_STREET")
 #aggregate_data.initialize("ROUTE")
-#aggregate_data.intialize("STOP")
-aggregate_data.view('ROUTE', order=True)
-aggregate_data.view('STOP', order=True)
+
+
+#aggregate_data.view('ROUTE', order=True)
+#aggregate_data.view('ON_STREET', order=True)
 
 
 
