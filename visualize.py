@@ -229,17 +229,20 @@ class Map(object):
 
         return data_list
 
-    def assign_colors(self,num):
-        if num <=10: return "FFFFFF"
-        elif num <= 25:  return "E3F1F0"
-        elif num <= 50:  return "C7E3E2"
-        elif num <= 75:  return "ABD6D3"
-        elif num <=100:  return "8FC8C5"
-        elif num <=125:  return "74BBB6"
-        elif num <= 150: return "58ADA8"
-        elif num <= 175: return "3CA099"
-        elif num <= 200: return "20928B"
-        elif num <= 250: return "05857D"
+    def assign_colors(self,num, type):
+
+        base_num = {1:12, 2:1200, 3:1200}[type]
+
+        if num <=  base_num:  print base_num * 2; return "FFFFFF"
+        elif num <= base_num * 2:  print base_num * 3;  return "E3F1F0" 
+        elif num <= base_num * 4: print base_num * 4; return "C7E3E2" 
+        elif num <= base_num * 6:   print base_num * 5;return "ABD6D3"
+        elif num <= base_num * 8:   print base_num * 6;return "8FC8C5" 
+        elif num <= base_num * 10:   print base_num * 7;return "74BBB6" 
+        elif num <= base_num * 12:  print base_num * 8;return "58ADA8" 
+        elif num <= base_num * 14:  print base_num * 9;return "3CA099" 
+        elif num <= base_num * 16:  print base_num* 10;return "20928B" 
+        elif num <= base_num * 18:  print base_num * 10; return "05857D" 
 
         return "000000"
 
@@ -247,6 +250,20 @@ class Map(object):
         data_list = self.custom_visual_data()
         center_lat = sum(( x[1] for x in data_list )) / len(data_list)
         center_lon = sum(( x[2] for x in data_list )) / len(data_list)
+
+        prompts ={"METRIC" : """
+        Sort according to COUNT, AVG_ALIGHT, SUM_BOARD or AVG_BOARD?\n
+        1 for COUNT ... 2 for AVG_ALIGHT ... 3 AVG_BOARD\n
+        """,
+        "ERROR": "An error has occured:\n"}
+
+        metric = int(raw_input(prompts['METRIC']))
+        if metric not in [1,2,3,4,5]:
+            print prompts['Error'] + metric
+            exit(1)
+
+        metric= {1:1, 2:2, 3:4}[metric]
+
 
         map_points = "\n".join(
             ["""
@@ -271,7 +288,7 @@ class Map(object):
             ' count: ' + '{count}' +
             ' avg_alight: ' + '{avg_alight}' +
             ' avg_board:' + '{avg_board}' +'</div>'}}).open(map, marker{index});}});
-        """.format(index =index, lat=x[1], lon=x[2], name=x[0][0], count=x[0][1], avg_alight=x[0][2], avg_board=x[0][4], pinColor=self.assign_colors(x[0][1])) for index,x in enumerate(data_list)])
+        """.format(index =index, lat=x[1], lon=x[2], name=x[0][0], count=x[0][1], avg_alight=x[0][2], avg_board=x[0][4], pinColor=self.assign_colors(x[0][metric],metric)) for index,x in enumerate(data_list)])
 
         return self.html_text["verbose_visual"].format(map_points=map_points, center_lat=center_lat, center_lon=center_lon)
 
