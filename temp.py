@@ -145,7 +145,7 @@ class Map(object):
         cursor1= connection.cursor()
         cursor2= connection.cursor()
 
-        query1 = "SELECT {column}, latitude, longitude FROM CTA1012 LIMIT 100".format(column=column)
+        query1 = "SELECT {column}, latitude, longitude FROM CTA1012".format(column=column)
         A = cursor1.execute(query1)
         data_list = []
         for line in A:

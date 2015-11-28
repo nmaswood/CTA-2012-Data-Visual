@@ -176,7 +176,7 @@ class Map(object):
         }});
 
         marker{index}.addListener('click', function () {{
-            new google.maps.InfoWindow({{content: '<div id="content">' + 'name: ' + '{name}' + ' count: ' + '{count}' + ' avg_alight: ' + '{avg_alight}' + ' avg_board: ' + '{avg_board}' +'</div>'}}).open(map, marker{index});
+            new google.maps.InfoWindow({{content: '<div id="content">' + 'name: ' + '{name}' + ' count: ' + '{count}' + ' avg_alight: ' + '{avg_alight}' + ' avg_board:' + '{avg_board}' +'</div>'}}).open(map, marker{index});
         }});""".format(index =index, lat=x[1], lon=x[2], name=x[0][0], count=x[0][1], avg_alight=x[0][2], avg_board=x[0][4]) for index,x in enumerate(data_list)])
 
 
