@@ -26,7 +26,8 @@ from collections import defaultdict
 #aggregate_data = aggregate_data()
 #aggregate_data.initialize("ROUTE")
 #aggregate_data.intialize("STOP")
-#aggregate_data.view()
+#aggregate_data.view('ROUTE', order=True)
+#aggregate_data.view('STOP', order=True)
 
 ###########
 
@@ -182,7 +183,7 @@ class aggregate_data(object):
 
 		except sql.Error as e:
 			print e
-	def view(self,type):
+	def view(self,type,order=False):
 		try:
 			connection = sql.connect(self.db_name)
 			cursor = connection.cursor()
@@ -190,6 +191,11 @@ class aggregate_data(object):
 			tables = {"ROUTE": "routeagg", "STOP":"stopagg"}
 
 			select = " SELECT * FROM %s"  % tables[type]
+			if order:
+				type_row = {"ROUTE":"route_count", "STOP":"stop_count"}
+				select+= " ORDER BY %s" % type_row[type]
+
+
 
 			rows = cursor.execute(select)
 			print type, "count" + type, "sum alightings", "avg alightings", "sum boardings", "avg boardings"
@@ -198,6 +204,12 @@ class aggregate_data(object):
 
 		except sql.Error as e:
 			print "Something wrong happened %s" % e
+
+
+
+
+
+
 
 
 
