@@ -100,7 +100,7 @@ class Map(object):
 
         connection = sql.connect('bus_data.db')
 
-        cursor= connection.cursor()
+        cursor = connection.cursor()
 
         DATA = cursor.execute("""SELECT latitude, longitude FROM CTA1012""")
 
@@ -133,34 +133,56 @@ class Map(object):
             print prompts['error'] + str(category)
             exit(1)
 
-        category = { 1 : "stopagg", 2 :"routeagg"}[category]
+        category = { 1 : "ON_STREET", 2 :"ROUTE"}[category]
 
-        column = {"stopagg": "on_street", "routeagg": "routes"}[category]
+        table_name = {"ON_STREET": "ON_STREET_AGG", "ROUTE": "ROUTE_AGG"}[category]
 
-        category_type = {"stopagg": "on_street", "routeagg": "route"}[category]
+        column = {"ON_STREET": "on_street", "ROUTE": "route"}[category]
 
-        category_count = {"stopagg": "stop_count", "routeagg":"route_count"}[category]
+        column_count = {"ON_STREET": "on_street_count", "ROUTE":"route_count"}[category]
 
         connection = sql.connect('bus_data.db')
-        cursor1= connection.cursor()
-        cursor2= connection.cursor()
+        cursor1 = connection.cursor()
+        cursor2 = connection.cursor()
 
-        query1 = "SELECT {column}, latitude, longitude FROM CTA1012 LIMIT 100".format(column=column)
-        A = cursor1.execute(query1)
+        select_raw_data = "SELECT {column}, latitude, longitude FROM CTA1012".format(column=column)
+
+        raw_data = cursor1.execute(select_raw_data)
+
         data_list = []
-        for line in A:
+
+        for line in raw_data:
+
             info, latitude, longitude = line
-            query2 = """SELECT 
-                {category_type},
-                {category_count},
+
+            select_agg_data = """SELECT 
+                {column},
+                {column_count},
                 sum_alight,
                 avg_alight,
                 sum_board,
                 avg_board 
-                FROM {category} WHERE {category_type} = ?""" .format(category_type=category_type,category=category, category_count=category_count)
-            B= cursor2.execute(query2, (info,))
-            data_list.append([B.fetchone(), latitude,longitude])
+                FROM {table_name} WHERE {column} = ?""" .format(column=column,column_count=column_count, table_name=table_name)
+            
+            agg_data = cursor2.execute(select_agg_data, (info,))
+
+            data_list.append([agg_data.fetchone(), latitude,longitude])
+
         return data_list
+
+    def assign_colors(self,num):
+        if num <=10: return "FFFFFF"
+        elif num <= 25:  return "E3F1F0"
+        elif num <= 50:  return "C7E3E2"
+        elif num <= 75:  return "ABD6D3"
+        elif num <=100:  return "8FC8C5"
+        elif num <=125:  return "74BBB6"
+        elif num <= 150: return "58ADA8"
+        elif num <= 175: return "3CA099"
+        elif num <= 200: return "20928B"
+        elif num <= 250: return "05857D"
+
+        return "000000"
 
     def custom_visual(self):
         data_list = self.custom_visual_data()
@@ -169,53 +191,65 @@ class Map(object):
 
         map_points = "\n".join(
             ["""
+
+
+            var pinColor{index} = "{pinColor}";
+            var pinImage{index} = new google.maps.MarkerImage("http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=%E2%80%A2|" + pinColor{index},
+                new google.maps.Size(21, 34),
+                new google.maps.Point(0,0),
+                new google.maps.Point(5, 5));
+
             var marker{index} = new google.maps.Marker({{
             position: {{lat: {lat}, lng: {lon}}},
             map: map,
+            icon : pinImage{index},
             title: 'Uluru (Ayers Rock)'
-        }});
+            }});
 
-        marker{index}.addListener('click', function () {{
-            new google.maps.InfoWindow({{content: '<div id="content">' + 'name: ' + '{name}' + ' count: ' + '{count}' + ' avg_alight: ' + '{avg_alight}' + ' avg_board:' + '{avg_board}' +'</div>'}}).open(map, marker{index});
-        }});""".format(index =index, lat=x[1], lon=x[2], name=x[0][0], count=x[0][1], avg_alight=x[0][2], avg_board=x[0][4]) for index,x in enumerate(data_list)])
+            marker{index}.addListener('click', function () {{
+            new google.maps.InfoWindow({{content: '<div id="content">'
+            + 'name: ' + '{name}' +
+            ' count: ' + '{count}' +
+            ' avg_alight: ' + '{avg_alight}' +
+            ' avg_board:' + '{avg_board}' +'</div>'}}).open(map, marker{index});}});
+        """.format(index =index, lat=x[1], lon=x[2], name=x[0][0], count=x[0][1], avg_alight=x[0][2], avg_board=x[0][4], pinColor=self.assign_colors(x[0][1])) for index,x in enumerate(data_list)])
 
 
         print map_points
-        return """<!DOCTYPE html>
-<html>
-<head>
-    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
-    <meta charset="utf-8">
-    <title>Verbose Map</title>
-    <style>
-        html, body {{
-            height: 100%;
-            margin: 0;
-            padding: 0;
-        }}
-        #map {{
-            height: 100%;
-        }}
-    </style>
-</head>
-<body>
-<div id="map"></div>
-<script>
+        return """
+        <!DOCTYPE html>
+        <html>
+            <head>
+                <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+                <meta charset="utf-8">
+                <title>Verbose Map</title>
+                <style>
+                    html, body {{
+                    height: 100%;
+                    margin: 0;
+                    padding: 0;
+                    }}
+                    #map {{
+                    height: 100%;
+                    }}
+                </style>
+            </head>
+            <body>
+                <div id="map"></div>
+                    <script>
 
-    function initMap() {{
-        var map = new google.maps.Map(document.getElementById('map'), {{
-            zoom: 12,
-            center: {{lat: {center_lat}, lng: {center_lon}}}
-        }});
-
-        {map_points}
-}}
-
-</script>
-<script async defer
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDTFj3XyhkCRZ5n6qPE23iwre3qFQgn3NI&signed_in=true&callback=initMap"></script>
-</body>
-</html>""".format(map_points=map_points, center_lat=center_lat, center_lon=center_lon)
+                        function initMap() {{
+                        var map = new google.maps.Map(document.getElementById('map'), {{
+                        zoom: 12,
+                        center: {{lat: {center_lat}, lng: {center_lon}}}
+                        }});
+                        {map_points}
+                        }}
+                    </script>
+                    <script async defer
+                        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDTFj3XyhkCRZ5n6qPE23iwre3qFQgn3NI&signed_in=true&callback=initMap"></script>
+            </body>
+            </html>""".format(map_points=map_points, center_lat=center_lat, center_lon=center_lon)
 
 
 
@@ -227,8 +261,8 @@ class Map(object):
 
 if __name__ == "__main__":
         map = Map()
-        with open('complex_visual.html', "w") as out:
-         out.write(map.custom_visual())
+        with open('custom_visual.html', "w") as out:
+            out.write(map.custom_visual())
 
 
 
