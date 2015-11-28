@@ -5,6 +5,30 @@ from sys import exit
 # This code uses code from
 #http://stackoverflow.com/questions/22342097/is-it-possible-to-create-a-google-map-from-python
 
+
+### Basic Visual
+
+### Returns a heat map where higher density refers bus stops that
+### appear more frequently
+
+
+### Verbose Visual
+
+### Returns a heat map  where the darker the pin drop 
+### the more frequently the bus stop or route appears
+### A user can also click on the pin drop and see the statisitics associated with it
+
+### TO DO ###
+
+### Build a more visually appealing graph that shows aggregate statistics
+
+### Make  Map Keys for all graphs via the html
+
+### Clean up and format Python AND html code
+
+### remove self.addpoints and self_points
+
+
 class Map(object):
     def __init__(self,db_name='bus_data.db'):
         self.db_name = db_name
