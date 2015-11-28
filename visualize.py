@@ -249,9 +249,6 @@ class Map(object):
             ' avg_board:' + '{avg_board}' +'</div>'}}).open(map, marker{index});}});
         """.format(index =index, lat=x[1], lon=x[2], name=x[0][0], count=x[0][1], avg_alight=x[0][2], avg_board=x[0][4], pinColor=self.assign_colors(x[0][1])) for index,x in enumerate(data_list)])
 
-
-
-        print map_points
         return self.html_text["verbose_visual"].format(map_points=map_points, center_lat=center_lat, center_lon=center_lon)
 
 
@@ -264,7 +261,7 @@ class Map(object):
 
 if __name__ == "__main__":
         map = Map()
-        with open('custom_visual.html', "w") as out:
+        with open('verbose_visual.html', "w") as out:
             out.write(map.custom_visual())
 
 
