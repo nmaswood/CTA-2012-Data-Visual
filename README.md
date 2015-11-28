@@ -1,6 +1,6 @@
 # CTA-2012-Data-Visual
 
-##This project aggregates information about October 2012 bus ridership data 
+This project aggregates information about October 2012 bus ridership data 
 and displays it via the Google Maps API
 
 
@@ -39,4 +39,10 @@ and displays it via the Google Maps API
 | avg_alight| FLOAT      |
 | sum_board| FLOAT      |
 | avg_board | FLOAT     |
+
+##Usage
+
+### populate_data
+
+See comments of populate_data.py
 
