@@ -208,6 +208,11 @@ class aggregate_data(object):
 
 
 
+aggregate_data = aggregate_data()
+#aggregate_data.initialize("ROUTE")
+#aggregate_data.intialize("STOP")
+aggregate_data.view('ROUTE', order=True)
+aggregate_data.view('STOP', order=True)
 
 
 

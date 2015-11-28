@@ -116,83 +116,106 @@ class Map(object):
 
         return self.html_text["basic_visual"].format(map_points=map_points, center_lat=center_lat, center_lon=center_lon)
    
-    def custom_visual(self):
+    def custom_visual_data(self):
 
         prompts = {
 
-        "ERROR" : "Invalid selectionError at step",
+        "ERROR" : "Invalid Selection Error:",
         "CATEGORY": """
         Which category would you like to select ON STREET OR ROUTE?\n
         1 for ON STREET ... 2 for ROUTE\n
-        """,
-        "ORDER": """
-        Order by count,  SUM  alightings, AVG alighting, SUM  boardings or AVG boardings,s\n
-        1 for count, 2 for SUM alightings, 3 for AVG alightings, 4 for SUM boardings, 5 for AVG boardings\n
-        """,
-        "SEQ": """
-        How would you like to see your results? ASC or DESC?\n
-        1 for ASC, 2 for DESC\n
-        """,
-        "LIM" : """
-        Would you like to limit your results?\n
-        1 for NO, i for i results\n
         """
-        }
-
-        valid = {
-        "CATEGORY" : [1,2],
-        "ORDER" : [1,2,3,4,5],
-        "SEQ" : [1,2],
-        "LIM" : "CUSTOM"
         }
 
         category = int(raw_input(prompts['CATEGORY']))
 
-        if category not in valid['CATEGORY']:
-            print prompts['error'] + 'one'
+        if category not in [1,2]:
+            print prompts['error'] + str(category)
             exit(1)
 
         category = { 1 : "stopagg", 2 :"routeagg"}[category]
 
-        order = int(raw_input(prompts['ORDER']))
+        column = {"stopagg": "on_street", "routeagg": "routes"}[category]
 
-        if order not in valid['ORDER']:
-            print prompts['error'] + 'two'
-            exit(1)
+        category_type = {"stopagg": "on_street", "routeagg": "route"}[category]
 
-        order = {
-        1 : {"stopagg" : "count_street", "routeagg" : "count_route"}[category],
-        2:"sum_alight",
-        3:"avg_alight", 
-        4:"sum_board",
-        5:"avg_board"}[order]
+        category_count = {"stopagg": "stop_count", "routeagg":"route_count"}[category]
 
-        seq = int(raw_input(prompts['SEQ']))
+        connection = sql.connect('bus_data.db')
+        cursor1= connection.cursor()
+        cursor2= connection.cursor()
 
-        if int(seq)  not in valid['SEQ']:
-            print prompts['error'] + 'three'
-            exit(1)
+        query1 = "SELECT {column}, latitude, longitude FROM CTA1012 LIMIT 100".format(column=column)
+        A = cursor1.execute(query1)
+        data_list = []
+        for line in A:
+            info, latitude, longitude = line
+            query2 = """SELECT 
+                {category_type},
+                {category_count},
+                sum_alight,
+                avg_alight,
+                sum_board,
+                avg_board 
+                FROM {category} WHERE {category_type} = ?""" .format(category_type=category_type,category=category, category_count=category_count)
+            B= cursor2.execute(query2, (info,))
+            data_list.append([B.fetchone(), latitude,longitude])
+        return data_list
 
-        seq = {1: "ASC", 2 :"DESC"}[seq]
+    def custom_visual(self):
+        data_list = self.custom_visual_data()
+        center_lat = sum(( x[1] for x in data_list )) / len(data_list)
+        center_lon = sum(( x[2] for x in data_list )) / len(data_list)
 
-        lim = int(raw_input(prompts['LIM']))
+        map_points = "\n".join(
+            ["""
+            var marker{index} = new google.maps.Marker({{
+            position: {{lat: {lat}, lng: {lon}}},
+            map: map,
+            title: 'Uluru (Ayers Rock)'
+        }});
 
-        if lim <= 0:
-            print prompts['error'] + 'four'
-            exit(1)
+        marker{index}.addListener('click', function () {{
+            new google.maps.InfoWindow({{content: '<div id="content">' + 'name: ' + '{name}' + ' count: ' + '{count}' + ' avg_alight: ' + '{avg_alight}' + ' avg_board: ' + '{avg_board}' +'</div>'}}).open(map, marker{index});
+        }});""".format(index =index, lat=x[1], lon=x[2], name=x[0][0], count=x[0][1], avg_alight=x[0][2], avg_board=x[0][4]) for index,x in enumerate(data_list)])
 
-        if lim == 1:
-            lim = False
 
-        query = """SELECT {order} FROM {category}
-                   ORDER BY {order}""".format(order=order,category=category) 
-        print query
-        if lim:
-            query += " LIMIT %s" % lim
+        print map_points
+        return """<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <title>Verbose Map</title>
+    <style>
+        html, body {{
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }}
+        #map {{
+            height: 100%;
+        }}
+    </style>
+</head>
+<body>
+<div id="map"></div>
+<script>
 
-        print category, order, lim, seq
-        
+    function initMap() {{
+        var map = new google.maps.Map(document.getElementById('map'), {{
+            zoom: 12,
+            center: {{lat: {center_lat}, lng: {center_lon}}}
+        }});
 
+        {map_points}
+}}
+
+</script>
+<script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDTFj3XyhkCRZ5n6qPE23iwre3qFQgn3NI&signed_in=true&callback=initMap"></script>
+</body>
+</html>""".format(map_points=map_points, center_lat=center_lat, center_lon=center_lon)
 
 
 
@@ -204,9 +227,8 @@ class Map(object):
 
 if __name__ == "__main__":
         map = Map()
-        map.custom_visual()
-        #with open('basic_visual.html', "w") as out:
-        #   out.write(map.basic_visual())
+        with open('complex_visual.html', "w") as out:
+         out.write(map.custom_visual())
 
 
 
