@@ -5,13 +5,35 @@ from sys import exit
 # This code uses code from
 #http://stackoverflow.com/questions/22342097/is-it-possible-to-create-a-google-map-from-python
 
+
+### Basic Visual
+
+### Returns a heat map where higher density refers bus stops that
+### appear more frequently
+
+
+### Verbose Visual
+
+### Returns a heat map  where the darker the pin drop 
+### the more frequently the bus stop or route appears
+### A user can also click on the pin drop and see the statisitics associated with it
+
+### TO DO ###
+
+### Build a more visually appealing graph that shows aggregate statistics
+
+### Make  Map Keys for all graphs via the html
+
+### Clean up and format Python AND html code
+
+
 class Map(object):
     def __init__(self,db_name='bus_data.db'):
         self.db_name = db_name
-        self._points = []
-        self.html_text = self.html()
+        self.html_body = self.html_body()
+        self.html_dom = self.html_dom()
 
-    def html(self):
+    def html_body(self):
         return {
         "basic_visual": """
         <!DOCTYPE html>
@@ -38,7 +60,7 @@ class Map(object):
 
             function initMap() {{
                 map = new google.maps.Map(document.getElementById('map'), {{
-                zoom: 10,
+                zoom: 12,
                 center: {{lat: {center_lat}, lng: {center_lon}}},
                 mapTypeId: google.maps.MapTypeId.SATELLITE
             }});
@@ -86,127 +108,245 @@ class Map(object):
             return {map_points};
         }}
 
-    </script>
-        <script async defer
-                src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDTFj3XyhkCRZ5n6qPE23iwre3qFQgn3NI&signed_in=true&libraries=visualization&callback=initMap">
-        </script>
-    </body>
-</html>
-"""}
-    def add_point(self, coordinates):
-        self._points.append(coordinates)
+            </script>
+                <script async defer
+                        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDTFj3XyhkCRZ5n6qPE23iwre3qFQgn3NI&signed_in=true&libraries=visualization&callback=initMap">
+                </script>
+            </body>
+        </html>
+""",
+        "verbose_visual": """
+        <!DOCTYPE html>
+        <html>
+            <head>
+                <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+                <meta charset="utf-8">
+                <title>Verbose Map</title>
+                <style>
+                    html, body {{
+                    height: 100%;
+                    margin: 0;
+                    padding: 0;
+                    }}
+                    #map {{
+                    height: 100%;
+                    }}
+                </style>
+            </head>
+            <body>
+                <div id="map"></div>
+                    <script>
 
+                        function initMap() {{
+                        var map = new google.maps.Map(document.getElementById('map'), {{
+                        zoom: 13,
+                        center: {{lat: {center_lat}, lng: {center_lon}}}
+                        }});
+                        {colors}
+                        {map_points}
+                        }}
+                    </script>
+                    <script async defer
+                        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDTFj3XyhkCRZ5n6qPE23iwre3qFQgn3NI&signed_in=true&callback=initMap"></script>
+            </body>
+            </html>
+            """}
+
+    def html_dom(self):
+        return {
+        "basic_visual_dom": "new google.maps.LatLng({lat}, {lon})",
+
+        "verbose_visual_colors"  : """
+
+                var pinImage{index} = new google.maps.MarkerImage("http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=%E2%80%A2|" + "{color}",
+                new google.maps.Size(21, 34),
+                new google.maps.Point(0,0),
+                new google.maps.Point(5, 5));
+                
+                """,
+
+        "verbose_visual_dom" : """
+
+            var marker{index} = new google.maps.Marker({{
+            position: {{lat: {lat}, lng: {lon}}},
+            map: map,
+            icon : pinImage{color_num},
+            title: 'name (Chicago)'
+            }});
+
+            marker{index}.addListener('click', function () {{
+            new google.maps.InfoWindow({{content: '<div id="content">'
+            + 'name: ' + '{name}' +
+            ' count: ' + '{count}' +
+            ' avg_alight: ' + '{avg_alight}' +
+            ' avg_board:' + '{avg_board}' +'</div>'}}).open(map, marker{index});}});
+
+            """
+        }
+   
     def basic_visual(self):
 
-        connection = sql.connect('bus_data.db')
+        connection = sql.connect(self.db_name)
 
-        cursor= connection.cursor()
+        cursor = connection.cursor()
 
-        DATA = cursor.execute("""SELECT latitude, longitude FROM CTA1012""")
+        points = cursor.execute("""SELECT latitude, longitude FROM CTA1012""")
 
-        for pair in DATA:
-            self.add_point(pair)
+        points = [pair for pair in points.fetchall()]
 
-        center_lat = sum(( x[0] for x in self._points )) / len(self._points)
-        center_lon = sum(( x[1] for x in self._points )) / len(self._points)
+        center_lat = sum(( x[0] for x in points )) / len(points)
+        center_lon = sum(( x[1] for x in points )) / len(points)
 
-        map_points = ",".join(
-            [ """new google.maps.LatLng({lat}, {lon})""".format(lat=x[0], lon=x[1]) for x in self._points])
-        map_points = '['  + map_points + ']'
+        map_points = "[" + ",".join(
+            [self.html_dom["basic_visual_dom"].format(lat=x[0], lon=x[1]) for x in points]) + "]"
 
-        return self.html_text["basic_visual"].format(map_points=map_points, center_lat=center_lat, center_lon=center_lon)
-   
-    def custom_visual(self):
+        return self.html_body["basic_visual"].format(map_points=map_points, center_lat=center_lat, center_lon=center_lon)
 
-        prompts = {
 
-        "ERROR" : "Invalid selectionError at step",
-        "CATEGORY": """
-        Which category would you like to select ON STREET OR ROUTE?\n
-        1 for ON STREET ... 2 for ROUTE\n
-        """,
-        "ORDER": """
-        Order by count,  SUM  alightings, AVG alighting, SUM  boardings or AVG boardings,s\n
-        1 for count, 2 for SUM alightings, 3 for AVG alightings, 4 for SUM boardings, 5 for AVG boardings\n
-        """,
-        "SEQ": """
-        How would you like to see your results? ASC or DESC?\n
-        1 for ASC, 2 for DESC\n
-        """,
-        "LIM" : """
-        Would you like to limit your results?\n
-        1 for NO, i for i results\n
-        """
-        }
 
-        valid = {
-        "CATEGORY" : [1,2],
-        "ORDER" : [1,2,3,4,5],
-        "SEQ" : [1,2],
-        "LIM" : "CUSTOM"
-        }
-
-        category = int(raw_input(prompts['CATEGORY']))
-
-        if category not in valid['CATEGORY']:
-            print prompts['error'] + 'one'
-            exit(1)
-
-        category = { 1 : "stopagg", 2 :"routeagg"}[category]
-
-        order = int(raw_input(prompts['ORDER']))
-
-        if order not in valid['ORDER']:
-            print prompts['error'] + 'two'
-            exit(1)
-
-        order = {
-        1 : {"stopagg" : "count_street", "routeagg" : "count_route"}[category],
-        2:"sum_alight",
-        3:"avg_alight", 
-        4:"sum_board",
-        5:"avg_board"}[order]
-
-        seq = int(raw_input(prompts['SEQ']))
-
-        if int(seq)  not in valid['SEQ']:
-            print prompts['error'] + 'three'
-            exit(1)
-
-        seq = {1: "ASC", 2 :"DESC"}[seq]
-
-        lim = int(raw_input(prompts['LIM']))
-
-        if lim <= 0:
-            print prompts['error'] + 'four'
-            exit(1)
-
-        if lim == 1:
-            lim = False
-
-        query = """SELECT {order} FROM {category}
-                   ORDER BY {order}""".format(order=order,category=category) 
-        print query
-        if lim:
-            query += " LIMIT %s" % lim
-
-        print category, order, lim, seq
+    def verbose_visual_data(self):
         
 
+        dicts = {
 
+        "error" : "Invalid Selection Error:",
 
+        "selection": """
 
+        Select ON STREET OR ROUTE?\n
+        1 for ON STREET ... 2 for ROUTE\n
 
+        """,
 
+        "category" : { 1 : "on_street",2 :"route"},
 
+        "table_name" : {"on_street": "ON_STREET_AGG", "route": "ROUTE_AGG"},
 
+        "column_count" :{"on_street": "on_street_count", "route":"route_count"}
+
+        }
+
+        selection = int(raw_input(dicts['selection']))
+
+        if selection not in [1,2]: print dicts['error'] + str(selection); exit(1)
+
+        category = dicts["category"][selection]
+
+        table_name = dicts["table_name"][category]
+
+        column_count = dicts["column_count"][category]
+
+        connection = sql.connect(self.db_name)
+
+        cursor1 = connection.cursor()
+
+        cursor2 = connection.cursor()
+
+        select_raw_data = "SELECT {category}, latitude, longitude FROM CTA1012".format(category=category)
+
+        raw_data = cursor1.execute(select_raw_data)
+
+        data_list = []
+
+        for line in raw_data:
+
+            info, latitude, longitude = line
+
+            select_agg_data = """SELECT 
+                {category},
+                {column_count},
+                sum_alight,
+                avg_alight,
+                sum_board,
+                avg_board 
+                FROM {table_name}
+                WHERE {category} = ?
+                """ .format(category=category,column_count=column_count, table_name=table_name)
+            
+            agg_data = cursor2.execute(select_agg_data, (info,))
+
+            data_list.append([agg_data.fetchone(), latitude,longitude])
+
+        return data_list
+
+    def assign_colors(self,num, type):
+
+        print "TYPE", type
+
+        base_num = {1:12, 2:1200, 3:1200}[type]
+
+        if   num <= base_num:       return 0
+        elif num <= base_num * 2:   return 1
+        elif num <= base_num * 4:   return 2
+        elif num <= base_num * 6:   return 3
+        elif num <= base_num * 8:   return 4
+        elif num <= base_num * 10:  return 5
+        elif num <= base_num * 12:  return 6
+        elif num <= base_num * 14:  return 7
+        elif num <= base_num * 16:  return 8
+        elif num <= base_num * 18:  return 9
+
+        return 10
+
+    def verbose_visual(self):
+
+        dicts = {
+
+        "metric" : """
+        Sort according to COUNT, AVG_ALIGHT or AVG_BOARD?\n
+        1 for COUNT ... 2 for AVG_ALIGHT ... 3 AVG_BOARD\n
+        """,
+
+        "error": "Invalid input:\n",
+
+        "colors" : ["FFFFFF","E3F1F0","C7E3E2","ABD6D3","8FC8C5","74BBB6","58ADA8","3CA099","20928B","05857D","000000"],
+
+        "metric_to_color" : {1:1, 2:2, 3:4}
+
+        } 
+
+        data_list = self.verbose_visual_data()
+
+        center_lat = sum(( x[1] for x in data_list )) / len(data_list)
+
+        center_lon = sum(( x[2] for x in data_list )) / len(data_list)
+
+        metric = int(raw_input(dicts['metric']))
+
+        if metric not in [1,2,3]:
+            print prompts['error'] + str(metric)
+            exit(1)
+
+        select_metric = dicts["metric_to_color"][metric]
+
+        colors = ('\n'.join(self.html_dom["verbose_visual_colors"].format(index=idx, color=color) for idx,color in enumerate(dicts["colors"])))
+
+        map_points = "\n".join(
+            [self.html_dom["verbose_visual_dom"].format(index =index, lat=x[1], lon=x[2], name=x[0][0], count=x[0][1], avg_alight=x[0][2], avg_board=x[0][4], color_num=self.assign_colors(x[0][select_metric],metric)) for index,x in enumerate(data_list)])
+
+        return self.html_body["verbose_visual"].format(colors=colors,map_points=map_points, center_lat=center_lat, center_lon=center_lon)
+
+    def create_map(self, map_type):
+        map_type_dict = {
+
+        "verbose" :'verbose_visual.html',
+        "basic" : 'basic_visual.html'
+
+        }
+
+        if map_type == "verbose": html = self.verbose_visual()
+
+        elif map_type == "basic": html = self.basic_visual()
+
+        else: print "Error invalid input"; exit(1)
+
+        with open( map_type_dict[map_type], "w") as out:
+            out.write(html)
 
 
 if __name__ == "__main__":
         map = Map()
-        map.custom_visual()
-        #with open('basic_visual.html', "w") as out:
-        #   out.write(map.basic_visual())
+        map.create_map("verbose")
 
 
 
