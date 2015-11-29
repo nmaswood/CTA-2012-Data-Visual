@@ -142,7 +142,7 @@ class Map(object):
 
                         function initMap() {{
                         var map = new google.maps.Map(document.getElementById('map'), {{
-                        zoom: 12,
+                        zoom: 13,
                         center: {{lat: {center_lat}, lng: {center_lon}}}
                         }});
                         {map_points}
@@ -279,7 +279,7 @@ class Map(object):
             position: {{lat: {lat}, lng: {lon}}},
             map: map,
             icon : pinImage{index},
-            title: 'Uluru (Ayers Rock)'
+            title: 'name (Chicago)'
             }});
 
             marker{index}.addListener('click', function () {{
