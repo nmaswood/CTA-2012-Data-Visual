@@ -189,7 +189,7 @@ class Map(object):
         category = int(raw_input(prompts['CATEGORY']))
 
         if category not in [1,2]:
-            print prompts['error'] + str(category)
+            print prompts['ERROR'] + str(category)
             exit(1)
 
         category = { 1 : "ON_STREET", 2 :"ROUTE"}[category]
@@ -233,16 +233,16 @@ class Map(object):
 
         base_num = {1:12, 2:1200, 3:1200}[type]
 
-        if num <=  base_num:  print base_num * 2; return "FFFFFF"
-        elif num <= base_num * 2:  print base_num * 3;  return "E3F1F0" 
-        elif num <= base_num * 4: print base_num * 4; return "C7E3E2" 
-        elif num <= base_num * 6:   print base_num * 5;return "ABD6D3"
-        elif num <= base_num * 8:   print base_num * 6;return "8FC8C5" 
-        elif num <= base_num * 10:   print base_num * 7;return "74BBB6" 
-        elif num <= base_num * 12:  print base_num * 8;return "58ADA8" 
-        elif num <= base_num * 14:  print base_num * 9;return "3CA099" 
-        elif num <= base_num * 16:  print base_num* 10;return "20928B" 
-        elif num <= base_num * 18:  print base_num * 10; return "05857D" 
+        if num <=  base_num: return "FFFFFF"
+        elif num <= base_num * 2:   return "E3F1F0" 
+        elif num <= base_num * 4:  return "C7E3E2" 
+        elif num <= base_num * 6:  return "ABD6D3"
+        elif num <= base_num * 8:  return "8FC8C5" 
+        elif num <= base_num * 10:  return "74BBB6" 
+        elif num <= base_num * 12:  return "58ADA8" 
+        elif num <= base_num * 14:  return "3CA099" 
+        elif num <= base_num * 16: return "20928B" 
+        elif num <= base_num * 18:  return "05857D" 
 
         return "000000"
 
@@ -255,11 +255,12 @@ class Map(object):
         Sort according to COUNT, AVG_ALIGHT, SUM_BOARD or AVG_BOARD?\n
         1 for COUNT ... 2 for AVG_ALIGHT ... 3 AVG_BOARD\n
         """,
-        "ERROR": "An error has occured:\n"}
+        "ERROR": "Invalid input:\n"}
 
         metric = int(raw_input(prompts['METRIC']))
-        if metric not in [1,2,3,4,5]:
-            print prompts['Error'] + metric
+
+        if metric not in [1,2,3]:
+            print prompts['ERROR'] + str(metric)
             exit(1)
 
         metric= {1:1, 2:2, 3:4}[metric]
