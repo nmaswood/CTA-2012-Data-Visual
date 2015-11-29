@@ -2,7 +2,6 @@ from csv import reader
 import sqlite3 as sql
 from collections import defaultdict
 
-
 # Load data loads the intial data from the CSV
 # into a sql table. The table is called CTA1012
 
@@ -183,6 +182,7 @@ class aggregate_data(object):
 
 		except sql.Error as e:
 			print e
+			
 	def view(self,type,order=False):
 		try:
 			connection = sql.connect(self.db_name)
@@ -204,23 +204,3 @@ class aggregate_data(object):
 
 		except sql.Error as e:
 			print "Something wrong happened %s" % e
-
-
-
-
-aggregate_data = aggregate_data()
-load_data = load_data()
-
-#load_data.view()
-
-#aggregate_data.initialize("ON_STREET")
-#aggregate_data.initialize("ROUTE")
-
-
-#aggregate_data.view('ROUTE', order=True)
-#aggregate_data.view('ON_STREET', order=True)
-
-
-
-
-

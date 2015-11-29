@@ -28,31 +28,38 @@ from sys import exit
 
 
 class Map(object):
+
     def __init__(self,db_name='bus_data.db'):
+
         self.db_name = db_name
+
         self.html_body = self.html_body()
+
         self.html_dom = self.html_dom()
+
+        self.group_by = ""
+
 
     def html_body(self):
         return {
+
         "basic_visual": """
         <!DOCTYPE html>
         <html>
             <head>
             <meta charset="utf-8">
             <title>Heatmaps</title>
-                <style>
-                    html, body {{
-                        height: 100%;
-                        margin: 0;
-                        padding: 0;
-                    }}
-                    #map {{
-                        height: 100%;
-                    }}
-                </style>
+                {style}
             </head>
             <body>
+            <div id="floating-panel">
+
+    <b>Heat Map</b>
+    <br>
+    Areas that are redder represent areas
+    with larger amounts of bus stops.
+
+</div>
             <div id="map"></div>
             <script>
             
@@ -114,7 +121,8 @@ class Map(object):
                 </script>
             </body>
         </html>
-""",
+        """,
+
         "verbose_visual": """
         <!DOCTYPE html>
         <html>
@@ -122,18 +130,20 @@ class Map(object):
                 <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
                 <meta charset="utf-8">
                 <title>Verbose Map</title>
-                <style>
-                    html, body {{
-                    height: 100%;
-                    margin: 0;
-                    padding: 0;
-                    }}
-                    #map {{
-                    height: 100%;
-                    }}
-                </style>
+                {style}
             </head>
             <body>
+            <div id="floating-panel">
+
+                    <b>Marker Map</b>
+                    <br>
+                    <b>Grouped by</b> : {group_by}
+                    <b>Metric</b> : {metric_name}
+                    <br>
+                    Markers that are darker have higher values. Click on a marker to see its
+                    corresponding statistics.
+
+                </div>
                 <div id="map"></div>
                     <script>
 
@@ -158,7 +168,7 @@ class Map(object):
 
         "verbose_visual_colors"  : """
 
-                var pinImage{index} = new google.maps.MarkerImage("http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=%E2%80%A2|" + "{color}",
+                var pinImage{idx} = new google.maps.MarkerImage("http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=%E2%80%A2|" + "{color}",
                 new google.maps.Size(21, 34),
                 new google.maps.Point(0,0),
                 new google.maps.Point(5, 5));
@@ -167,21 +177,56 @@ class Map(object):
 
         "verbose_visual_dom" : """
 
-            var marker{index} = new google.maps.Marker({{
+            var marker{idx} = new google.maps.Marker({{
             position: {{lat: {lat}, lng: {lon}}},
             map: map,
             icon : pinImage{color_num},
             title: 'name (Chicago)'
             }});
 
-            marker{index}.addListener('click', function () {{
+            marker{idx}.addListener('click', function () {{
             new google.maps.InfoWindow({{content: '<div id="content">'
             + 'name: ' + '{name}' +
             ' count: ' + '{count}' +
-            ' avg_alight: ' + '{avg_alight}' +
-            ' avg_board:' + '{avg_board}' +'</div>'}}).open(map, marker{index});}});
+            ' average alight: ' + '{avg_alight}' +
+            ' average board:' + '{avg_board}' +'</div>'}}).open(map, marker{idx});}});
 
-            """
+            """,
+        "style" : """
+        <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        #map {
+            height: 100%;
+        }
+        #floating-panel {
+            position: absolute;
+            top: 10px;
+            left: 25%;
+            z-index: 5;
+            background-color: #fff;
+            padding: 5px;
+            border: 1px solid #999;
+            text-align: center;
+            font-family: 'Roboto','sans-serif';
+            line-height: 30px;
+            padding-left: 10px;
+        }
+
+        #floating-panel {
+            background-color: #fff;
+            border: 1px solid #999;
+            left: 25%;
+            padding: 5px;
+            position: absolute;
+            top: 10px;
+            z-index: 5;
+            font-family: 'Roboto', 'sans-serif';
+        }
+    </style>"""
         }
    
     def basic_visual(self):
@@ -198,9 +243,18 @@ class Map(object):
         center_lon = sum(( x[1] for x in points )) / len(points)
 
         map_points = "[" + ",".join(
-            [self.html_dom["basic_visual_dom"].format(lat=x[0], lon=x[1]) for x in points]) + "]"
+            [self.html_dom["basic_visual_dom"]
+            .format(
+                lat=x[0],
+                lon=x[1]
+                ) for x in points]) + "]"
 
-        return self.html_body["basic_visual"].format(map_points=map_points, center_lat=center_lat, center_lon=center_lon)
+        return self.html_body["basic_visual"].format(
+            style=self.html_dom["style"],
+            map_points=map_points,
+            center_lat=center_lat,
+            center_lon=center_lon
+            )
 
 
 
@@ -220,9 +274,9 @@ class Map(object):
 
         "category" : { 1 : "on_street",2 :"route"},
 
-        "table_name" : {"on_street": "ON_STREET_AGG", "route": "ROUTE_AGG"},
+        "table_name" : { "on_street": "ON_STREET_AGG", "route": "ROUTE_AGG"},
 
-        "column_count" :{"on_street": "on_street_count", "route":"route_count"}
+        "column_count" :{ "on_street": "on_street_count", "route":"route_count"}
 
         }
 
@@ -231,6 +285,8 @@ class Map(object):
         if selection not in [1,2]: print dicts['error'] + str(selection); exit(1)
 
         category = dicts["category"][selection]
+
+        self.group_by = category
 
         table_name = dicts["table_name"][category]
 
@@ -269,9 +325,7 @@ class Map(object):
 
         return data_list
 
-    def assign_colors(self,num, type):
-
-        print "TYPE", type
+    def gen_colors(self,num, type):
 
         base_num = {1:12, 2:1200, 3:1200}[type]
 
@@ -301,7 +355,9 @@ class Map(object):
 
         "colors" : ["FFFFFF","E3F1F0","C7E3E2","ABD6D3","8FC8C5","74BBB6","58ADA8","3CA099","20928B","05857D","000000"],
 
-        "metric_to_color" : {1:1, 2:2, 3:4}
+        "metric_to_color" : {1:1, 2:2, 3:4},
+
+        "metric_name" : {1:"Count", 2 : "Average alighting", 3 : "Average boarding"}
 
         } 
 
@@ -319,12 +375,37 @@ class Map(object):
 
         select_metric = dicts["metric_to_color"][metric]
 
-        colors = ('\n'.join(self.html_dom["verbose_visual_colors"].format(index=idx, color=color) for idx,color in enumerate(dicts["colors"])))
+        metric_name = dicts["metric_name"][metric]
 
+        colors = ('\n'.join(self.html_dom["verbose_visual_colors"]
+            .format(
+                idx=idx,
+                color=color
+                ) for idx,color in enumerate(dicts["colors"])))
+
+        ### AGG [(NAME, COUNT, SUM_LIGHT, AVG_LIGHT, SUM_BOARD, AVG_BOARD), LAT, LONG]
         map_points = "\n".join(
-            [self.html_dom["verbose_visual_dom"].format(index =index, lat=x[1], lon=x[2], name=x[0][0], count=x[0][1], avg_alight=x[0][2], avg_board=x[0][4], color_num=self.assign_colors(x[0][select_metric],metric)) for index,x in enumerate(data_list)])
+            [self.html_dom["verbose_visual_dom"]
+            .format(
+                idx = idx,
+                lat = agg[1],
+                lon = agg[2],
+                name = agg[0][0],
+                count = agg[0][1],
+                avg_alight = agg[0][2],
+                avg_board = agg[0][4],
+                color_num = self.gen_colors(agg[0][select_metric],metric)
+                ) for idx,agg in enumerate(data_list)])
 
-        return self.html_body["verbose_visual"].format(colors=colors,map_points=map_points, center_lat=center_lat, center_lon=center_lon)
+        return self.html_body["verbose_visual"].format(
+            group_by = self.group_by,
+            metric_name=metric_name,
+            colors=colors,
+            map_points=map_points,
+            center_lat=center_lat,
+            center_lon=center_lon,
+            style=self.html_dom["style"],
+)
 
     def create_map(self, map_type):
         map_type_dict = {
@@ -343,10 +424,9 @@ class Map(object):
         with open( map_type_dict[map_type], "w") as out:
             out.write(html)
 
-
 if __name__ == "__main__":
         map = Map()
-        map.create_map("verbose")
+        map.create_map("basic")
 
 
 
