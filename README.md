@@ -40,6 +40,19 @@ and displays it via the Google Maps API
 | sum_board| FLOAT      |
 | avg_board | FLOAT     |
 
+
+### Basic Visual
+
+Returns a heat map where higher density
+refers bus stops that appear more frequently
+
+
+### Verbose Visual
+
+A marker map where the darker the marker
+the higher the value for the specified metric.
+A user can  click on a marker and see the statisitics associated with it
+
 ##Usage
 
 ### populate_data
