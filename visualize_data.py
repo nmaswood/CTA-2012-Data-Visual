@@ -2,29 +2,19 @@ import sqlite3 as sql
 from googlemaps import Client
 from sys import exit
 
-# This code uses code from
+# This file uses code from
 #http://stackoverflow.com/questions/22342097/is-it-possible-to-create-a-google-map-from-python
 
 
-### Basic Visual
+### USAGE ###
 
-### Returns a heat map where higher density refers bus stops that
-### appear more frequently
-
-
-### Verbose Visual
-
-### Returns a heat map  where the darker the pin drop 
-### the more frequently the bus stop or route appears
-### A user can also click on the pin drop and see the statisitics associated with it
+#map = Map()
+#map.create_map("basic")
 
 ### TO DO ###
 
 ### Build a more visually appealing graph that shows aggregate statistics
 
-### Make  Map Keys for all graphs via the html
-
-### Clean up and format Python AND html code
 
 
 class Map(object):

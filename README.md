@@ -51,7 +51,9 @@ refers bus stops that appear more frequently
 
 A marker map where the darker the marker
 the higher the value for the specified metric.
-A user can  click on a marker and see the statisitics associated with it
+
+A user can click on a marker and
+see the statisitics associated with it
 
 ##Usage
 
