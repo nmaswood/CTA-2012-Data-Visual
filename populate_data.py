@@ -1,5 +1,6 @@
 from csv import reader
 import sqlite3 as sql
+from sys import exit
 
 # Load data loads the intial data from the CSV
 # into a sql table. The table is called CTA1012
@@ -97,7 +98,7 @@ class load_data(object):
 							longitude));
 					except sql.Error as e:
 						print self.error.format(function="initialize", error=e)
-						break
+						exit(1)
 		except sql.Error as e:
 			print self.error.format(function="initialize", error=e)
 
