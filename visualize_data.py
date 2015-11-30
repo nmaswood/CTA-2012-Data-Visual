@@ -427,13 +427,15 @@ class Map(object):
         with open( map_type_dict[map_type], "w") as out:
             out.write(html)
 
+        print "The marker map has been succesfully created\n"
+
 class Bubble(object):
 
     def __init__(self):
         self.error = "{function}: The following error occured {error}\n"
         self.group_by = ""
         self.metric = ""
-
+    ### This uses code from http://bl.ocks.org/mbostock/4063269
     def html_text(self):
         return """
         <!DOCTYPE html>
@@ -464,7 +466,7 @@ class Bubble(object):
 <script src="d3.min.js"></script>
 <script>
 
-    var diameter = 1200,
+    var diameter = 1400,
             format = d3.format(",d"),
             color = d3.scale.category20c();
 
@@ -569,6 +571,7 @@ class Bubble(object):
     def create_bubble(self):
 
         data = self.bubble_data()
+
         bubble_format  = """{{ 
         "name": "{name}",
         "children" : [{{
@@ -580,7 +583,7 @@ class Bubble(object):
 
         map_points = """ 
                     {{ 
-                    "name": "flare",
+                    "name": "body",
                     "children": {body}
                     }}""".format(body=body)
 
@@ -588,11 +591,21 @@ class Bubble(object):
             out.write(self.html_text().format(group_by=self.group_by,metric=self.metric))
         with open("d3/flare.json", "w") as out:
             out.write(map_points)
+        
+        print """
+        The bubble map has been succesfully created.\n
+        If you have trouble opening index.html, try using a different browser\n
+        """
 
 if __name__ == "__main__":
 
-    print "hello there!"
+    #Bubble = Bubble()
+    #Bubble.create_bubble()
 
+
+    #map = Map()
+    #map.create_map("basic")
+    #map.create_verbose("visual")
 
 
 
