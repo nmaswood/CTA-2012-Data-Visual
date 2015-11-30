@@ -1,0 +1,1830 @@
+ 
+                    { 
+                    "name": "flare",
+                    "children": [{ 
+        "name": "(old) HARLEM",
+        "children" : [{
+        "name" : "(old) HARLEM", "size" : 2.4
+        }]
+        },{ 
+        "name": "100TH STREET",
+        "children" : [{
+        "name" : "100TH STREET", "size" : 31.965
+        }]
+        },{ 
+        "name": "103RD STREET",
+        "children" : [{
+        "name" : "103RD STREET", "size" : 37.1761904762
+        }]
+        },{ 
+        "name": "104TH STREET",
+        "children" : [{
+        "name" : "104TH STREET", "size" : 2.62
+        }]
+        },{ 
+        "name": "106TH STREET",
+        "children" : [{
+        "name" : "106TH STREET", "size" : 11.3583333333
+        }]
+        },{ 
+        "name": "111TH STREET",
+        "children" : [{
+        "name" : "111TH STREET", "size" : 27.6241758242
+        }]
+        },{ 
+        "name": "112TH STREET",
+        "children" : [{
+        "name" : "112TH STREET", "size" : 9.32
+        }]
+        },{ 
+        "name": "115TH STREET",
+        "children" : [{
+        "name" : "115TH STREET", "size" : 30.6174603175
+        }]
+        },{ 
+        "name": "119TH STREET",
+        "children" : [{
+        "name" : "119TH STREET", "size" : 39.8744186047
+        }]
+        },{ 
+        "name": "127TH STREET",
+        "children" : [{
+        "name" : "127TH STREET", "size" : 44.35
+        }]
+        },{ 
+        "name": "130TH STREET",
+        "children" : [{
+        "name" : "130TH STREET", "size" : 29.1428571429
+        }]
+        },{ 
+        "name": "131ST STREET",
+        "children" : [{
+        "name" : "131ST STREET", "size" : 52.8142857143
+        }]
+        },{ 
+        "name": "132ND STREET",
+        "children" : [{
+        "name" : "132ND STREET", "size" : 2.46666666667
+        }]
+        },{ 
+        "name": "133RD PLACE",
+        "children" : [{
+        "name" : "133RD PLACE", "size" : 60.6333333333
+        }]
+        },{ 
+        "name": "16TH STREET",
+        "children" : [{
+        "name" : "16TH STREET", "size" : 26.4048780488
+        }]
+        },{ 
+        "name": "18TH STREET",
+        "children" : [{
+        "name" : "18TH STREET", "size" : 39.3135135135
+        }]
+        },{ 
+        "name": "18TH STREET(north leg)",
+        "children" : [{
+        "name" : "18TH STREET(north leg)", "size" : 66.0
+        }]
+        },{ 
+        "name": "25TH AVENUE",
+        "children" : [{
+        "name" : "25TH AVENUE", "size" : 6.1
+        }]
+        },{ 
+        "name": "25TH STREET",
+        "children" : [{
+        "name" : "25TH STREET", "size" : 102.8
+        }]
+        },{ 
+        "name": "26TH STREET",
+        "children" : [{
+        "name" : "26TH STREET", "size" : 75.0979591837
+        }]
+        },{ 
+        "name": "31ST STREET",
+        "children" : [{
+        "name" : "31ST STREET", "size" : 57.8777777778
+        }]
+        },{ 
+        "name": "31ST STREET (north leg)",
+        "children" : [{
+        "name" : "31ST STREET (north leg)", "size" : 0.0
+        }]
+        },{ 
+        "name": "31ST STREET (south leg)",
+        "children" : [{
+        "name" : "31ST STREET (south leg)", "size" : 0.5
+        }]
+        },{ 
+        "name": "32ND STREET",
+        "children" : [{
+        "name" : "32ND STREET", "size" : 9.0
+        }]
+        },{ 
+        "name": "33RD PLACE",
+        "children" : [{
+        "name" : "33RD PLACE", "size" : 10.4
+        }]
+        },{ 
+        "name": "35TH STREET",
+        "children" : [{
+        "name" : "35TH STREET", "size" : 100.991780822
+        }]
+        },{ 
+        "name": "35TH/ARCHER",
+        "children" : [{
+        "name" : "35TH/ARCHER", "size" : 245.6
+        }]
+        },{ 
+        "name": "36TH PLACE",
+        "children" : [{
+        "name" : "36TH PLACE", "size" : 1.46666666667
+        }]
+        },{ 
+        "name": "36TH STREET",
+        "children" : [{
+        "name" : "36TH STREET", "size" : 22.2857142857
+        }]
+        },{ 
+        "name": "38TH STREET",
+        "children" : [{
+        "name" : "38TH STREET", "size" : 0.4
+        }]
+        },{ 
+        "name": "40TH STREET",
+        "children" : [{
+        "name" : "40TH STREET", "size" : 2.03333333333
+        }]
+        },{ 
+        "name": "42ND STREET",
+        "children" : [{
+        "name" : "42ND STREET", "size" : 1.5
+        }]
+        },{ 
+        "name": "43RD STREET",
+        "children" : [{
+        "name" : "43RD STREET", "size" : 40.2161290323
+        }]
+        },{ 
+        "name": "47TH STREET",
+        "children" : [{
+        "name" : "47TH STREET", "size" : 102.041935484
+        }]
+        },{ 
+        "name": "51ST STREET",
+        "children" : [{
+        "name" : "51ST STREET", "size" : 50.224137931
+        }]
+        },{ 
+        "name": "54TH AVE/CERMAK",
+        "children" : [{
+        "name" : "54TH AVE/CERMAK", "size" : 398.5
+        }]
+        },{ 
+        "name": "54TH STREET",
+        "children" : [{
+        "name" : "54TH STREET", "size" : 10.8
+        }]
+        },{ 
+        "name": "55TH STREET",
+        "children" : [{
+        "name" : "55TH STREET", "size" : 66.0539325843
+        }]
+        },{ 
+        "name": "59TH STREET",
+        "children" : [{
+        "name" : "59TH STREET", "size" : 32.1112244898
+        }]
+        },{ 
+        "name": "60TH STREET",
+        "children" : [{
+        "name" : "60TH STREET", "size" : 66.6764705882
+        }]
+        },{ 
+        "name": "61ST STREET",
+        "children" : [{
+        "name" : "61ST STREET", "size" : 31.9833333333
+        }]
+        },{ 
+        "name": "63RD STREET",
+        "children" : [{
+        "name" : "63RD STREET", "size" : 119.389325843
+        }]
+        },{ 
+        "name": "64TH STREET",
+        "children" : [{
+        "name" : "64TH STREET", "size" : 38.0
+        }]
+        },{ 
+        "name": "65TH STREET",
+        "children" : [{
+        "name" : "65TH STREET", "size" : 17.9125
+        }]
+        },{ 
+        "name": "67TH STREET",
+        "children" : [{
+        "name" : "67TH STREET", "size" : 108.381818182
+        }]
+        },{ 
+        "name": "69TH BUS BRIDGE",
+        "children" : [{
+        "name" : "69TH BUS BRIDGE", "size" : 987.75
+        }]
+        },{ 
+        "name": "69TH STREET",
+        "children" : [{
+        "name" : "69TH STREET", "size" : 112.084057971
+        }]
+        },{ 
+        "name": "71ST STREET",
+        "children" : [{
+        "name" : "71ST STREET", "size" : 84.1356321839
+        }]
+        },{ 
+        "name": "71ST/PUL.SHPNG",
+        "children" : [{
+        "name" : "71ST/PUL.SHPNG", "size" : 0.4
+        }]
+        },{ 
+        "name": "73RD STREET",
+        "children" : [{
+        "name" : "73RD STREET", "size" : 16.3833333333
+        }]
+        },{ 
+        "name": "74TH STREET",
+        "children" : [{
+        "name" : "74TH STREET", "size" : 50.324137931
+        }]
+        },{ 
+        "name": "75TH STREET",
+        "children" : [{
+        "name" : "75TH STREET", "size" : 71.6207792208
+        }]
+        },{ 
+        "name": "76TH FORD C.DR",
+        "children" : [{
+        "name" : "76TH FORD C.DR", "size" : 98.6
+        }]
+        },{ 
+        "name": "76TH STREET",
+        "children" : [{
+        "name" : "76TH STREET", "size" : 52.9142857143
+        }]
+        },{ 
+        "name": "79TH & WESTERN",
+        "children" : [{
+        "name" : "79TH & WESTERN", "size" : 578.02
+        }]
+        },{ 
+        "name": "79TH STREET",
+        "children" : [{
+        "name" : "79TH STREET", "size" : 177.431016043
+        }]
+        },{ 
+        "name": "83RD STREET",
+        "children" : [{
+        "name" : "83RD STREET", "size" : 25.4
+        }]
+        },{ 
+        "name": "87TH STREET",
+        "children" : [{
+        "name" : "87TH STREET", "size" : 99.4459627329
+        }]
+        },{ 
+        "name": "91ST STREET",
+        "children" : [{
+        "name" : "91ST STREET", "size" : 105.228571429
+        }]
+        },{ 
+        "name": "92ND STREET",
+        "children" : [{
+        "name" : "92ND STREET", "size" : 194.383333333
+        }]
+        },{ 
+        "name": "93RD STREET",
+        "children" : [{
+        "name" : "93RD STREET", "size" : 45.2833333333
+        }]
+        },{ 
+        "name": "95TH STREET",
+        "children" : [{
+        "name" : "95TH STREET", "size" : 172.517142857
+        }]
+        },{ 
+        "name": "ADAMS",
+        "children" : [{
+        "name" : "ADAMS", "size" : 393.475
+        }]
+        },{ 
+        "name": "ADDISON",
+        "children" : [{
+        "name" : "ADDISON", "size" : 70.2553459119
+        }]
+        },{ 
+        "name": "AINSLIE",
+        "children" : [{
+        "name" : "AINSLIE", "size" : 13.9
+        }]
+        },{ 
+        "name": "ARCHER",
+        "children" : [{
+        "name" : "ARCHER", "size" : 56.735483871
+        }]
+        },{ 
+        "name": "ARCHER/HALSTED",
+        "children" : [{
+        "name" : "ARCHER/HALSTED", "size" : 733.566666667
+        }]
+        },{ 
+        "name": "ARMITAGE",
+        "children" : [{
+        "name" : "ARMITAGE", "size" : 58.9686868687
+        }]
+        },{ 
+        "name": "ASBURY",
+        "children" : [{
+        "name" : "ASBURY", "size" : 0.9
+        }]
+        },{ 
+        "name": "ASHLAND",
+        "children" : [{
+        "name" : "ASHLAND", "size" : 126.215648855
+        }]
+        },{ 
+        "name": "AUSTIN",
+        "children" : [{
+        "name" : "AUSTIN", "size" : 64.03
+        }]
+        },{ 
+        "name": "AVENUE B",
+        "children" : [{
+        "name" : "AVENUE B", "size" : 4.76
+        }]
+        },{ 
+        "name": "AVENUE C",
+        "children" : [{
+        "name" : "AVENUE C", "size" : 0.433333333333
+        }]
+        },{ 
+        "name": "AVENUE O",
+        "children" : [{
+        "name" : "AVENUE O", "size" : 10.9692307692
+        }]
+        },{ 
+        "name": "AVONDALE",
+        "children" : [{
+        "name" : "AVONDALE", "size" : 12.25
+        }]
+        },{ 
+        "name": "BALBO",
+        "children" : [{
+        "name" : "BALBO", "size" : 123.183333333
+        }]
+        },{ 
+        "name": "BALMORAL",
+        "children" : [{
+        "name" : "BALMORAL", "size" : 2.15
+        }]
+        },{ 
+        "name": "BALTIMORE",
+        "children" : [{
+        "name" : "BALTIMORE", "size" : 10.46
+        }]
+        },{ 
+        "name": "BELLWOOD",
+        "children" : [{
+        "name" : "BELLWOOD", "size" : 7.57777777778
+        }]
+        },{ 
+        "name": "BELMONT",
+        "children" : [{
+        "name" : "BELMONT", "size" : 150.610559006
+        }]
+        },{ 
+        "name": "BENSON",
+        "children" : [{
+        "name" : "BENSON", "size" : 317.4
+        }]
+        },{ 
+        "name": "BERWYN",
+        "children" : [{
+        "name" : "BERWYN", "size" : 55.8333333333
+        }]
+        },{ 
+        "name": "BEVERLY",
+        "children" : [{
+        "name" : "BEVERLY", "size" : 12.0928571429
+        }]
+        },{ 
+        "name": "BLACKHAWK",
+        "children" : [{
+        "name" : "BLACKHAWK", "size" : 20.9
+        }]
+        },{ 
+        "name": "BLACKSTONE",
+        "children" : [{
+        "name" : "BLACKSTONE", "size" : 242.5
+        }]
+        },{ 
+        "name": "BLUE ISLAND",
+        "children" : [{
+        "name" : "BLUE ISLAND", "size" : 55.9708333333
+        }]
+        },{ 
+        "name": "BOWEN",
+        "children" : [{
+        "name" : "BOWEN", "size" : 48.9
+        }]
+        },{ 
+        "name": "BRAINARD",
+        "children" : [{
+        "name" : "BRAINARD", "size" : 29.44
+        }]
+        },{ 
+        "name": "BRIDGE",
+        "children" : [{
+        "name" : "BRIDGE", "size" : 0.7
+        }]
+        },{ 
+        "name": "BROADWAY",
+        "children" : [{
+        "name" : "BROADWAY", "size" : 132.028378378
+        }]
+        },{ 
+        "name": "BRONX",
+        "children" : [{
+        "name" : "BRONX", "size" : 14.4
+        }]
+        },{ 
+        "name": "BRWN MAWR",
+        "children" : [{
+        "name" : "BRWN MAWR", "size" : 4.4
+        }]
+        },{ 
+        "name": "BRYN MAWR",
+        "children" : [{
+        "name" : "BRYN MAWR", "size" : 108.283333333
+        }]
+        },{ 
+        "name": "BRYN MAWR SERV",
+        "children" : [{
+        "name" : "BRYN MAWR SERV", "size" : 0.85
+        }]
+        },{ 
+        "name": "BUFFALO",
+        "children" : [{
+        "name" : "BUFFALO", "size" : 26.975
+        }]
+        },{ 
+        "name": "BURLEY",
+        "children" : [{
+        "name" : "BURLEY", "size" : 3.9
+        }]
+        },{ 
+        "name": "CALDWELL",
+        "children" : [{
+        "name" : "CALDWELL", "size" : 8.61071428571
+        }]
+        },{ 
+        "name": "CALIFORNIA",
+        "children" : [{
+        "name" : "CALIFORNIA", "size" : 62.4224137931
+        }]
+        },{ 
+        "name": "CALIFORNIA-DODGE",
+        "children" : [{
+        "name" : "CALIFORNIA-DODGE", "size" : 46.4
+        }]
+        },{ 
+        "name": "CAMPBELL",
+        "children" : [{
+        "name" : "CAMPBELL", "size" : 71.8
+        }]
+        },{ 
+        "name": "CANAL",
+        "children" : [{
+        "name" : "CANAL", "size" : 280.922222222
+        }]
+        },{ 
+        "name": "CANFIELD",
+        "children" : [{
+        "name" : "CANFIELD", "size" : 7.7
+        }]
+        },{ 
+        "name": "CANNON",
+        "children" : [{
+        "name" : "CANNON", "size" : 60.9
+        }]
+        },{ 
+        "name": "CANTERBURY",
+        "children" : [{
+        "name" : "CANTERBURY", "size" : 3.9
+        }]
+        },{ 
+        "name": "CARVER HIGH SCHOOL 4",
+        "children" : [{
+        "name" : "CARVER HIGH SCHOOL 4", "size" : 35.3
+        }]
+        },{ 
+        "name": "CENTRAL",
+        "children" : [{
+        "name" : "CENTRAL", "size" : 85.8661870504
+        }]
+        },{ 
+        "name": "CENTRAL PARK",
+        "children" : [{
+        "name" : "CENTRAL PARK", "size" : 88.345
+        }]
+        },{ 
+        "name": "CENTRAL STREET",
+        "children" : [{
+        "name" : "CENTRAL STREET", "size" : 16.9076923077
+        }]
+        },{ 
+        "name": "CERMAK",
+        "children" : [{
+        "name" : "CERMAK", "size" : 73.865648855
+        }]
+        },{ 
+        "name": "CHERRY",
+        "children" : [{
+        "name" : "CHERRY", "size" : 8.35
+        }]
+        },{ 
+        "name": "CHESTNUT",
+        "children" : [{
+        "name" : "CHESTNUT", "size" : 55.25
+        }]
+        },{ 
+        "name": "CHICAGO",
+        "children" : [{
+        "name" : "CHICAGO", "size" : 200.676515152
+        }]
+        },{ 
+        "name": "CHICAGO AVENUE",
+        "children" : [{
+        "name" : "CHICAGO AVENUE", "size" : 20.6588235294
+        }]
+        },{ 
+        "name": "CHICAGO STATE UNIVERSITY",
+        "children" : [{
+        "name" : "CHICAGO STATE UNIVERSITY", "size" : 501.0
+        }]
+        },{ 
+        "name": "CHURCH",
+        "children" : [{
+        "name" : "CHURCH", "size" : 19.0833333333
+        }]
+        },{ 
+        "name": "CICERO",
+        "children" : [{
+        "name" : "CICERO", "size" : 67.902661597
+        }]
+        },{ 
+        "name": "CLARENDON",
+        "children" : [{
+        "name" : "CLARENDON", "size" : 68.85
+        }]
+        },{ 
+        "name": "CLARK",
+        "children" : [{
+        "name" : "CLARK", "size" : 124.399428571
+        }]
+        },{ 
+        "name": "CLINTON",
+        "children" : [{
+        "name" : "CLINTON", "size" : 305.09
+        }]
+        },{ 
+        "name": "CLYBOURN",
+        "children" : [{
+        "name" : "CLYBOURN", "size" : 11.35
+        }]
+        },{ 
+        "name": "COLUMBUS",
+        "children" : [{
+        "name" : "COLUMBUS", "size" : 87.6666666667
+        }]
+        },{ 
+        "name": "COLUMBUS (mid)",
+        "children" : [{
+        "name" : "COLUMBUS (mid)", "size" : 1.65
+        }]
+        },{ 
+        "name": "COLUMBUS (upper)",
+        "children" : [{
+        "name" : "COLUMBUS (upper)", "size" : 4.7
+        }]
+        },{ 
+        "name": "COMMERCIAL",
+        "children" : [{
+        "name" : "COMMERCIAL", "size" : 33.0627906977
+        }]
+        },{ 
+        "name": "CONGRESS",
+        "children" : [{
+        "name" : "CONGRESS", "size" : 83.2785714286
+        }]
+        },{ 
+        "name": "CONGRESS PLAZA",
+        "children" : [{
+        "name" : "CONGRESS PLAZA", "size" : 138.8
+        }]
+        },{ 
+        "name": "CORNELL",
+        "children" : [{
+        "name" : "CORNELL", "size" : 2.9
+        }]
+        },{ 
+        "name": "CORTLAND",
+        "children" : [{
+        "name" : "CORTLAND", "size" : 44.1923076923
+        }]
+        },{ 
+        "name": "COTTAGE GROVE",
+        "children" : [{
+        "name" : "COTTAGE GROVE", "size" : 117.107317073
+        }]
+        },{ 
+        "name": "CRAWFORD",
+        "children" : [{
+        "name" : "CRAWFORD", "size" : 1.0
+        }]
+        },{ 
+        "name": "CTA DRIVEWAY",
+        "children" : [{
+        "name" : "CTA DRIVEWAY", "size" : 0.0
+        }]
+        },{ 
+        "name": "CUMBERLAND",
+        "children" : [{
+        "name" : "CUMBERLAND", "size" : 39.5823529412
+        }]
+        },{ 
+        "name": "DAMEN",
+        "children" : [{
+        "name" : "DAMEN", "size" : 48.4034934498
+        }]
+        },{ 
+        "name": "DAVIS",
+        "children" : [{
+        "name" : "DAVIS", "size" : 50.52
+        }]
+        },{ 
+        "name": "DEARBORN",
+        "children" : [{
+        "name" : "DEARBORN", "size" : 337.217647059
+        }]
+        },{ 
+        "name": "DELAWARE",
+        "children" : [{
+        "name" : "DELAWARE", "size" : 2.1
+        }]
+        },{ 
+        "name": "DELPHIA",
+        "children" : [{
+        "name" : "DELPHIA", "size" : 4.475
+        }]
+        },{ 
+        "name": "DEMPSTER",
+        "children" : [{
+        "name" : "DEMPSTER", "size" : 37.8071428571
+        }]
+        },{ 
+        "name": "DESPLAINES",
+        "children" : [{
+        "name" : "DESPLAINES", "size" : 29.1076923077
+        }]
+        },{ 
+        "name": "DEVON",
+        "children" : [{
+        "name" : "DEVON", "size" : 121.760377358
+        }]
+        },{ 
+        "name": "DEWITT",
+        "children" : [{
+        "name" : "DEWITT", "size" : 3.3
+        }]
+        },{ 
+        "name": "DIVERSEY",
+        "children" : [{
+        "name" : "DIVERSEY", "size" : 88.4597014925
+        }]
+        },{ 
+        "name": "DIVISION",
+        "children" : [{
+        "name" : "DIVISION", "size" : 93.1169491525
+        }]
+        },{ 
+        "name": "DODGE",
+        "children" : [{
+        "name" : "DODGE", "size" : 28.5275
+        }]
+        },{ 
+        "name": "DODGE-CALIFORNIA",
+        "children" : [{
+        "name" : "DODGE-CALIFORNIA", "size" : 117.3
+        }]
+        },{ 
+        "name": "DORCHESTER",
+        "children" : [{
+        "name" : "DORCHESTER", "size" : 15.14
+        }]
+        },{ 
+        "name": "DOUGLAS BLVD",
+        "children" : [{
+        "name" : "DOUGLAS BLVD", "size" : 54.9
+        }]
+        },{ 
+        "name": "DREXEL",
+        "children" : [{
+        "name" : "DREXEL", "size" : 0.1
+        }]
+        },{ 
+        "name": "E FRONTAGE",
+        "children" : [{
+        "name" : "E FRONTAGE", "size" : 5.9
+        }]
+        },{ 
+        "name": "E HYDE PARK",
+        "children" : [{
+        "name" : "E HYDE PARK", "size" : 133.194736842
+        }]
+        },{ 
+        "name": "EAST HYDE PARK",
+        "children" : [{
+        "name" : "EAST HYDE PARK", "size" : 214.4
+        }]
+        },{ 
+        "name": "EAST RIVER RD",
+        "children" : [{
+        "name" : "EAST RIVER RD", "size" : 7.26666666667
+        }]
+        },{ 
+        "name": "EBERHART",
+        "children" : [{
+        "name" : "EBERHART", "size" : 12.35
+        }]
+        },{ 
+        "name": "EDGEWATER",
+        "children" : [{
+        "name" : "EDGEWATER", "size" : 226.7
+        }]
+        },{ 
+        "name": "EGGLESTON",
+        "children" : [{
+        "name" : "EGGLESTON", "size" : 9.3
+        }]
+        },{ 
+        "name": "ELGIN ROAD",
+        "children" : [{
+        "name" : "ELGIN ROAD", "size" : 0.2
+        }]
+        },{ 
+        "name": "ELLIS",
+        "children" : [{
+        "name" : "ELLIS", "size" : 85.1555555556
+        }]
+        },{ 
+        "name": "EMERALD",
+        "children" : [{
+        "name" : "EMERALD", "size" : 0.2
+        }]
+        },{ 
+        "name": "EMERSON",
+        "children" : [{
+        "name" : "EMERSON", "size" : 14.8769230769
+        }]
+        },{ 
+        "name": "EWING",
+        "children" : [{
+        "name" : "EWING", "size" : 29.0973684211
+        }]
+        },{ 
+        "name": "EXCHANGE",
+        "children" : [{
+        "name" : "EXCHANGE", "size" : 24.8277777778
+        }]
+        },{ 
+        "name": "FAIRBANKS",
+        "children" : [{
+        "name" : "FAIRBANKS", "size" : 269.042857143
+        }]
+        },{ 
+        "name": "FIFTH AVENUE",
+        "children" : [{
+        "name" : "FIFTH AVENUE", "size" : 32.26
+        }]
+        },{ 
+        "name": "FILLMORE",
+        "children" : [{
+        "name" : "FILLMORE", "size" : 5.75
+        }]
+        },{ 
+        "name": "FINANCIAL PLACE",
+        "children" : [{
+        "name" : "FINANCIAL PLACE", "size" : 136.6
+        }]
+        },{ 
+        "name": "FORD CITY",
+        "children" : [{
+        "name" : "FORD CITY", "size" : 645.9
+        }]
+        },{ 
+        "name": "FOREST GLEN GARAGE",
+        "children" : [{
+        "name" : "FOREST GLEN GARAGE", "size" : 90.2666666667
+        }]
+        },{ 
+        "name": "FOREST PRES AVE",
+        "children" : [{
+        "name" : "FOREST PRES AVE", "size" : 35.8
+        }]
+        },{ 
+        "name": "FOREST PRES DR",
+        "children" : [{
+        "name" : "FOREST PRES DR", "size" : 25.6428571429
+        }]
+        },{ 
+        "name": "FOSTER",
+        "children" : [{
+        "name" : "FOSTER", "size" : 71.6203883495
+        }]
+        },{ 
+        "name": "FRANKLIN",
+        "children" : [{
+        "name" : "FRANKLIN", "size" : 248.25
+        }]
+        },{ 
+        "name": "FULLERTON",
+        "children" : [{
+        "name" : "FULLERTON", "size" : 127.253982301
+        }]
+        },{ 
+        "name": "FULTON",
+        "children" : [{
+        "name" : "FULTON", "size" : 23.2428571429
+        }]
+        },{ 
+        "name": "GALE",
+        "children" : [{
+        "name" : "GALE", "size" : 109.725
+        }]
+        },{ 
+        "name": "GARFIELD",
+        "children" : [{
+        "name" : "GARFIELD", "size" : 159.542105263
+        }]
+        },{ 
+        "name": "GOLF ROAD",
+        "children" : [{
+        "name" : "GOLF ROAD", "size" : 8.63666666667
+        }]
+        },{ 
+        "name": "GRAND",
+        "children" : [{
+        "name" : "GRAND", "size" : 76.4838709677
+        }]
+        },{ 
+        "name": "GRAND BLVD.S.C",
+        "children" : [{
+        "name" : "GRAND BLVD.S.C", "size" : 16.9
+        }]
+        },{ 
+        "name": "GRANT",
+        "children" : [{
+        "name" : "GRANT", "size" : 3.46
+        }]
+        },{ 
+        "name": "GREEN BAY RD",
+        "children" : [{
+        "name" : "GREEN BAY RD", "size" : 3.9
+        }]
+        },{ 
+        "name": "GREENWOOD",
+        "children" : [{
+        "name" : "GREENWOOD", "size" : 0.2
+        }]
+        },{ 
+        "name": "GREGORY",
+        "children" : [{
+        "name" : "GREGORY", "size" : 16.0
+        }]
+        },{ 
+        "name": "GROSS POINT",
+        "children" : [{
+        "name" : "GROSS POINT", "size" : 7.6
+        }]
+        },{ 
+        "name": "GUNNISON",
+        "children" : [{
+        "name" : "GUNNISON", "size" : 9.2625
+        }]
+        },{ 
+        "name": "HALSTED",
+        "children" : [{
+        "name" : "HALSTED", "size" : 97.0714285714
+        }]
+        },{ 
+        "name": "HARBOR DRIVE",
+        "children" : [{
+        "name" : "HARBOR DRIVE", "size" : 24.1666666667
+        }]
+        },{ 
+        "name": "HARLEM",
+        "children" : [{
+        "name" : "HARLEM", "size" : 40.4596273292
+        }]
+        },{ 
+        "name": "HARRISON",
+        "children" : [{
+        "name" : "HARRISON", "size" : 62.9076923077
+        }]
+        },{ 
+        "name": "HIGGINS",
+        "children" : [{
+        "name" : "HIGGINS", "size" : 17.6243243243
+        }]
+        },{ 
+        "name": "HOLLAND",
+        "children" : [{
+        "name" : "HOLLAND", "size" : 15.7
+        }]
+        },{ 
+        "name": "HOMAN",
+        "children" : [{
+        "name" : "HOMAN", "size" : 115.201818182
+        }]
+        },{ 
+        "name": "HOMAN (east leg)",
+        "children" : [{
+        "name" : "HOMAN (east leg)", "size" : 12.7
+        }]
+        },{ 
+        "name": "HOMAN (west leg)",
+        "children" : [{
+        "name" : "HOMAN (west leg)", "size" : 49.9
+        }]
+        },{ 
+        "name": "HOUSTON",
+        "children" : [{
+        "name" : "HOUSTON", "size" : 66.65
+        }]
+        },{ 
+        "name": "HOWARD",
+        "children" : [{
+        "name" : "HOWARD", "size" : 74.9137931034
+        }]
+        },{ 
+        "name": "HUBBARD",
+        "children" : [{
+        "name" : "HUBBARD", "size" : 174.5
+        }]
+        },{ 
+        "name": "ILLINOIS",
+        "children" : [{
+        "name" : "ILLINOIS", "size" : 73.2125
+        }]
+        },{ 
+        "name": "ILLINOIS lower",
+        "children" : [{
+        "name" : "ILLINOIS lower", "size" : 41.7
+        }]
+        },{ 
+        "name": "IN FORD CITY",
+        "children" : [{
+        "name" : "IN FORD CITY", "size" : 805.7
+        }]
+        },{ 
+        "name": "INDIANA",
+        "children" : [{
+        "name" : "INDIANA", "size" : 30.7727272727
+        }]
+        },{ 
+        "name": "INNER LAKE SHR",
+        "children" : [{
+        "name" : "INNER LAKE SHR", "size" : 1420.5
+        }]
+        },{ 
+        "name": "IRVING PARK",
+        "children" : [{
+        "name" : "IRVING PARK", "size" : 102.906097561
+        }]
+        },{ 
+        "name": "JACKSON",
+        "children" : [{
+        "name" : "JACKSON", "size" : 61.382
+        }]
+        },{ 
+        "name": "JEFFERSON",
+        "children" : [{
+        "name" : "JEFFERSON", "size" : 138.6
+        }]
+        },{ 
+        "name": "JEFFERSON PARK",
+        "children" : [{
+        "name" : "JEFFERSON PARK", "size" : 495.923076923
+        }]
+        },{ 
+        "name": "JEFFERY",
+        "children" : [{
+        "name" : "JEFFERY", "size" : 155.332258065
+        }]
+        },{ 
+        "name": "KARLOV",
+        "children" : [{
+        "name" : "KARLOV", "size" : 280.9
+        }]
+        },{ 
+        "name": "KEDZIE",
+        "children" : [{
+        "name" : "KEDZIE", "size" : 67.6137931034
+        }]
+        },{ 
+        "name": "KEEFE",
+        "children" : [{
+        "name" : "KEEFE", "size" : 16.0
+        }]
+        },{ 
+        "name": "KIMBALL",
+        "children" : [{
+        "name" : "KIMBALL", "size" : 136.362365591
+        }]
+        },{ 
+        "name": "KING DRIVE",
+        "children" : [{
+        "name" : "KING DRIVE", "size" : 100.665333333
+        }]
+        },{ 
+        "name": "KOSTNER",
+        "children" : [{
+        "name" : "KOSTNER", "size" : 31.5
+        }]
+        },{ 
+        "name": "LAFAYETTE",
+        "children" : [{
+        "name" : "LAFAYETTE", "size" : 34.3125
+        }]
+        },{ 
+        "name": "LAFLIN",
+        "children" : [{
+        "name" : "LAFLIN", "size" : 2.5
+        }]
+        },{ 
+        "name": "LAKE",
+        "children" : [{
+        "name" : "LAKE", "size" : 13.6222222222
+        }]
+        },{ 
+        "name": "LAKE PARK",
+        "children" : [{
+        "name" : "LAKE PARK", "size" : 177.286363636
+        }]
+        },{ 
+        "name": "LAKE POINTE PLAZA",
+        "children" : [{
+        "name" : "LAKE POINTE PLAZA", "size" : 116.7
+        }]
+        },{ 
+        "name": "LAKE SHORE",
+        "children" : [{
+        "name" : "LAKE SHORE", "size" : 135.44047619
+        }]
+        },{ 
+        "name": "LAKE SHR.DR.W.",
+        "children" : [{
+        "name" : "LAKE SHR.DR.W.", "size" : 30.86
+        }]
+        },{ 
+        "name": "LAKE STREET",
+        "children" : [{
+        "name" : "LAKE STREET", "size" : 5.33333333333
+        }]
+        },{ 
+        "name": "LANGLEY",
+        "children" : [{
+        "name" : "LANGLEY", "size" : 145.233333333
+        }]
+        },{ 
+        "name": "LARAMIE",
+        "children" : [{
+        "name" : "LARAMIE", "size" : 59.7924528302
+        }]
+        },{ 
+        "name": "LASALLE",
+        "children" : [{
+        "name" : "LASALLE", "size" : 162.304255319
+        }]
+        },{ 
+        "name": "LAWNDALE",
+        "children" : [{
+        "name" : "LAWNDALE", "size" : 30.0636363636
+        }]
+        },{ 
+        "name": "LAWRENCE",
+        "children" : [{
+        "name" : "LAWRENCE", "size" : 100.767857143
+        }]
+        },{ 
+        "name": "LEAVITT",
+        "children" : [{
+        "name" : "LEAVITT", "size" : 7.3
+        }]
+        },{ 
+        "name": "LEHIGH",
+        "children" : [{
+        "name" : "LEHIGH", "size" : 11.8076923077
+        }]
+        },{ 
+        "name": "LELAND",
+        "children" : [{
+        "name" : "LELAND", "size" : 55.1
+        }]
+        },{ 
+        "name": "LEXINGTON",
+        "children" : [{
+        "name" : "LEXINGTON", "size" : 5.9
+        }]
+        },{ 
+        "name": "LINCOLN",
+        "children" : [{
+        "name" : "LINCOLN", "size" : 30.0957446809
+        }]
+        },{ 
+        "name": "LINCOLNWD CTR",
+        "children" : [{
+        "name" : "LINCOLNWD CTR", "size" : 401.4
+        }]
+        },{ 
+        "name": "LOGAN SQUARE",
+        "children" : [{
+        "name" : "LOGAN SQUARE", "size" : 620.5
+        }]
+        },{ 
+        "name": "LOOMIS",
+        "children" : [{
+        "name" : "LOOMIS", "size" : 122.2
+        }]
+        },{ 
+        "name": "LOWE",
+        "children" : [{
+        "name" : "LOWE", "size" : 84.3
+        }]
+        },{ 
+        "name": "LUNT",
+        "children" : [{
+        "name" : "LUNT", "size" : 18.5032258065
+        }]
+        },{ 
+        "name": "MACKINAW",
+        "children" : [{
+        "name" : "MACKINAW", "size" : 5.4
+        }]
+        },{ 
+        "name": "MADISON",
+        "children" : [{
+        "name" : "MADISON", "size" : 161.404575163
+        }]
+        },{ 
+        "name": "MAPLE",
+        "children" : [{
+        "name" : "MAPLE", "size" : 10.7333333333
+        }]
+        },{ 
+        "name": "MARINE DRIVE",
+        "children" : [{
+        "name" : "MARINE DRIVE", "size" : 82.896875
+        }]
+        },{ 
+        "name": "MARQUETTE",
+        "children" : [{
+        "name" : "MARQUETTE", "size" : 41.7333333333
+        }]
+        },{ 
+        "name": "MASON",
+        "children" : [{
+        "name" : "MASON", "size" : 5.8
+        }]
+        },{ 
+        "name": "MCCORMICK",
+        "children" : [{
+        "name" : "MCCORMICK", "size" : 33.5
+        }]
+        },{ 
+        "name": "MCFETRIDGE",
+        "children" : [{
+        "name" : "MCFETRIDGE", "size" : 163.85
+        }]
+        },{ 
+        "name": "MICHIGAN",
+        "children" : [{
+        "name" : "MICHIGAN", "size" : 293.430379747
+        }]
+        },{ 
+        "name": "MICHIGAN lower",
+        "children" : [{
+        "name" : "MICHIGAN lower", "size" : 2.86666666667
+        }]
+        },{ 
+        "name": "MIDWAY PLAIS",
+        "children" : [{
+        "name" : "MIDWAY PLAIS", "size" : 21.7
+        }]
+        },{ 
+        "name": "MIDWAY TERMINAL",
+        "children" : [{
+        "name" : "MIDWAY TERMINAL", "size" : 434.888888889
+        }]
+        },{ 
+        "name": "MIES VAN DER ROHE",
+        "children" : [{
+        "name" : "MIES VAN DER ROHE", "size" : 3.7
+        }]
+        },{ 
+        "name": "MILWAUKEE",
+        "children" : [{
+        "name" : "MILWAUKEE", "size" : 61.9725
+        }]
+        },{ 
+        "name": "MONROE",
+        "children" : [{
+        "name" : "MONROE", "size" : 844.92
+        }]
+        },{ 
+        "name": "MONTEREY",
+        "children" : [{
+        "name" : "MONTEREY", "size" : 45.42
+        }]
+        },{ 
+        "name": "MONTROSE",
+        "children" : [{
+        "name" : "MONTROSE", "size" : 77.7781818182
+        }]
+        },{ 
+        "name": "MORGAN",
+        "children" : [{
+        "name" : "MORGAN", "size" : 0.62
+        }]
+        },{ 
+        "name": "MORGAN DRIVE",
+        "children" : [{
+        "name" : "MORGAN DRIVE", "size" : 1.7
+        }]
+        },{ 
+        "name": "MORSE",
+        "children" : [{
+        "name" : "MORSE", "size" : 48.6166666667
+        }]
+        },{ 
+        "name": "MUSEUM DRIVE",
+        "children" : [{
+        "name" : "MUSEUM DRIVE", "size" : 53.9
+        }]
+        },{ 
+        "name": "McCORMICK",
+        "children" : [{
+        "name" : "McCORMICK", "size" : 127.88
+        }]
+        },{ 
+        "name": "N.RIVERSIDE SC",
+        "children" : [{
+        "name" : "N.RIVERSIDE SC", "size" : 436.5
+        }]
+        },{ 
+        "name": "NAGLE",
+        "children" : [{
+        "name" : "NAGLE", "size" : 14.8540540541
+        }]
+        },{ 
+        "name": "NARRAGANSETT",
+        "children" : [{
+        "name" : "NARRAGANSETT", "size" : 36.8093333333
+        }]
+        },{ 
+        "name": "NATOMA",
+        "children" : [{
+        "name" : "NATOMA", "size" : 20.4
+        }]
+        },{ 
+        "name": "NAVY PIER",
+        "children" : [{
+        "name" : "NAVY PIER", "size" : 240.9
+        }]
+        },{ 
+        "name": "NEENAH (WRIGHT COLLEGE)",
+        "children" : [{
+        "name" : "NEENAH (WRIGHT COLLEGE)", "size" : 1.3
+        }]
+        },{ 
+        "name": "NEVA",
+        "children" : [{
+        "name" : "NEVA", "size" : 548.4
+        }]
+        },{ 
+        "name": "NILES CENTER",
+        "children" : [{
+        "name" : "NILES CENTER", "size" : 8.36923076923
+        }]
+        },{ 
+        "name": "NORTH AVENUE",
+        "children" : [{
+        "name" : "NORTH AVENUE", "size" : 126.869064748
+        }]
+        },{ 
+        "name": "NORTH BLVD",
+        "children" : [{
+        "name" : "NORTH BLVD", "size" : 9.1
+        }]
+        },{ 
+        "name": "NORTH BRANCH",
+        "children" : [{
+        "name" : "NORTH BRANCH", "size" : 2.85
+        }]
+        },{ 
+        "name": "NORTH RIVERSIDE",
+        "children" : [{
+        "name" : "NORTH RIVERSIDE", "size" : 4.9
+        }]
+        },{ 
+        "name": "NORTHWEST HWY",
+        "children" : [{
+        "name" : "NORTHWEST HWY", "size" : 16.1379310345
+        }]
+        },{ 
+        "name": "NOYES",
+        "children" : [{
+        "name" : "NOYES", "size" : 0.8
+        }]
+        },{ 
+        "name": "OAK",
+        "children" : [{
+        "name" : "OAK", "size" : 6.5
+        }]
+        },{ 
+        "name": "OAK PARK",
+        "children" : [{
+        "name" : "OAK PARK", "size" : 11.9666666667
+        }]
+        },{ 
+        "name": "OAKTON",
+        "children" : [{
+        "name" : "OAKTON", "size" : 17.5614035088
+        }]
+        },{ 
+        "name": "OGDEN",
+        "children" : [{
+        "name" : "OGDEN", "size" : 27.6923076923
+        }]
+        },{ 
+        "name": "OGDEN serv.dr.",
+        "children" : [{
+        "name" : "OGDEN serv.dr.", "size" : 26.64
+        }]
+        },{ 
+        "name": "OHIO",
+        "children" : [{
+        "name" : "OHIO", "size" : 4.73333333333
+        }]
+        },{ 
+        "name": "OLD ORCHARD RD",
+        "children" : [{
+        "name" : "OLD ORCHARD RD", "size" : 41.6333333333
+        }]
+        },{ 
+        "name": "OLIVE-HARVEY",
+        "children" : [{
+        "name" : "OLIVE-HARVEY", "size" : 1010.8
+        }]
+        },{ 
+        "name": "ONTARIO",
+        "children" : [{
+        "name" : "ONTARIO", "size" : 74.56
+        }]
+        },{ 
+        "name": "ORLEANS",
+        "children" : [{
+        "name" : "ORLEANS", "size" : 20.61875
+        }]
+        },{ 
+        "name": "PALATINE",
+        "children" : [{
+        "name" : "PALATINE", "size" : 32.5
+        }]
+        },{ 
+        "name": "PAULINA",
+        "children" : [{
+        "name" : "PAULINA", "size" : 288.5
+        }]
+        },{ 
+        "name": "PAVILION",
+        "children" : [{
+        "name" : "PAVILION", "size" : 48.75
+        }]
+        },{ 
+        "name": "PAYNE DRIVE",
+        "children" : [{
+        "name" : "PAYNE DRIVE", "size" : 2.9
+        }]
+        },{ 
+        "name": "PEARSON",
+        "children" : [{
+        "name" : "PEARSON", "size" : 53.3
+        }]
+        },{ 
+        "name": "PERRY",
+        "children" : [{
+        "name" : "PERRY", "size" : 183.4
+        }]
+        },{ 
+        "name": "PERSHING",
+        "children" : [{
+        "name" : "PERSHING", "size" : 15.5772151899
+        }]
+        },{ 
+        "name": "PETERSON",
+        "children" : [{
+        "name" : "PETERSON", "size" : 58.0
+        }]
+        },{ 
+        "name": "POLK",
+        "children" : [{
+        "name" : "POLK", "size" : 139.488888889
+        }]
+        },{ 
+        "name": "PRATT",
+        "children" : [{
+        "name" : "PRATT", "size" : 22.16
+        }]
+        },{ 
+        "name": "PRINCETON",
+        "children" : [{
+        "name" : "PRINCETON", "size" : 52.9
+        }]
+        },{ 
+        "name": "PROMONTORY DR",
+        "children" : [{
+        "name" : "PROMONTORY DR", "size" : 16.4
+        }]
+        },{ 
+        "name": "PULASKI",
+        "children" : [{
+        "name" : "PULASKI", "size" : 95.8648734177
+        }]
+        },{ 
+        "name": "PULASKI sv.dr.",
+        "children" : [{
+        "name" : "PULASKI sv.dr.", "size" : 325.45
+        }]
+        },{ 
+        "name": "PULASKI/51ST",
+        "children" : [{
+        "name" : "PULASKI/51ST", "size" : 641.36
+        }]
+        },{ 
+        "name": "RACINE",
+        "children" : [{
+        "name" : "RACINE", "size" : 51.9118811881
+        }]
+        },{ 
+        "name": "RANDOLPH",
+        "children" : [{
+        "name" : "RANDOLPH", "size" : 61.07
+        }]
+        },{ 
+        "name": "RAVENSWOOD (east leg)",
+        "children" : [{
+        "name" : "RAVENSWOOD (east leg)", "size" : 109.0
+        }]
+        },{ 
+        "name": "RHODES",
+        "children" : [{
+        "name" : "RHODES", "size" : 34.275
+        }]
+        },{ 
+        "name": "RHODES (east leg)",
+        "children" : [{
+        "name" : "RHODES (east leg)", "size" : 9.5
+        }]
+        },{ 
+        "name": "RIDGE",
+        "children" : [{
+        "name" : "RIDGE", "size" : 31.9857142857
+        }]
+        },{ 
+        "name": "RIDGELAND",
+        "children" : [{
+        "name" : "RIDGELAND", "size" : 9.1652173913
+        }]
+        },{ 
+        "name": "ROGERS",
+        "children" : [{
+        "name" : "ROGERS", "size" : 11.4
+        }]
+        },{ 
+        "name": "ROOSEVELT",
+        "children" : [{
+        "name" : "ROOSEVELT", "size" : 160.898165138
+        }]
+        },{ 
+        "name": "ROOT",
+        "children" : [{
+        "name" : "ROOT", "size" : 13.0666666667
+        }]
+        },{ 
+        "name": "S HYDE PARK",
+        "children" : [{
+        "name" : "S HYDE PARK", "size" : 154.692307692
+        }]
+        },{ 
+        "name": "S. SHORE DRIVE",
+        "children" : [{
+        "name" : "S. SHORE DRIVE", "size" : 72.327027027
+        }]
+        },{ 
+        "name": "S.WATER m.levl",
+        "children" : [{
+        "name" : "S.WATER m.levl", "size" : 116.25
+        }]
+        },{ 
+        "name": "S.WATER(lower)",
+        "children" : [{
+        "name" : "S.WATER(lower)", "size" : 7.2
+        }]
+        },{ 
+        "name": "SACRAMENTO",
+        "children" : [{
+        "name" : "SACRAMENTO", "size" : 9.58571428571
+        }]
+        },{ 
+        "name": "SACRMNTO w.Dr",
+        "children" : [{
+        "name" : "SACRMNTO w.Dr", "size" : 167.1
+        }]
+        },{ 
+        "name": "SEDGWICK",
+        "children" : [{
+        "name" : "SEDGWICK", "size" : 26.9466666667
+        }]
+        },{ 
+        "name": "SHEFFIELD",
+        "children" : [{
+        "name" : "SHEFFIELD", "size" : 5.0
+        }]
+        },{ 
+        "name": "SHERIDAN",
+        "children" : [{
+        "name" : "SHERIDAN", "size" : 193.55
+        }]
+        },{ 
+        "name": "SHERIDAN 3900N",
+        "children" : [{
+        "name" : "SHERIDAN 3900N", "size" : 42.525
+        }]
+        },{ 
+        "name": "SHERIDAN 6400N",
+        "children" : [{
+        "name" : "SHERIDAN 6400N", "size" : 149.06
+        }]
+        },{ 
+        "name": "SHERMAN",
+        "children" : [{
+        "name" : "SHERMAN", "size" : 0.523076923077
+        }]
+        },{ 
+        "name": "SIMPSON",
+        "children" : [{
+        "name" : "SIMPSON", "size" : 11.1
+        }]
+        },{ 
+        "name": "SKOKIE",
+        "children" : [{
+        "name" : "SKOKIE", "size" : 11.4
+        }]
+        },{ 
+        "name": "SKOKIE BLVD",
+        "children" : [{
+        "name" : "SKOKIE BLVD", "size" : 14.890625
+        }]
+        },{ 
+        "name": "SOLIDARITY DR",
+        "children" : [{
+        "name" : "SOLIDARITY DR", "size" : 93.16
+        }]
+        },{ 
+        "name": "SOUTH BLVD",
+        "children" : [{
+        "name" : "SOUTH BLVD", "size" : 281.666666667
+        }]
+        },{ 
+        "name": "SOUTH CHICAGO",
+        "children" : [{
+        "name" : "SOUTH CHICAGO", "size" : 18.25
+        }]
+        },{ 
+        "name": "SOUTHPORT",
+        "children" : [{
+        "name" : "SOUTHPORT", "size" : 62.2
+        }]
+        },{ 
+        "name": "ST. LOUIS",
+        "children" : [{
+        "name" : "ST. LOUIS", "size" : 19.65
+        }]
+        },{ 
+        "name": "ST.LAURENCE HS",
+        "children" : [{
+        "name" : "ST.LAURENCE HS", "size" : 1.7
+        }]
+        },{ 
+        "name": "STATE",
+        "children" : [{
+        "name" : "STATE", "size" : 163.542937853
+        }]
+        },{ 
+        "name": "STOCKTON",
+        "children" : [{
+        "name" : "STOCKTON", "size" : 211.722222222
+        }]
+        },{ 
+        "name": "STONY ISLAND",
+        "children" : [{
+        "name" : "STONY ISLAND", "size" : 118.040740741
+        }]
+        },{ 
+        "name": "SUMMIT",
+        "children" : [{
+        "name" : "SUMMIT", "size" : 24.35
+        }]
+        },{ 
+        "name": "TALCOTT",
+        "children" : [{
+        "name" : "TALCOTT", "size" : 12.9428571429
+        }]
+        },{ 
+        "name": "TAYLOR",
+        "children" : [{
+        "name" : "TAYLOR", "size" : 102.317241379
+        }]
+        },{ 
+        "name": "TORRENCE",
+        "children" : [{
+        "name" : "TORRENCE", "size" : 16.6652173913
+        }]
+        },{ 
+        "name": "TOUHY",
+        "children" : [{
+        "name" : "TOUHY", "size" : 11.2612903226
+        }]
+        },{ 
+        "name": "UNION",
+        "children" : [{
+        "name" : "UNION", "size" : 1.7
+        }]
+        },{ 
+        "name": "UNIVERSITY",
+        "children" : [{
+        "name" : "UNIVERSITY", "size" : 252.4
+        }]
+        },{ 
+        "name": "UPS FACILITY",
+        "children" : [{
+        "name" : "UPS FACILITY", "size" : 104.6
+        }]
+        },{ 
+        "name": "VAN BUREN",
+        "children" : [{
+        "name" : "VAN BUREN", "size" : 30.2789473684
+        }]
+        },{ 
+        "name": "VAN VLISSINGEN",
+        "children" : [{
+        "name" : "VAN VLISSINGEN", "size" : 18.9
+        }]
+        },{ 
+        "name": "VERMONT",
+        "children" : [{
+        "name" : "VERMONT", "size" : 12.85
+        }]
+        },{ 
+        "name": "VINCENNES",
+        "children" : [{
+        "name" : "VINCENNES", "size" : 33.2222222222
+        }]
+        },{ 
+        "name": "WABANSIA",
+        "children" : [{
+        "name" : "WABANSIA", "size" : 1.4
+        }]
+        },{ 
+        "name": "WABASH",
+        "children" : [{
+        "name" : "WABASH", "size" : 107.55
+        }]
+        },{ 
+        "name": "WACKER",
+        "children" : [{
+        "name" : "WACKER", "size" : 24.8
+        }]
+        },{ 
+        "name": "WACKER (upper)",
+        "children" : [{
+        "name" : "WACKER (upper)", "size" : 197.769230769
+        }]
+        },{ 
+        "name": "WACKER PLACE",
+        "children" : [{
+        "name" : "WACKER PLACE", "size" : 5.0
+        }]
+        },{ 
+        "name": "WALLACE",
+        "children" : [{
+        "name" : "WALLACE", "size" : 16.5964285714
+        }]
+        },{ 
+        "name": "WALTON",
+        "children" : [{
+        "name" : "WALTON", "size" : 188.1
+        }]
+        },{ 
+        "name": "WASHINGTON",
+        "children" : [{
+        "name" : "WASHINGTON", "size" : 301.527272727
+        }]
+        },{ 
+        "name": "WASHTENAW",
+        "children" : [{
+        "name" : "WASHTENAW", "size" : 46.9
+        }]
+        },{ 
+        "name": "WAVELAND",
+        "children" : [{
+        "name" : "WAVELAND", "size" : 81.2
+        }]
+        },{ 
+        "name": "WEBSTER",
+        "children" : [{
+        "name" : "WEBSTER", "size" : 23.2
+        }]
+        },{ 
+        "name": "WELLS",
+        "children" : [{
+        "name" : "WELLS", "size" : 22.1269230769
+        }]
+        },{ 
+        "name": "WENTWORTH",
+        "children" : [{
+        "name" : "WENTWORTH", "size" : 33.7583333333
+        }]
+        },{ 
+        "name": "WESTCHESTER",
+        "children" : [{
+        "name" : "WESTCHESTER", "size" : 1.20909090909
+        }]
+        },{ 
+        "name": "WESTERN",
+        "children" : [{
+        "name" : "WESTERN", "size" : 101.988205128
+        }]
+        },{ 
+        "name": "WESTERN BLVD",
+        "children" : [{
+        "name" : "WESTERN BLVD", "size" : 6.6
+        }]
+        },{ 
+        "name": "WHIPPLE",
+        "children" : [{
+        "name" : "WHIPPLE", "size" : 38.9
+        }]
+        },{ 
+        "name": "WILSON",
+        "children" : [{
+        "name" : "WILSON", "size" : 121.273684211
+        }]
+        },{ 
+        "name": "WOOD",
+        "children" : [{
+        "name" : "WOOD", "size" : 13.0
+        }]
+        },{ 
+        "name": "WOODLAWN",
+        "children" : [{
+        "name" : "WOODLAWN", "size" : 105.04
+        }]
+        },{ 
+        "name": "WRIGHT COLLEGE DRIVE",
+        "children" : [{
+        "name" : "WRIGHT COLLEGE DRIVE", "size" : 32.3
+        }]
+        },{ 
+        "name": "YALE",
+        "children" : [{
+        "name" : "YALE", "size" : 48.7
+        }]
+        },{ 
+        "name": "YATES",
+        "children" : [{
+        "name" : "YATES", "size" : 20.7555555556
+        }]
+        }]
+                    }

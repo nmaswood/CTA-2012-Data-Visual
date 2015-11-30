@@ -224,3 +224,9 @@ class aggregate_data(object):
 
 		except sql.Error as e:
 			print self.error.format(function="view", error=e)
+
+			
+load_data = load_data()
+#load_data.initialize()
+load_data.view()
+
