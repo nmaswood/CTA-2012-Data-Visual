@@ -1,6 +1,5 @@
 from csv import reader
 import sqlite3 as sql
-from collections import defaultdict
 
 # Load data loads the intial data from the CSV
 # into a sql table. The table is called CTA1012
@@ -10,15 +9,20 @@ from collections import defaultdict
 ###USAGE###
 
 #load_data = load_data()
+#load_data.initialize()
 #load_data.view()
 
 ###########
 
-# Aggregate data sums the data on basis
-# of stop and route. The tables are called
-# stopagg and route agg respectively.
 
 # aggregate_data takes optional parameters of a database name and a table name
+
+#aggregate_data = aggregate_data()
+#aggregate_data.initialize("ROUTE")
+#aggregate_data.initialize("ON_STREET")
+#aggregate_data.view('ROUTE', order=True)
+#aggregate_data.view('ON_STREET', order=True)
+
 
 ###USAGE###
 
@@ -37,11 +41,12 @@ class load_data(object):
 		self.db_name = db_name
 		self.table_name = table_name
 		self.start = self.queries()
+		self.error = "{function}: The following error occured {error}"
 
 	def queries(self):
 
 		return {
-		"INSERT" : """INSERT INTO %s(
+		"INSERT" : """INSERT INTO {table_name}(
 			stop_id,
 			on_street,
 		 	cross_street,
@@ -51,9 +56,9 @@ class load_data(object):
 		 	latitude,
 		 	longitude)  VALUES
 		 	(?, ?, ?, ?, ?,?,?,?)
-		 	""" % self.table_name,
+		 	""".format(table_name= self.table_name),
 
-		"CREATE" : '''CREATE TABLE %s(
+		"CREATE" : '''CREATE TABLE {table_name}(
 			stop_id  		INT PRIMARY KEY NOT NULL,
        		on_street		VARCHAR(50),
 			cross_street 	VARCHAR(30),
@@ -62,8 +67,10 @@ class load_data(object):
 			alightings		FLOAT,
 			latitude		DECIMAL,
 			longitude		DECIMAL);
-			''' % self.table_name,
-		"SELECT" : """SELECT * FROM %s""" % self.table_name}
+			'''.format(table_name=self.table_name),
+
+		"SELECT" : """SELECT * FROM {table_name}""".format(table_name =self.table_name)
+		}
 		
 
 	def initialize(self):
@@ -79,18 +86,28 @@ class load_data(object):
 					stop_id, on_street, cross_street, routes, boardings, alightings, month_beginning, daytype, location = row
 					latitude, longitude = location.strip('()').split(",")
 					try:
-						connection.execute(self.start["INSERT"], (stop_id,on_street,cross_street,routes,boardings,alightings,latitude,longitude));
+						connection.execute(self.start["INSERT"], (
+							stop_id,
+							on_street,
+							cross_street,
+							routes,
+							boardings,
+							alightings,
+							latitude,
+							longitude));
 					except sql.Error as e:
-						print "initialize-table: The following error occured %s" % e
+						print self.error.format(function="initialize", error=e)
 						break
 		except sql.Error as e:
-			print "intialize-table: The following error occured %s" % e
+			print self.error.format(function="initialize", error=e)
 
 		connection.commit()
 		connection.close()
 
 	def view(self):
+		
 		try:
+
 			connection = sql.connect(self.db_name)
 			cursor = connection.cursor()
 			rows = cursor.execute(self.start["SELECT"])
@@ -99,7 +116,7 @@ class load_data(object):
 				print row
 
 		except sql.Error as e:
-			print "Something wrong happened %s" % e
+			print self.error.format(function="view", error=e)
 
 class aggregate_data(object):
 
@@ -107,6 +124,8 @@ class aggregate_data(object):
 		self.db_name = db_name
 		self.table_name = table_name
 		self.agg = self.queries()
+		self.error = "{function}: The following error occured {error}"
+
 
 	def queries(self):
 		return {
@@ -136,8 +155,8 @@ class aggregate_data(object):
 		 	AVG(alightings),
 		 	SUM(boardings),
 		 	AVG(boardings)
-		 FROM %s GROUP BY route ORDER BY route 
-		 """ % self.table_name,
+		 FROM {table_name} GROUP BY route ORDER BY route 
+		 """.format(table_name=self.table_name),
 
 		 "CREATE_ON_STREET" : """CREATE TABLE ON_STREET_AGG(
 			on_street varchar(50),
@@ -164,8 +183,8 @@ class aggregate_data(object):
 		 	AVG(alightings),
 		 	SUM(boardings),
 		 	AVG(boardings)
-			FROM %s GROUP BY on_street ORDER BY on_street
-			""" % self.table_name,
+			FROM {table_name} GROUP BY on_street ORDER BY on_street
+			""".format(table_name=self.table_name),
 		} 
 
 	def initialize(self,query):
@@ -181,8 +200,8 @@ class aggregate_data(object):
 			connection.commit()
 
 		except sql.Error as e:
-			print e
-			
+			print self.error.format(function="initialize", error=e)
+
 	def view(self,type,order=False):
 		try:
 			connection = sql.connect(self.db_name)
@@ -190,12 +209,12 @@ class aggregate_data(object):
 
 			tables = {"ROUTE": "ROUTE_AGG", "ON_STREET":"ON_STREET_AGG"}
 
-			select = " SELECT * FROM %s"  % tables[type]
+			select = " SELECT * FROM {table}".format(table=tables[type])
 			if order:
 
 				type_row = {"ROUTE":"route_count", "ON_STREET":"on_street_count"}
-				select+= " ORDER BY %s" % type_row[type]
 
+				select+= " ORDER BY {type_row}".format(type_row=type_row[type]) 
 
 			rows = cursor.execute(select)
 			print type, "count" + type, "sum alightings", "avg alightings", "sum boardings", "avg boardings"
@@ -203,4 +222,4 @@ class aggregate_data(object):
 				print row
 
 		except sql.Error as e:
-			print "Something wrong happened %s" % e
+			print self.error.format(function="view", error=e)

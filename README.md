@@ -59,5 +59,15 @@ see the statisitics associated with it
 
 ### populate_data
 
-See comments of populate_data.py
+
+Input:  a csv for Chicago bus data for a particular year and month
+Output: A sql database containing table of data
+
+Input : A sql database containing table of  bus data
+Output: A table grouping aggregates of the data by on_street and by route
+
+### visualize_data
+
+
+See comments of visualize_data.py
 

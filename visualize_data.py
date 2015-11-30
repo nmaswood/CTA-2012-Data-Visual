@@ -10,12 +10,13 @@ from sys import exit
 
 #map = Map()
 #map.create_map("basic")
+##map.create_verbose("visual")
+# Type 1 to group by on_stret type 2 to group by route
+# Type 1 to hightlight count, type 2 to highlight boarding, type 3 to highlight alighting
 
 ### TO DO ###
 
 ### Build a more visually appealing graph that shows aggregate statistics
-
-
 
 class Map(object):
 
@@ -28,6 +29,8 @@ class Map(object):
         self.html_dom = self.html_dom()
 
         self.group_by = ""
+
+        self.error = "{function}: The following error occured {error}\n"
 
 
     def html_body(self):
@@ -162,7 +165,7 @@ class Map(object):
                 new google.maps.Size(21, 34),
                 new google.maps.Point(0,0),
                 new google.maps.Point(5, 5));
-                
+
                 """,
 
         "verbose_visual_dom" : """
@@ -253,8 +256,6 @@ class Map(object):
 
         dicts = {
 
-        "error" : "Invalid Selection Error:",
-
         "selection": """
 
         Select ON STREET OR ROUTE?\n
@@ -272,7 +273,9 @@ class Map(object):
 
         selection = int(raw_input(dicts['selection']))
 
-        if selection not in [1,2]: print dicts['error'] + str(selection); exit(1)
+        if selection not in [1,2]:
+            print self.error.format(function='verbose_visual_data', error="Invalid input")
+            exit(1)
 
         category = dicts["category"][selection]
 
@@ -338,12 +341,22 @@ class Map(object):
 
         "metric" : """
         Sort according to COUNT, AVG_ALIGHT or AVG_BOARD?\n
-        1 for COUNT ... 2 for AVG_ALIGHT ... 3 AVG_BOARD\n
+        1 for COUNT ... 2 for AVG_ALIGHT ... 3 for AVG_BOARD\n
         """,
 
-        "error": "Invalid input:\n",
-
-        "colors" : ["FFFFFF","E3F1F0","C7E3E2","ABD6D3","8FC8C5","74BBB6","58ADA8","3CA099","20928B","05857D","000000"],
+        "colors" : [
+        "FFFFFF",
+        "E3F1F0",
+        "C7E3E2",
+        "ABD6D3",
+        "8FC8C5",
+        "74BBB6",
+        "58ADA8",
+        "3CA099",
+        "20928B",
+        "05857D",
+        "000000"
+        ],
 
         "metric_to_color" : {1:1, 2:2, 3:4},
 
@@ -360,7 +373,7 @@ class Map(object):
         metric = int(raw_input(dicts['metric']))
 
         if metric not in [1,2,3]:
-            print prompts['error'] + str(metric)
+            print self.error.format(function="verbose_visual", error="Invalid input")
             exit(1)
 
         select_metric = dicts["metric_to_color"][metric]
@@ -394,10 +407,10 @@ class Map(object):
             map_points=map_points,
             center_lat=center_lat,
             center_lon=center_lon,
-            style=self.html_dom["style"],
-)
+            style=self.html_dom["style"])
 
     def create_map(self, map_type):
+
         map_type_dict = {
 
         "verbose" :'verbose_visual.html',
@@ -409,14 +422,14 @@ class Map(object):
 
         elif map_type == "basic": html = self.basic_visual()
 
-        else: print "Error invalid input"; exit(1)
+        else: print self.error.format(function="create_map", error="Invalid input"); exit(1)
 
         with open( map_type_dict[map_type], "w") as out:
             out.write(html)
 
 if __name__ == "__main__":
         map = Map()
-        map.create_map("basic")
+        map.create_map("verbose")
 
 
 
