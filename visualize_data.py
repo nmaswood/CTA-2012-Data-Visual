@@ -1,6 +1,9 @@
 import sqlite3 as sql
 from googlemaps import Client
 from sys import exit
+from haversine import haversine
+from collections import defaultdict
+
 
 # This file uses code from
 #http://stackoverflow.com/questions/22342097/is-it-possible-to-create-a-google-map-from-python
@@ -116,7 +119,7 @@ class Map(object):
         </html>
         """,
 
-        "verbose_visual": """
+        "map_visual": """
         <!DOCTYPE html>
         <html>
             <head>
@@ -159,7 +162,7 @@ class Map(object):
         return {
         "basic_visual_dom": "new google.maps.LatLng({lat}, {lon})",
 
-        "verbose_visual_colors"  : """
+        "map_visual_colors"  : """
 
                 var pinImage{idx} = new google.maps.MarkerImage("http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=%E2%80%A2|" + "{color}",
                 new google.maps.Size(21, 34),
@@ -168,7 +171,7 @@ class Map(object):
 
                 """,
 
-        "verbose_visual_dom" : """
+        "map_visual_dom" : """
 
             var marker{idx} = new google.maps.Marker({{
             position: {{lat: {lat}, lng: {lon}}},
@@ -251,7 +254,7 @@ class Map(object):
 
 
 
-    def verbose_visual_data(self):
+    def map_data(self):
         
 
         dicts = {
@@ -274,7 +277,7 @@ class Map(object):
         selection = int(raw_input(dicts['selection']))
 
         if selection not in [1,2]:
-            print self.error.format(function='verbose_visual_data', error="Invalid input")
+            print self.error.format(function='map_data', error="Invalid input")
             exit(1)
 
         category = dicts["category"][selection]
@@ -309,7 +312,7 @@ class Map(object):
                 sum_board,
                 avg_board 
                 FROM {table_name}
-                WHERE {category} = ?
+                WHERE {category} = ? ORDER BY {category}
                 """ .format(category=category,column_count=column_count, table_name=table_name)
             
             agg_data = cursor2.execute(select_agg_data, (info,))
@@ -317,6 +320,44 @@ class Map(object):
             data_list.append([agg_data.fetchone(), latitude,longitude])
 
         return data_list
+    
+    def thin_data(self,threshold, thin_data):
+
+        data = self.map_data()
+
+
+        prev_name = data[0][0][0]
+        prev_lat = data[0][1]
+        prev_lon = data[0][2]  
+
+        new_len = True
+        prev_len = thin_data
+
+        while prev_len != new_len:
+
+            prev_len = len(data)
+
+            for line in data[1:]:
+
+                agg,lat,lon = line
+
+                name = agg[0]
+
+                if name == prev_name:
+
+                    distance = haversine((lat,lon),(prev_lat,prev_lon))
+
+                    if distance > threshold: data.remove(line)
+
+                else: prev_name = name
+
+                prev_lat = lat
+                prev_lon = lon
+
+            data.sort(key=lambda val: val[0][0])
+            new_len = len(data)
+
+        return data
 
     def gen_colors(self,num, type):
 
@@ -335,7 +376,7 @@ class Map(object):
 
         return 10
 
-    def verbose_visual(self):
+    def map_visual(self,verbose=False):
 
         dicts = {
 
@@ -364,7 +405,7 @@ class Map(object):
 
         } 
 
-        data_list = self.verbose_visual_data()
+        data_list = self.thin_data(.001,thin_data=verbose)
 
         center_lat = sum(( x[1] for x in data_list )) / len(data_list)
 
@@ -373,14 +414,14 @@ class Map(object):
         metric = int(raw_input(dicts['metric']))
 
         if metric not in [1,2,3]:
-            print self.error.format(function="verbose_visual", error="Invalid input")
+            print self.error.format(function="map_visual", error="Invalid input")
             exit(1)
 
         select_metric = dicts["metric_to_color"][metric]
 
         metric_name = dicts["metric_name"][metric]
 
-        colors = ('\n'.join(self.html_dom["verbose_visual_colors"]
+        colors = ('\n'.join(self.html_dom["map_visual_colors"]
             .format(
                 idx=idx,
                 color=color
@@ -388,7 +429,7 @@ class Map(object):
 
         ### AGG [(NAME, COUNT, SUM_LIGHT, AVG_LIGHT, SUM_BOARD, AVG_BOARD), LAT, LONG]
         map_points = "\n".join(
-            [self.html_dom["verbose_visual_dom"]
+            [self.html_dom["map_visual_dom"]
             .format(
                 idx = idx,
                 lat = agg[1],
@@ -400,7 +441,7 @@ class Map(object):
                 color_num = self.gen_colors(agg[0][select_metric],metric)
                 ) for idx,agg in enumerate(data_list)])
 
-        return self.html_body["verbose_visual"].format(
+        return self.html_body["map_visual"].format(
             group_by = self.group_by,
             metric_name=metric_name,
             colors=colors,
@@ -409,7 +450,7 @@ class Map(object):
             center_lon=center_lon,
             style=self.html_dom["style"])
 
-    def create_map(self, map_type):
+    def create_map(self, map_type, verbose=False):
 
         map_type_dict = {
 
@@ -418,7 +459,7 @@ class Map(object):
 
         }
 
-        if map_type == "verbose": html = self.verbose_visual()
+        if map_type == "verbose": html = self.map_visual(verbose)
 
         elif map_type == "basic": html = self.basic_visual()
 
@@ -563,7 +604,7 @@ class Bubble(object):
 
 
 
-        return cursor.execute("SELECT {selected_type},{metric} FROM {table}".format(
+        return cursor.execute("SELECT {selected_type},{metric} FROM {table} ORDER BY {selected_type}".format(
             selected_type=selected_type,
             metric=metric,
             table=table))
@@ -599,13 +640,8 @@ class Bubble(object):
 
 if __name__ == "__main__":
 
-    #Bubble = Bubble()
-    #Bubble.create_bubble()
-
-
-    #map = Map()
-    #map.create_map("basic")
-    #map.create_verbose("visual")
+    map = Map()
+    map.create_map("verbose", verbose= False)
 
 
 
