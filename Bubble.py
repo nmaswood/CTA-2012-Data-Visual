@@ -130,12 +130,7 @@ class Bubble(object):
 
         self.metric = metric
 
-
         self.group_by = selected_type
-
-        print metric, self.metric
-
-        print self.group_by, selected_type
 
         return cursor.execute("SELECT {selected_type},{metric} FROM {table} ORDER BY {metric}".format(
             selected_type=selected_type,
