@@ -4,10 +4,10 @@ This project aggregates and displays information about October 2012 bus ridershi
 
 
 #### run main.py to create charts
-#### Look in D3 to see sample Bubble Chart 
-#### Look in Gmaps to see sample mapping
-#### You can customize both the Bubble Chart and the Marker Map
-#### according to what metrics you would like to display
+##### Look in D3 to see sample a Bubble Chart 
+##### Look in Gmaps to see sample mapping
+##### You can customize both the Bubble Chart and the Marker Map
+##### according to what metrics you would like to display
 
 
 
