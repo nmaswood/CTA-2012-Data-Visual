@@ -2,9 +2,7 @@ import sqlite3 as sql
 from googlemaps import Client
 from sys import exit
 from haversine import haversine
-
-# This file uses code from
-#http://stackoverflow.com/questions/22342097/is-it-possible-to-create-a-google-map-from-python
+from Color import Colors
 
 class Map(object):
 
@@ -20,6 +18,7 @@ class Map(object):
 
         self.error = "{function}: The following error occured {error}\n"
 
+        self.colors = Colors()
 
     def html_body(self):
         return {
@@ -29,7 +28,7 @@ class Map(object):
         <html>
             <head>
             <meta charset="utf-8">
-            <title>Heatmaps</title>
+            <title>Heatmap</title>
                 {style}
             </head>
             <body>
@@ -110,7 +109,7 @@ class Map(object):
             <head>
                 <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
                 <meta charset="utf-8">
-                <title>Verbose Map</title>
+                <title>Marker Map</title>
                 {style}
             </head>
             <body>
@@ -130,7 +129,7 @@ class Map(object):
 
                         function initMap() {{
                         var map = new google.maps.Map(document.getElementById('map'), {{
-                        zoom: 13,
+                        zoom: 12,
                         center: {{lat: {center_lat}, lng: {center_lon}}}
                         }});
                         {colors}
@@ -162,7 +161,7 @@ class Map(object):
             position: {{lat: {lat}, lng: {lon}}},
             map: map,
             icon : pinImage{color_num},
-            title: 'name (Chicago)'
+            title: 'name ({name})'
             }});
 
             marker{idx}.addListener('click', function () {{
@@ -237,6 +236,9 @@ class Map(object):
             center_lon=center_lon
             )
 
+    ### marker_map_data queries user selected data
+    ### from the sql db and returns it as a list
+
     def marker_map_data(self):
         
 
@@ -304,6 +306,12 @@ class Map(object):
 
         return data_list
     
+
+    ### thin_data removes close neighbors
+    ### so that map data appears less dense
+    ### if thin_data = False, the data will
+    ### be returned as is
+
     def thin_data(self,threshold, thin_data):
 
         data = self.marker_map_data()
@@ -312,7 +320,7 @@ class Map(object):
         prev_lat = data[0][1]
         prev_lon = data[0][2]  
 
-        new_len = True
+        new_len = False
         prev_len = thin_data
 
         while prev_len != new_len:
@@ -342,45 +350,11 @@ class Map(object):
 
         return data
 
-    def gen_colors(self,num, type):
 
-        base_num = {1:1.99, 2:35, 3:35}[type]
+    ### marker_map creates js code for marker map
+    ### allows user to select desired metrics
 
-        if   num <= base_num:       return 0
-        elif num <= base_num * 2:   return 1
-        elif num <= base_num * 4:   return 2
-        elif num <= base_num * 6:   return 3
-        elif num <= base_num * 8:   return 4
-        elif num <= base_num * 10:   return 5
-        elif num <= base_num * 12:   return 6
-        elif num <= base_num * 14:   return 7
-        elif num <= base_num * 16:   return 8
-        elif num <= base_num * 18:   return 9
-        elif num <= base_num * 20:  return 10
-        elif num <= base_num * 22:  return 11
-        elif num <= base_num * 24:  return 12
-        elif num <= base_num * 26:  return 13
-        elif num <= base_num * 28:  return 14
-        elif num <= base_num * 30:  return 15
-        elif num <= base_num * 32:  return 16
-        elif num <= base_num * 34:  return 17
-        elif num <= base_num * 36:  return 18
-        elif num <= base_num * 38:  return 19
-        elif num <= base_num * 40:  return 20
-        elif num <= base_num * 42:  return 21
-        elif num <= base_num * 44:  return 22
-        elif num <= base_num * 46:  return 23
-        elif num <= base_num * 48:  return 24
-        elif num <= base_num * 50:  return 25
-        elif num <= base_num * 52:  return 26
-        elif num <= base_num * 54:  return 27
-        elif num <= base_num * 56:  return 28
-        elif num <= base_num * 58:  return 29
-        elif num <= base_num * 60:  return 30
-
-        return 31
-
-    def marker_map(self,verbose=False):
+    def marker_map(self,thin_data=True):
 
         dicts = {
 
@@ -389,48 +363,15 @@ class Map(object):
         1 for COUNT ... 2 for AVG_ALIGHT ... 3 for AVG_BOARD\n
         """,
 
-        "colors" : [
-        "FFFFFF",
-        "FEF7F8",
-        "FEEFF1",
-        "FDE8EA",
-        "FDE0E3",
-        "FDD8DC",
-        "FCD1D5",
-        "FCC9CE",
-        "FBC1C7",
-        "FBBAC0",
-        "FBB2B9",
-        "FAAAB2",
-        "FAA3AB",
-        "F99BA4",
-        "F9939D",
-        "F98C96",
-        "F8848F",
-        "F87D88",
-        "F87581",
-        "F76D7A",
-        "F76673",
-        "F65E6C",
-        "F65665",
-        "F64F5E",
-        "F54757",
-        "F53F50",
-        "F43849",
-        "F43042",
-        "F4283B",
-        "F32134",
-        "F3192D",
-        "F31226"
-        ],
-
         "metric_to_color" : {1:1, 2:2, 3:4},
 
         "metric_name" : {1:"Count", 2 : "Average alighting", 3 : "Average boarding"}
 
         } 
 
-        data_list = self.thin_data(.001,thin_data=verbose)
+        color_list = self.colors.gradient()
+
+        data_list = self.thin_data(.001,thin_data=thin_data)
 
         center_lat = sum(( x[1] for x in data_list )) / len(data_list)
 
@@ -450,7 +391,7 @@ class Map(object):
             .format(
                 idx=idx,
                 color=color
-                ) for idx,color in enumerate(dicts["colors"])))
+                ) for idx,color in enumerate(color_list)))
 
         ### AGG [(NAME, COUNT, SUM_LIGHT, AVG_LIGHT, SUM_BOARD, AVG_BOARD), LAT, LONG]
         map_points = "\n".join(
@@ -463,7 +404,7 @@ class Map(object):
                 count = agg[0][1],
                 avg_alight = agg[0][2],
                 avg_board = agg[0][4],
-                color_num = self.gen_colors(agg[0][select_metric],metric)
+                color_num = self.colors.gen_colors(agg[0][select_metric],metric)
                 ) for idx,agg in enumerate(data_list)])
 
         return self.html_body["marker_map"].format(
@@ -475,7 +416,10 @@ class Map(object):
             center_lon=center_lon,
             style=self.html_dom["style"])
 
-    def create_map(self, map_type, verbose=False):
+    ### creates desired map and writes it to disk
+    ### if verbose is selected data will not be truncated
+
+    def create_map(self, map_type, thin_data=True):
 
         map_type_dict = {
 
@@ -485,7 +429,7 @@ class Map(object):
 
         }
 
-        if map_type == "marker": html = self.marker_map(verbose)
+        if map_type == "marker": html = self.marker_map(thin_data)
 
         elif map_type == "heat": html = self.heat_map()
 
@@ -493,6 +437,5 @@ class Map(object):
 
         with open( map_type_dict[map_type], "w") as out:
             out.write(html)
-
+            
         print "The marker map has been succesfully created\n"
-
