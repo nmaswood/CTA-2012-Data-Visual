@@ -9,6 +9,8 @@ This project aggregates and displays information about October 2012 bus ridershi
 ##### You can customize both the Bubble Chart and the Marker Map
 ##### according to what metrics you would like to display
 
+##### P.S. The bubble chart may not work in Google Chrome, try Firefox or Safari
+
 
 
 #### References
