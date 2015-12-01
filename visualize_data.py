@@ -12,8 +12,6 @@ from collections import defaultdict
 ### USAGE ###
 
 #map = Map()
-#map.create_map("basic")
-##map.create_verbose("visual")
 
 
 #Bubble = Bubble()
@@ -39,7 +37,7 @@ class Map(object):
     def html_body(self):
         return {
 
-        "basic_visual": """
+        "heat_map": """
         <!DOCTYPE html>
         <html>
             <head>
@@ -55,7 +53,7 @@ class Map(object):
     Areas that are redder represent areas
     with larger amounts of bus stops.
 
-</div>
+    </div>
             <div id="map"></div>
             <script>
             
@@ -119,7 +117,7 @@ class Map(object):
         </html>
         """,
 
-        "map_visual": """
+        "marker_map": """
         <!DOCTYPE html>
         <html>
             <head>
@@ -160,9 +158,9 @@ class Map(object):
 
     def html_dom(self):
         return {
-        "basic_visual_dom": "new google.maps.LatLng({lat}, {lon})",
+        "heat_map_dom": "new google.maps.LatLng({lat}, {lon})",
 
-        "map_visual_colors"  : """
+        "marker_map_colors"  : """
 
                 var pinImage{idx} = new google.maps.MarkerImage("http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=%E2%80%A2|" + "{color}",
                 new google.maps.Size(21, 34),
@@ -171,7 +169,7 @@ class Map(object):
 
                 """,
 
-        "map_visual_dom" : """
+        "marker_map_dom" : """
 
             var marker{idx} = new google.maps.Marker({{
             position: {{lat: {lat}, lng: {lon}}},
@@ -225,7 +223,7 @@ class Map(object):
     </style>"""
         }
    
-    def basic_visual(self):
+    def heat_map(self):
 
         connection = sql.connect(self.db_name)
 
@@ -239,22 +237,20 @@ class Map(object):
         center_lon = sum(( x[1] for x in points )) / len(points)
 
         map_points = "[" + ",".join(
-            [self.html_dom["basic_visual_dom"]
+            [self.html_dom["heat_map_dom"]
             .format(
                 lat=x[0],
                 lon=x[1]
                 ) for x in points]) + "]"
 
-        return self.html_body["basic_visual"].format(
+        return self.html_body["heat_map"].format(
             style=self.html_dom["style"],
             map_points=map_points,
             center_lat=center_lat,
             center_lon=center_lon
             )
 
-
-
-    def map_data(self):
+    def marker_map_data(self):
         
 
         dicts = {
@@ -277,7 +273,7 @@ class Map(object):
         selection = int(raw_input(dicts['selection']))
 
         if selection not in [1,2]:
-            print self.error.format(function='map_data', error="Invalid input")
+            print self.error.format(function='marker_map_data', error="Invalid input")
             exit(1)
 
         category = dicts["category"][selection]
@@ -323,8 +319,7 @@ class Map(object):
     
     def thin_data(self,threshold, thin_data):
 
-        data = self.map_data()
-
+        data = self.marker_map_data()
 
         prev_name = data[0][0][0]
         prev_lat = data[0][1]
@@ -355,6 +350,7 @@ class Map(object):
                 prev_lon = lon
 
             data.sort(key=lambda val: val[0][0])
+
             new_len = len(data)
 
         return data
@@ -376,7 +372,7 @@ class Map(object):
 
         return 10
 
-    def map_visual(self,verbose=False):
+    def marker_map(self,verbose=False):
 
         dicts = {
 
@@ -414,14 +410,14 @@ class Map(object):
         metric = int(raw_input(dicts['metric']))
 
         if metric not in [1,2,3]:
-            print self.error.format(function="map_visual", error="Invalid input")
+            print self.error.format(function="marker_map", error="Invalid input")
             exit(1)
 
         select_metric = dicts["metric_to_color"][metric]
 
         metric_name = dicts["metric_name"][metric]
 
-        colors = ('\n'.join(self.html_dom["map_visual_colors"]
+        colors = ('\n'.join(self.html_dom["marker_map_colors"]
             .format(
                 idx=idx,
                 color=color
@@ -429,7 +425,7 @@ class Map(object):
 
         ### AGG [(NAME, COUNT, SUM_LIGHT, AVG_LIGHT, SUM_BOARD, AVG_BOARD), LAT, LONG]
         map_points = "\n".join(
-            [self.html_dom["map_visual_dom"]
+            [self.html_dom["marker_map_dom"]
             .format(
                 idx = idx,
                 lat = agg[1],
@@ -441,7 +437,7 @@ class Map(object):
                 color_num = self.gen_colors(agg[0][select_metric],metric)
                 ) for idx,agg in enumerate(data_list)])
 
-        return self.html_body["map_visual"].format(
+        return self.html_body["marker_map"].format(
             group_by = self.group_by,
             metric_name=metric_name,
             colors=colors,
@@ -454,14 +450,14 @@ class Map(object):
 
         map_type_dict = {
 
-        "verbose" :'verbose_visual.html',
-        "basic" : 'basic_visual.html'
+        "marker" :'gmaps/marker_map.html',
+        "heat" : 'gmaps/heat_map.html'
 
         }
 
-        if map_type == "verbose": html = self.map_visual(verbose)
+        if map_type == "marker": html = self.marker_map(verbose)
 
-        elif map_type == "basic": html = self.basic_visual()
+        elif map_type == "heat": html = self.heat_map()
 
         else: print self.error.format(function="create_map", error="Invalid input"); exit(1)
 
@@ -602,8 +598,6 @@ class Bubble(object):
 
         self.group_by = selected_type
 
-
-
         return cursor.execute("SELECT {selected_type},{metric} FROM {table} ORDER BY {selected_type}".format(
             selected_type=selected_type,
             metric=metric,
@@ -641,7 +635,7 @@ class Bubble(object):
 if __name__ == "__main__":
 
     map = Map()
-    map.create_map("verbose", verbose= False)
+    map.create_map("heat", verbose= False)
 
 
 
