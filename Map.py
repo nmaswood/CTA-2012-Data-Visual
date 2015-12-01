@@ -480,6 +480,7 @@ class Map(object):
         map_type_dict = {
 
         "marker" :'gmaps/marker_map.html',
+        
         "heat" : 'gmaps/heat_map.html'
 
         }
