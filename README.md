@@ -3,14 +3,15 @@
 This project aggregates and displays information about October 2012 bus ridership data.
 
 
-#### Look in D3 for a Bubble Chart of the information
-#### Look in Gmaps for a mapping of the information
-#### Run all functions in main.py
+#### run main.py to create charts
+#### Look in D3 to see sample Bubble Chart 
+#### Look in Gmaps to see sample mapping
+#### You can customize both the Bubble Chart and the Marker Map
+#### according to what metrics you would like to display
+
 
 
 #### References
-
-This project uses code from 
 
 http://stackoverflow.com/questions/22342097/is-it-possible-to-create-a-google-map-from-python
 

@@ -7,9 +7,10 @@ from Bubble import Bubble
 if __name__ == "__main__":
 
     map = Map()
+    bubble = Bubble()
+
 
     map.create_map("heat")
     map.create_map("marker")
 
-    bubble = Bubble()
     bubble.create_bubble()
