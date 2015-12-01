@@ -4,6 +4,9 @@ This project aggregates information about October 2012 bus ridership data
 and displays it via the Google Maps API
 
 
+## Look in D3 for a Bubble Chart of the information
+## Look in Gmaps for a mapping of the information
+
 
 ## Data Schema from CSV
 
@@ -39,35 +42,3 @@ and displays it via the Google Maps API
 | avg_alight| FLOAT      |
 | sum_board| FLOAT      |
 | avg_board | FLOAT     |
-
-
-### Basic Visual
-
-Returns a heat map where higher density
-refers bus stops that appear more frequently
-
-
-### Verbose Visual
-
-A marker map where the darker the marker
-the higher the value for the specified metric.
-
-A user can click on a marker and
-see the statisitics associated with it
-
-##Usage
-
-### populate_data
-
-
-Input:  a csv for Chicago bus data for a particular year and month
-Output: A sql database containing table of data
-
-Input : A sql database containing table of  bus data
-Output: A table grouping aggregates of the data by on_street and by route
-
-### visualize_data
-
-
-See comments of visualize_data.py
-
