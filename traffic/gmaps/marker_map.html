@@ -1,0 +1,3866 @@
+
+        <!DOCTYPE html>
+        <html>
+            <head>
+                <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+                <meta charset="utf-8">
+                <title>Coffee Map</title>
+                
+        <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        #map {
+            height: 100%;
+        }
+        #floating-panel {
+            position: absolute;
+            top: 10px;
+            left: 25%;
+            z-index: 5;
+            background-color: #fff;
+            padding: 5px;
+            border: 1px solid #999;
+            text-align: center;
+            font-family: 'Roboto','sans-serif';
+            line-height: 30px;
+            padding-left: 10px;
+        }
+
+        #floating-panel {
+            background-color: #fff;
+            border: 1px solid #999;
+            left: 25%;
+            padding: 5px;
+            position: absolute;
+            top: 10px;
+            z-index: 5;
+            font-family: 'Roboto', 'sans-serif';
+        }
+    </style>
+            </head>
+            <body>
+            <div id="floating-panel">
+
+                    <b>Rainbow Push Traffic Guide</b>
+                    <br>
+                    So you'd like to get a cup of coffee down town?
+
+                </div>
+                <div id="map"></div>
+                    <script>
+
+                        function initMap() {
+                        var map = new google.maps.Map(document.getElementById('map'), {
+                        zoom: 12,
+                        center: {lat: 41.89509188532758, lng: -87.65270291282778}
+                        });
+                        
+                var dunkin = new google.maps.MarkerImage("d.png");
+                var starbucks = new google.maps.MarkerImage("s.png");
+                var misc = new google.maps.MarkerImage("m.png");
+                var peets = new google.maps.MarkerImage("p.png");
+                var argos = new google.maps.MarkerImage("a.png");
+                var argo = new google.maps.MarkerImage("a.png");
+                
+                        
+
+            var marker0 = new google.maps.Marker({
+            position: {lat: 41.883261, lng: -87.632936},
+            map: map,
+            icon : dunkin,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Dunkin Donuts)"
+            });
+
+            marker0.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Dunkin Donuts"
+            +'</div>'}).open(map, marker0);});
+
+            
+
+
+            var marker1 = new google.maps.Marker({
+            position: {lat: 41.881916, lng: -87.631307},
+            map: map,
+            icon : dunkin,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Dunkin Donuts)"
+            });
+
+            marker1.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Dunkin Donuts"
+            +'</div>'}).open(map, marker1);});
+
+            
+
+
+            var marker2 = new google.maps.Marker({
+            position: {lat: 41.883086, lng: -87.634604},
+            map: map,
+            icon : dunkin,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Dunkin Donuts)"
+            });
+
+            marker2.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Dunkin Donuts"
+            +'</div>'}).open(map, marker2);});
+
+            
+
+
+            var marker3 = new google.maps.Marker({
+            position: {lat: 41.884348, lng: -87.634041},
+            map: map,
+            icon : dunkin,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Dunkin Donuts)"
+            });
+
+            marker3.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Dunkin Donuts"
+            +'</div>'}).open(map, marker3);});
+
+            
+
+
+            var marker4 = new google.maps.Marker({
+            position: {lat: 41.881849, lng: -87.634075},
+            map: map,
+            icon : dunkin,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Dunkin Donuts)"
+            });
+
+            marker4.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Dunkin Donuts"
+            +'</div>'}).open(map, marker4);});
+
+            
+
+
+            var marker5 = new google.maps.Marker({
+            position: {lat: 41.88501, lng: -87.631661},
+            map: map,
+            icon : dunkin,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Dunkin Donuts)"
+            });
+
+            marker5.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Dunkin Donuts"
+            +'</div>'}).open(map, marker5);});
+
+            
+
+
+            var marker6 = new google.maps.Marker({
+            position: {lat: 41.88554, lng: -87.632196},
+            map: map,
+            icon : dunkin,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Dunkin Donuts)"
+            });
+
+            marker6.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Dunkin Donuts"
+            +'</div>'}).open(map, marker6);});
+
+            
+
+
+            var marker7 = new google.maps.Marker({
+            position: {lat: 41.8856, lng: -87.634093},
+            map: map,
+            icon : dunkin,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Dunkin Donuts)"
+            });
+
+            marker7.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Dunkin Donuts"
+            +'</div>'}).open(map, marker7);});
+
+            
+
+
+            var marker8 = new google.maps.Marker({
+            position: {lat: 41.886106, lng: -87.632147},
+            map: map,
+            icon : dunkin,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Dunkin Donuts)"
+            });
+
+            marker8.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Dunkin Donuts"
+            +'</div>'}).open(map, marker8);});
+
+            
+
+
+            var marker9 = new google.maps.Marker({
+            position: {lat: 41.881406, lng: -87.629047},
+            map: map,
+            icon : dunkin,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Dunkin Donuts)"
+            });
+
+            marker9.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Dunkin Donuts"
+            +'</div>'}).open(map, marker9);});
+
+            
+
+
+            var marker10 = new google.maps.Marker({
+            position: {lat: 41.883813, lng: -87.627978},
+            map: map,
+            icon : dunkin,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Dunkin Donuts)"
+            });
+
+            marker10.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Dunkin Donuts"
+            +'</div>'}).open(map, marker10);});
+
+            
+
+
+            var marker11 = new google.maps.Marker({
+            position: {lat: 41.885628, lng: -87.628798},
+            map: map,
+            icon : dunkin,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Dunkin Donuts)"
+            });
+
+            marker11.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Dunkin Donuts"
+            +'</div>'}).open(map, marker11);});
+
+            
+
+
+            var marker12 = new google.maps.Marker({
+            position: {lat: 41.886686, lng: -87.634131},
+            map: map,
+            icon : dunkin,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Dunkin Donuts)"
+            });
+
+            marker12.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Dunkin Donuts"
+            +'</div>'}).open(map, marker12);});
+
+            
+
+
+            var marker13 = new google.maps.Marker({
+            position: {lat: 41.879318, lng: -87.633939},
+            map: map,
+            icon : dunkin,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Dunkin Donuts)"
+            });
+
+            marker13.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Dunkin Donuts"
+            +'</div>'}).open(map, marker13);});
+
+            
+
+
+            var marker14 = new google.maps.Marker({
+            position: {lat: 41.882424, lng: -87.626363},
+            map: map,
+            icon : dunkin,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Dunkin Donuts)"
+            });
+
+            marker14.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Dunkin Donuts"
+            +'</div>'}).open(map, marker14);});
+
+            
+
+
+            var marker15 = new google.maps.Marker({
+            position: {lat: 41.885626, lng: -87.626627},
+            map: map,
+            icon : dunkin,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Dunkin Donuts)"
+            });
+
+            marker15.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Dunkin Donuts"
+            +'</div>'}).open(map, marker15);});
+
+            
+
+
+            var marker16 = new google.maps.Marker({
+            position: {lat: 41.882291, lng: -87.63933},
+            map: map,
+            icon : dunkin,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Dunkin Donuts)"
+            });
+
+            marker16.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Dunkin Donuts"
+            +'</div>'}).open(map, marker16);});
+
+            
+
+
+            var marker17 = new google.maps.Marker({
+            position: {lat: 41.878842, lng: -87.63656},
+            map: map,
+            icon : dunkin,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Dunkin Donuts)"
+            });
+
+            marker17.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Dunkin Donuts"
+            +'</div>'}).open(map, marker17);});
+
+            
+
+
+            var marker18 = new google.maps.Marker({
+            position: {lat: 41.883099, lng: -87.625134},
+            map: map,
+            icon : dunkin,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Dunkin Donuts)"
+            });
+
+            marker18.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Dunkin Donuts"
+            +'</div>'}).open(map, marker18);});
+
+            
+
+
+            var marker19 = new google.maps.Marker({
+            position: {lat: 41.878036, lng: -87.634793},
+            map: map,
+            icon : dunkin,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Dunkin Donuts)"
+            });
+
+            marker19.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Dunkin Donuts"
+            +'</div>'}).open(map, marker19);});
+
+            
+
+
+            var marker20 = new google.maps.Marker({
+            position: {lat: 41.87811, lng: -87.62914},
+            map: map,
+            icon : dunkin,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Dunkin Donuts)"
+            });
+
+            marker20.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Dunkin Donuts"
+            +'</div>'}).open(map, marker20);});
+
+            
+
+
+            var marker21 = new google.maps.Marker({
+            position: {lat: 41.878592, lng: -87.627788},
+            map: map,
+            icon : dunkin,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Dunkin Donuts)"
+            });
+
+            marker21.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Dunkin Donuts"
+            +'</div>'}).open(map, marker21);});
+
+            
+
+
+            var marker22 = new google.maps.Marker({
+            position: {lat: 41.888603, lng: -87.635481},
+            map: map,
+            icon : dunkin,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Dunkin Donuts)"
+            });
+
+            marker22.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Dunkin Donuts"
+            +'</div>'}).open(map, marker22);});
+
+            
+
+
+            var marker23 = new google.maps.Marker({
+            position: {lat: 41.879429, lng: -87.626388},
+            map: map,
+            icon : dunkin,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Dunkin Donuts)"
+            });
+
+            marker23.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Dunkin Donuts"
+            +'</div>'}).open(map, marker23);});
+
+            
+
+
+            var marker24 = new google.maps.Marker({
+            position: {lat: 41.880677, lng: -87.625134},
+            map: map,
+            icon : dunkin,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Dunkin Donuts)"
+            });
+
+            marker24.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Dunkin Donuts"
+            +'</div>'}).open(map, marker24);});
+
+            
+
+
+            var marker25 = new google.maps.Marker({
+            position: {lat: 41.876868, lng: -87.63322},
+            map: map,
+            icon : dunkin,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Dunkin Donuts)"
+            });
+
+            marker25.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Dunkin Donuts"
+            +'</div>'}).open(map, marker25);});
+
+            
+
+
+            var marker26 = new google.maps.Marker({
+            position: {lat: 41.882335, lng: -87.640893},
+            map: map,
+            icon : dunkin,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Dunkin Donuts)"
+            });
+
+            marker26.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Dunkin Donuts"
+            +'</div>'}).open(map, marker26);});
+
+            
+
+
+            var marker27 = new google.maps.Marker({
+            position: {lat: 41.878866, lng: -87.639305},
+            map: map,
+            icon : dunkin,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Dunkin Donuts)"
+            });
+
+            marker27.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Dunkin Donuts"
+            +'</div>'}).open(map, marker27);});
+
+            
+
+
+            var marker28 = new google.maps.Marker({
+            position: {lat: 41.878363, lng: -87.625471},
+            map: map,
+            icon : dunkin,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Dunkin Donuts)"
+            });
+
+            marker28.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Dunkin Donuts"
+            +'</div>'}).open(map, marker28);});
+
+            
+
+
+            var marker29 = new google.maps.Marker({
+            position: {lat: 41.880018, lng: -87.640976},
+            map: map,
+            icon : dunkin,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Dunkin Donuts)"
+            });
+
+            marker29.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Dunkin Donuts"
+            +'</div>'}).open(map, marker29);});
+
+            
+
+
+            var marker30 = new google.maps.Marker({
+            position: {lat: 41.877061, lng: -87.627369},
+            map: map,
+            icon : dunkin,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Dunkin Donuts)"
+            });
+
+            marker30.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Dunkin Donuts"
+            +'</div>'}).open(map, marker30);});
+
+            
+
+
+            var marker31 = new google.maps.Marker({
+            position: {lat: 41.885607, lng: -87.641933},
+            map: map,
+            icon : dunkin,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Dunkin Donuts)"
+            });
+
+            marker31.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Dunkin Donuts"
+            +'</div>'}).open(map, marker31);});
+
+            
+
+
+            var marker32 = new google.maps.Marker({
+            position: {lat: 41.889524, lng: -87.626809},
+            map: map,
+            icon : dunkin,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Dunkin Donuts)"
+            });
+
+            marker32.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Dunkin Donuts"
+            +'</div>'}).open(map, marker32);});
+
+            
+
+
+            var marker33 = new google.maps.Marker({
+            position: {lat: 41.886833, lng: -87.623422},
+            map: map,
+            icon : dunkin,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Dunkin Donuts)"
+            });
+
+            marker33.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Dunkin Donuts"
+            +'</div>'}).open(map, marker33);});
+
+            
+
+
+            var marker34 = new google.maps.Marker({
+            position: {lat: 41.877043, lng: -87.639922},
+            map: map,
+            icon : dunkin,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Dunkin Donuts)"
+            });
+
+            marker34.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Dunkin Donuts"
+            +'</div>'}).open(map, marker34);});
+
+            
+
+
+            var marker35 = new google.maps.Marker({
+            position: {lat: 41.885243, lng: -87.621507},
+            map: map,
+            icon : dunkin,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Dunkin Donuts)"
+            });
+
+            marker35.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Dunkin Donuts"
+            +'</div>'}).open(map, marker35);});
+
+            
+
+
+            var marker36 = new google.maps.Marker({
+            position: {lat: 41.877918, lng: -87.641613},
+            map: map,
+            icon : dunkin,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Dunkin Donuts)"
+            });
+
+            marker36.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Dunkin Donuts"
+            +'</div>'}).open(map, marker36);});
+
+            
+
+
+            var marker37 = new google.maps.Marker({
+            position: {lat: 41.876742, lng: -87.624529},
+            map: map,
+            icon : dunkin,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Dunkin Donuts)"
+            });
+
+            marker37.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Dunkin Donuts"
+            +'</div>'}).open(map, marker37);});
+
+            
+
+
+            var marker38 = new google.maps.Marker({
+            position: {lat: 41.89178, lng: -87.62824},
+            map: map,
+            icon : dunkin,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Dunkin Donuts)"
+            });
+
+            marker38.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Dunkin Donuts"
+            +'</div>'}).open(map, marker38);});
+
+            
+
+
+            var marker39 = new google.maps.Marker({
+            position: {lat: 41.884842, lng: -87.6201},
+            map: map,
+            icon : dunkin,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Dunkin Donuts)"
+            });
+
+            marker39.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Dunkin Donuts"
+            +'</div>'}).open(map, marker39);});
+
+            
+
+
+            var marker40 = new google.maps.Marker({
+            position: {lat: 41.873779, lng: -87.630801},
+            map: map,
+            icon : dunkin,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Dunkin Donuts)"
+            });
+
+            marker40.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Dunkin Donuts"
+            +'</div>'}).open(map, marker40);});
+
+            
+
+
+            var marker41 = new google.maps.Marker({
+            position: {lat: 41.88748, lng: -87.620298},
+            map: map,
+            icon : dunkin,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Dunkin Donuts)"
+            });
+
+            marker41.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Dunkin Donuts"
+            +'</div>'}).open(map, marker41);});
+
+            
+
+
+            var marker42 = new google.maps.Marker({
+            position: {lat: 41.874209, lng: -87.626193},
+            map: map,
+            icon : dunkin,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Dunkin Donuts)"
+            });
+
+            marker42.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Dunkin Donuts"
+            +'</div>'}).open(map, marker42);});
+
+            
+
+
+            var marker43 = new google.maps.Marker({
+            position: {lat: 41.892827, lng: -87.622635},
+            map: map,
+            icon : dunkin,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Dunkin Donuts)"
+            });
+
+            marker43.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Dunkin Donuts"
+            +'</div>'}).open(map, marker43);});
+
+            
+
+
+            var marker44 = new google.maps.Marker({
+            position: {lat: 41.882953, lng: -87.649668},
+            map: map,
+            icon : dunkin,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Dunkin Donuts)"
+            });
+
+            marker44.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Dunkin Donuts"
+            +'</div>'}).open(map, marker44);});
+
+            
+
+
+            var marker45 = new google.maps.Marker({
+            position: {lat: 41.896494, lng: -87.636121},
+            map: map,
+            icon : dunkin,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Dunkin Donuts)"
+            });
+
+            marker45.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Dunkin Donuts"
+            +'</div>'}).open(map, marker45);});
+
+            
+
+
+            var marker46 = new google.maps.Marker({
+            position: {lat: 41.896832, lng: -87.628618},
+            map: map,
+            icon : dunkin,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Dunkin Donuts)"
+            });
+
+            marker46.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Dunkin Donuts"
+            +'</div>'}).open(map, marker46);});
+
+            
+
+
+            var marker47 = new google.maps.Marker({
+            position: {lat: 41.895923, lng: -87.621237},
+            map: map,
+            icon : dunkin,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Dunkin Donuts)"
+            });
+
+            marker47.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Dunkin Donuts"
+            +'</div>'}).open(map, marker47);});
+
+            
+
+
+            var marker48 = new google.maps.Marker({
+            position: {lat: 41.885349, lng: -87.652815},
+            map: map,
+            icon : dunkin,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Dunkin Donuts)"
+            });
+
+            marker48.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Dunkin Donuts"
+            +'</div>'}).open(map, marker48);});
+
+            
+
+
+            var marker49 = new google.maps.Marker({
+            position: {lat: 41.871664, lng: -87.647665},
+            map: map,
+            icon : dunkin,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Dunkin Donuts)"
+            });
+
+            marker49.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Dunkin Donuts"
+            +'</div>'}).open(map, marker49);});
+
+            
+
+
+            var marker50 = new google.maps.Marker({
+            position: {lat: 41.878515, lng: -87.631259},
+            map: map,
+            icon : starbucks,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Starbucks)"
+            });
+
+            marker50.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Starbucks"
+            +'</div>'}).open(map, marker50);});
+
+            
+
+
+            var marker51 = new google.maps.Marker({
+            position: {lat: 41.879304, lng: -87.631001},
+            map: map,
+            icon : starbucks,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Starbucks)"
+            });
+
+            marker51.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Starbucks"
+            +'</div>'}).open(map, marker51);});
+
+            
+
+
+            var marker52 = new google.maps.Marker({
+            position: {lat: 41.87957, lng: -87.627979},
+            map: map,
+            icon : starbucks,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Starbucks)"
+            });
+
+            marker52.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Starbucks"
+            +'</div>'}).open(map, marker52);});
+
+            
+
+
+            var marker53 = new google.maps.Marker({
+            position: {lat: 41.876891, lng: -87.633015},
+            map: map,
+            icon : starbucks,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Starbucks)"
+            });
+
+            marker53.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Starbucks"
+            +'</div>'}).open(map, marker53);});
+
+            
+
+
+            var marker54 = new google.maps.Marker({
+            position: {lat: 41.878108, lng: -87.625882},
+            map: map,
+            icon : starbucks,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Starbucks)"
+            });
+
+            marker54.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Starbucks"
+            +'</div>'}).open(map, marker54);});
+
+            
+
+
+            var marker55 = new google.maps.Marker({
+            position: {lat: 41.880144, lng: -87.626877},
+            map: map,
+            icon : starbucks,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Starbucks)"
+            });
+
+            marker55.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Starbucks"
+            +'</div>'}).open(map, marker55);});
+
+            
+
+
+            var marker56 = new google.maps.Marker({
+            position: {lat: 41.88079, lng: -87.632144},
+            map: map,
+            icon : starbucks,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Starbucks)"
+            });
+
+            marker56.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Starbucks"
+            +'</div>'}).open(map, marker56);});
+
+            
+
+
+            var marker57 = new google.maps.Marker({
+            position: {lat: 41.877914, lng: -87.634158},
+            map: map,
+            icon : starbucks,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Starbucks)"
+            });
+
+            marker57.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Starbucks"
+            +'</div>'}).open(map, marker57);});
+
+            
+
+
+            var marker58 = new google.maps.Marker({
+            position: {lat: 41.879507, lng: -87.633966},
+            map: map,
+            icon : starbucks,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Starbucks)"
+            });
+
+            marker58.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Starbucks"
+            +'</div>'}).open(map, marker58);});
+
+            
+
+
+            var marker59 = new google.maps.Marker({
+            position: {lat: 41.874653, lng: -87.628821},
+            map: map,
+            icon : starbucks,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Starbucks)"
+            });
+
+            marker59.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Starbucks"
+            +'</div>'}).open(map, marker59);});
+
+            
+
+
+            var marker60 = new google.maps.Marker({
+            position: {lat: 41.88173, lng: -87.63066},
+            map: map,
+            icon : starbucks,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Starbucks)"
+            });
+
+            marker60.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Starbucks"
+            +'</div>'}).open(map, marker60);});
+
+            
+
+
+            var marker61 = new google.maps.Marker({
+            position: {lat: 41.879372, lng: -87.624673},
+            map: map,
+            icon : starbucks,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Starbucks)"
+            });
+
+            marker61.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Starbucks"
+            +'</div>'}).open(map, marker61);});
+
+            
+
+
+            var marker62 = new google.maps.Marker({
+            position: {lat: 41.88214, lng: -87.63052},
+            map: map,
+            icon : starbucks,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Starbucks)"
+            });
+
+            marker62.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Starbucks"
+            +'</div>'}).open(map, marker62);});
+
+            
+
+
+            var marker63 = new google.maps.Marker({
+            position: {lat: 41.880077, lng: -87.635003},
+            map: map,
+            icon : starbucks,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Starbucks)"
+            });
+
+            marker63.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Starbucks"
+            +'</div>'}).open(map, marker63);});
+
+            
+
+
+            var marker64 = new google.maps.Marker({
+            position: {lat: 41.878852, lng: -87.636113},
+            map: map,
+            icon : starbucks,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Starbucks)"
+            });
+
+            marker64.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Starbucks"
+            +'</div>'}).open(map, marker64);});
+
+            
+
+
+            var marker65 = new google.maps.Marker({
+            position: {lat: 41.877406, lng: -87.636382},
+            map: map,
+            icon : starbucks,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Starbucks)"
+            });
+
+            marker65.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Starbucks"
+            +'</div>'}).open(map, marker65);});
+
+            
+
+
+            var marker66 = new google.maps.Marker({
+            position: {lat: 41.883087, lng: -87.631488},
+            map: map,
+            icon : starbucks,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Starbucks)"
+            });
+
+            marker66.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Starbucks"
+            +'</div>'}).open(map, marker66);});
+
+            
+
+
+            var marker67 = new google.maps.Marker({
+            position: {lat: 41.882921, lng: -87.632622},
+            map: map,
+            icon : starbucks,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Starbucks)"
+            });
+
+            marker67.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Starbucks"
+            +'</div>'}).open(map, marker67);});
+
+            
+
+
+            var marker68 = new google.maps.Marker({
+            position: {lat: 41.882301, lng: -87.634311},
+            map: map,
+            icon : starbucks,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Starbucks)"
+            });
+
+            marker68.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Starbucks"
+            +'</div>'}).open(map, marker68);});
+
+            
+
+
+            var marker69 = new google.maps.Marker({
+            position: {lat: 41.88335, lng: -87.627362},
+            map: map,
+            icon : starbucks,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Starbucks)"
+            });
+
+            marker69.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Starbucks"
+            +'</div>'}).open(map, marker69);});
+
+            
+
+
+            var marker70 = new google.maps.Marker({
+            position: {lat: 41.881735, lng: -87.635521},
+            map: map,
+            icon : starbucks,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Starbucks)"
+            });
+
+            marker70.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Starbucks"
+            +'</div>'}).open(map, marker70);});
+
+            
+
+
+            var marker71 = new google.maps.Marker({
+            position: {lat: 41.883122, lng: -87.626424},
+            map: map,
+            icon : starbucks,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Starbucks)"
+            });
+
+            marker71.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Starbucks"
+            +'</div>'}).open(map, marker71);});
+
+            
+
+
+            var marker72 = new google.maps.Marker({
+            position: {lat: 41.883865, lng: -87.630759},
+            map: map,
+            icon : starbucks,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Starbucks)"
+            });
+
+            marker72.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Starbucks"
+            +'</div>'}).open(map, marker72);});
+
+            
+
+
+            var marker73 = new google.maps.Marker({
+            position: {lat: 41.882653, lng: -87.624954},
+            map: map,
+            icon : starbucks,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Starbucks)"
+            });
+
+            marker73.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Starbucks"
+            +'</div>'}).open(map, marker73);});
+
+            
+
+
+            var marker74 = new google.maps.Marker({
+            position: {lat: 41.87331, lng: -87.62453},
+            map: map,
+            icon : starbucks,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Starbucks)"
+            });
+
+            marker74.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Starbucks"
+            +'</div>'}).open(map, marker74);});
+
+            
+
+
+            var marker75 = new google.maps.Marker({
+            position: {lat: 41.88048, lng: -87.637529},
+            map: map,
+            icon : starbucks,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Starbucks)"
+            });
+
+            marker75.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Starbucks"
+            +'</div>'}).open(map, marker75);});
+
+            
+
+
+            var marker76 = new google.maps.Marker({
+            position: {lat: 41.884215, lng: -87.627383},
+            map: map,
+            icon : starbucks,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Starbucks)"
+            });
+
+            marker76.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Starbucks"
+            +'</div>'}).open(map, marker76);});
+
+            
+
+
+            var marker77 = new google.maps.Marker({
+            position: {lat: 41.884346, lng: -87.633691},
+            map: map,
+            icon : starbucks,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Starbucks)"
+            });
+
+            marker77.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Starbucks"
+            +'</div>'}).open(map, marker77);});
+
+            
+
+
+            var marker78 = new google.maps.Marker({
+            position: {lat: 41.879035, lng: -87.639029},
+            map: map,
+            icon : starbucks,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Starbucks)"
+            });
+
+            marker78.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Starbucks"
+            +'</div>'}).open(map, marker78);});
+
+            
+
+
+            var marker79 = new google.maps.Marker({
+            position: {lat: 41.885117, lng: -87.63076},
+            map: map,
+            icon : starbucks,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Starbucks)"
+            });
+
+            marker79.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Starbucks"
+            +'</div>'}).open(map, marker79);});
+
+            
+
+
+            var marker80 = new google.maps.Marker({
+            position: {lat: 41.880888, lng: -87.638935},
+            map: map,
+            icon : starbucks,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Starbucks)"
+            });
+
+            marker80.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Starbucks"
+            +'</div>'}).open(map, marker80);});
+
+            
+
+
+            var marker81 = new google.maps.Marker({
+            position: {lat: 41.885593, lng: -87.63268},
+            map: map,
+            icon : starbucks,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Starbucks)"
+            });
+
+            marker81.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Starbucks"
+            +'</div>'}).open(map, marker81);});
+
+            
+
+
+            var marker82 = new google.maps.Marker({
+            position: {lat: 41.885903, lng: -87.628861},
+            map: map,
+            icon : starbucks,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Starbucks)"
+            });
+
+            marker82.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Starbucks"
+            +'</div>'}).open(map, marker82);});
+
+            
+
+
+            var marker83 = new google.maps.Marker({
+            position: {lat: 41.882131, lng: -87.638993},
+            map: map,
+            icon : starbucks,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Starbucks)"
+            });
+
+            marker83.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Starbucks"
+            +'</div>'}).open(map, marker83);});
+
+            
+
+
+            var marker84 = new google.maps.Marker({
+            position: {lat: 41.885111, lng: -87.624107},
+            map: map,
+            icon : starbucks,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Starbucks)"
+            });
+
+            marker84.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Starbucks"
+            +'</div>'}).open(map, marker84);});
+
+            
+
+
+            var marker85 = new google.maps.Marker({
+            position: {lat: 41.879407, lng: -87.640915},
+            map: map,
+            icon : starbucks,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Starbucks)"
+            });
+
+            marker85.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Starbucks"
+            +'</div>'}).open(map, marker85);});
+
+            
+
+
+            var marker86 = new google.maps.Marker({
+            position: {lat: 41.884618, lng: -87.637348},
+            map: map,
+            icon : starbucks,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Starbucks)"
+            });
+
+            marker86.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Starbucks"
+            +'</div>'}).open(map, marker86);});
+
+            
+
+
+            var marker87 = new google.maps.Marker({
+            position: {lat: 41.876936, lng: -87.641222},
+            map: map,
+            icon : starbucks,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Starbucks)"
+            });
+
+            marker87.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Starbucks"
+            +'</div>'}).open(map, marker87);});
+
+            
+
+
+            var marker88 = new google.maps.Marker({
+            position: {lat: 41.885936, lng: -87.624818},
+            map: map,
+            icon : starbucks,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Starbucks)"
+            });
+
+            marker88.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Starbucks"
+            +'</div>'}).open(map, marker88);});
+
+            
+
+
+            var marker89 = new google.maps.Marker({
+            position: {lat: 41.886658, lng: -87.627003},
+            map: map,
+            icon : starbucks,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Starbucks)"
+            });
+
+            marker89.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Starbucks"
+            +'</div>'}).open(map, marker89);});
+
+            
+
+
+            var marker90 = new google.maps.Marker({
+            position: {lat: 41.886084, lng: -87.62407},
+            map: map,
+            icon : starbucks,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Starbucks)"
+            });
+
+            marker90.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Starbucks"
+            +'</div>'}).open(map, marker90);});
+
+            
+
+
+            var marker91 = new google.maps.Marker({
+            position: {lat: 41.885144, lng: -87.621479},
+            map: map,
+            icon : starbucks,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Starbucks)"
+            });
+
+            marker91.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Starbucks"
+            +'</div>'}).open(map, marker91);});
+
+            
+
+
+            var marker92 = new google.maps.Marker({
+            position: {lat: 41.882985, lng: -87.641456},
+            map: map,
+            icon : starbucks,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Starbucks)"
+            });
+
+            marker92.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Starbucks"
+            +'</div>'}).open(map, marker92);});
+
+            
+
+
+            var marker93 = new google.maps.Marker({
+            position: {lat: 41.884817, lng: -87.619808},
+            map: map,
+            icon : starbucks,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Starbucks)"
+            });
+
+            marker93.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Starbucks"
+            +'</div>'}).open(map, marker93);});
+
+            
+
+
+            var marker94 = new google.maps.Marker({
+            position: {lat: 41.867654, lng: -87.630728},
+            map: map,
+            icon : starbucks,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Starbucks)"
+            });
+
+            marker94.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Starbucks"
+            +'</div>'}).open(map, marker94);});
+
+            
+
+
+            var marker95 = new google.maps.Marker({
+            position: {lat: 41.888662, lng: -87.634534},
+            map: map,
+            icon : starbucks,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Starbucks)"
+            });
+
+            marker95.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Starbucks"
+            +'</div>'}).open(map, marker95);});
+
+            
+
+
+            var marker96 = new google.maps.Marker({
+            position: {lat: 41.867243, lng: -87.626055},
+            map: map,
+            icon : starbucks,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Starbucks)"
+            });
+
+            marker96.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Starbucks"
+            +'</div>'}).open(map, marker96);});
+
+            
+
+
+            var marker97 = new google.maps.Marker({
+            position: {lat: 41.890187, lng: -87.631329},
+            map: map,
+            icon : starbucks,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Starbucks)"
+            });
+
+            marker97.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Starbucks"
+            +'</div>'}).open(map, marker97);});
+
+            
+
+
+            var marker98 = new google.maps.Marker({
+            position: {lat: 41.868102, lng: -87.638989},
+            map: map,
+            icon : starbucks,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Starbucks)"
+            });
+
+            marker98.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Starbucks"
+            +'</div>'}).open(map, marker98);});
+
+            
+
+
+            var marker99 = new google.maps.Marker({
+            position: {lat: 41.88595, lng: -87.643013},
+            map: map,
+            icon : starbucks,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Starbucks)"
+            });
+
+            marker99.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Starbucks"
+            +'</div>'}).open(map, marker99);});
+
+            
+
+
+            var marker100 = new google.maps.Marker({
+            position: {lat: 41.8781136, lng: -87.62979819999998},
+            map: map,
+            icon : argos,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Argo Tea)"
+            });
+
+            marker100.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Argo Tea"
+            +'</div>'}).open(map, marker100);});
+
+            
+
+
+            var marker101 = new google.maps.Marker({
+            position: {lat: 41.8797829, lng: -87.6297248},
+            map: map,
+            icon : argos,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Argo Tea)"
+            });
+
+            marker101.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Argo Tea"
+            +'</div>'}).open(map, marker101);});
+
+            
+
+
+            var marker102 = new google.maps.Marker({
+            position: {lat: 41.87886, lng: -87.636077},
+            map: map,
+            icon : argos,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Argo Tea)"
+            });
+
+            marker102.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Argo Tea"
+            +'</div>'}).open(map, marker102);});
+
+            
+
+
+            var marker103 = new google.maps.Marker({
+            position: {lat: 41.8815453, lng: -87.6350572},
+            map: map,
+            icon : argos,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Argo Tea)"
+            });
+
+            marker103.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Argo Tea"
+            +'</div>'}).open(map, marker103);});
+
+            
+
+
+            var marker104 = new google.maps.Marker({
+            position: {lat: 41.8846013, lng: -87.6283597},
+            map: map,
+            icon : argos,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Argo Tea)"
+            });
+
+            marker104.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Argo Tea"
+            +'</div>'}).open(map, marker104);});
+
+            
+
+
+            var marker105 = new google.maps.Marker({
+            position: {lat: 41.8885749, lng: -87.6346219},
+            map: map,
+            icon : argos,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Argo Tea)"
+            });
+
+            marker105.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Argo Tea"
+            +'</div>'}).open(map, marker105);});
+
+            
+
+
+            var marker106 = new google.maps.Marker({
+            position: {lat: 41.8904735, lng: -87.6238323},
+            map: map,
+            icon : argos,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Argo Tea)"
+            });
+
+            marker106.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Argo Tea"
+            +'</div>'}).open(map, marker106);});
+
+            
+
+
+            var marker107 = new google.maps.Marker({
+            position: {lat: 41.871887, lng: -87.647754},
+            map: map,
+            icon : argos,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Argo Tea)"
+            });
+
+            marker107.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Argo Tea"
+            +'</div>'}).open(map, marker107);});
+
+            
+
+
+            var marker108 = new google.maps.Marker({
+            position: {lat: 41.8961215, lng: -87.6208067},
+            map: map,
+            icon : argos,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Argo Tea)"
+            });
+
+            marker108.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Argo Tea"
+            +'</div>'}).open(map, marker108);});
+
+            
+
+
+            var marker109 = new google.maps.Marker({
+            position: {lat: 41.8973673, lng: -87.6256539},
+            map: map,
+            icon : argos,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Argo Tea)"
+            });
+
+            marker109.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Argo Tea"
+            +'</div>'}).open(map, marker109);});
+
+            
+
+
+            var marker110 = new google.maps.Marker({
+            position: {lat: 41.8985967, lng: -87.6267076},
+            map: map,
+            icon : argos,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Argo Tea)"
+            });
+
+            marker110.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Argo Tea"
+            +'</div>'}).open(map, marker110);});
+
+            
+
+
+            var marker111 = new google.maps.Marker({
+            position: {lat: 41.9385685, lng: -87.6440731},
+            map: map,
+            icon : argos,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Argo Tea)"
+            });
+
+            marker111.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Argo Tea"
+            +'</div>'}).open(map, marker111);});
+
+            
+
+
+            var marker112 = new google.maps.Marker({
+            position: {lat: 41.9849481, lng: -87.9089623},
+            map: map,
+            icon : argos,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Argo Tea)"
+            });
+
+            marker112.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Argo Tea"
+            +'</div>'}).open(map, marker112);});
+
+            
+
+
+            var marker113 = new google.maps.Marker({
+            position: {lat: 41.9849481, lng: -87.9089623},
+            map: map,
+            icon : argos,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Argo Tea)"
+            });
+
+            marker113.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Argo Tea"
+            +'</div>'}).open(map, marker113);});
+
+            
+
+
+            var marker114 = new google.maps.Marker({
+            position: {lat: 41.9849481, lng: -87.9089623},
+            map: map,
+            icon : argos,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Argo Tea)"
+            });
+
+            marker114.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Argo Tea"
+            +'</div>'}).open(map, marker114);});
+
+            
+
+
+            var marker115 = new google.maps.Marker({
+            position: {lat: 41.8529, lng: -87.949956},
+            map: map,
+            icon : argos,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Argo Tea)"
+            });
+
+            marker115.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Argo Tea"
+            +'</div>'}).open(map, marker115);});
+
+            
+
+
+            var marker116 = new google.maps.Marker({
+            position: {lat: 42.0458265, lng: -88.0380549},
+            map: map,
+            icon : argos,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Argo Tea)"
+            });
+
+            marker116.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Argo Tea"
+            +'</div>'}).open(map, marker116);});
+
+            
+
+
+            var marker117 = new google.maps.Marker({
+            position: {lat: 42.9721934, lng: -85.9540407},
+            map: map,
+            icon : argos,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Argo Tea)"
+            });
+
+            marker117.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Argo Tea"
+            +'</div>'}).open(map, marker117);});
+
+            
+
+
+            var marker118 = new google.maps.Marker({
+            position: {lat: 41.8811, lng: -87.6292},
+            map: map,
+            icon : peets,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Peet's Coffee)"
+            });
+
+            marker118.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Peet's Coffee"
+            +'</div>'}).open(map, marker118);});
+
+            
+
+
+            var marker119 = new google.maps.Marker({
+            position: {lat: 41.8805, lng: -87.6257},
+            map: map,
+            icon : peets,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Peet's Coffee)"
+            });
+
+            marker119.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Peet's Coffee"
+            +'</div>'}).open(map, marker119);});
+
+            
+
+
+            var marker120 = new google.maps.Marker({
+            position: {lat: 41.8819, lng: -87.62779},
+            map: map,
+            icon : peets,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Peet's Coffee)"
+            });
+
+            marker120.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Peet's Coffee"
+            +'</div>'}).open(map, marker120);});
+
+            
+
+
+            var marker121 = new google.maps.Marker({
+            position: {lat: 41.8816, lng: -87.6327},
+            map: map,
+            icon : peets,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Peet's Coffee)"
+            });
+
+            marker121.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Peet's Coffee"
+            +'</div>'}).open(map, marker121);});
+
+            
+
+
+            var marker122 = new google.maps.Marker({
+            position: {lat: 41.8836, lng: -87.6283},
+            map: map,
+            icon : peets,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Peet's Coffee)"
+            });
+
+            marker122.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Peet's Coffee"
+            +'</div>'}).open(map, marker122);});
+
+            
+
+
+            var marker123 = new google.maps.Marker({
+            position: {lat: 41.8827, lng: -87.625},
+            map: map,
+            icon : peets,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Peet's Coffee)"
+            });
+
+            marker123.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Peet's Coffee"
+            +'</div>'}).open(map, marker123);});
+
+            
+
+
+            var marker124 = new google.maps.Marker({
+            position: {lat: 41.88415, lng: -87.632409},
+            map: map,
+            icon : peets,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Peet's Coffee)"
+            });
+
+            marker124.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Peet's Coffee"
+            +'</div>'}).open(map, marker124);});
+
+            
+
+
+            var marker125 = new google.maps.Marker({
+            position: {lat: 41.88415, lng: -87.632409},
+            map: map,
+            icon : peets,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Peet's Coffee)"
+            });
+
+            marker125.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Peet's Coffee"
+            +'</div>'}).open(map, marker125);});
+
+            
+
+
+            var marker126 = new google.maps.Marker({
+            position: {lat: 41.88415, lng: -87.632409},
+            map: map,
+            icon : peets,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Peet's Coffee)"
+            });
+
+            marker126.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Peet's Coffee"
+            +'</div>'}).open(map, marker126);});
+
+            
+
+
+            var marker127 = new google.maps.Marker({
+            position: {lat: 41.88415, lng: -87.632409},
+            map: map,
+            icon : peets,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Peet's Coffee)"
+            });
+
+            marker127.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Peet's Coffee"
+            +'</div>'}).open(map, marker127);});
+
+            
+
+
+            var marker128 = new google.maps.Marker({
+            position: {lat: 41.88415, lng: -87.632409},
+            map: map,
+            icon : peets,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Peet's Coffee)"
+            });
+
+            marker128.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Peet's Coffee"
+            +'</div>'}).open(map, marker128);});
+
+            
+
+
+            var marker129 = new google.maps.Marker({
+            position: {lat: 41.88415, lng: -87.632409},
+            map: map,
+            icon : peets,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Peet's Coffee)"
+            });
+
+            marker129.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Peet's Coffee"
+            +'</div>'}).open(map, marker129);});
+
+            
+
+
+            var marker130 = new google.maps.Marker({
+            position: {lat: 41.88415, lng: -87.632409},
+            map: map,
+            icon : peets,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Peet's Coffee)"
+            });
+
+            marker130.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Peet's Coffee"
+            +'</div>'}).open(map, marker130);});
+
+            
+
+
+            var marker131 = new google.maps.Marker({
+            position: {lat: 41.88415, lng: -87.632409},
+            map: map,
+            icon : peets,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Peet's Coffee)"
+            });
+
+            marker131.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Peet's Coffee"
+            +'</div>'}).open(map, marker131);});
+
+            
+
+
+            var marker132 = new google.maps.Marker({
+            position: {lat: 41.8787, lng: -87.6389},
+            map: map,
+            icon : peets,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Peet's Coffee)"
+            });
+
+            marker132.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Peet's Coffee"
+            +'</div>'}).open(map, marker132);});
+
+            
+
+
+            var marker133 = new google.maps.Marker({
+            position: {lat: 41.8717, lng: -87.6264},
+            map: map,
+            icon : peets,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Peet's Coffee)"
+            });
+
+            marker133.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Peet's Coffee"
+            +'</div>'}).open(map, marker133);});
+
+            
+
+
+            var marker134 = new google.maps.Marker({
+            position: {lat: 41.869255, lng: -87.630517},
+            map: map,
+            icon : peets,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Peet's Coffee)"
+            });
+
+            marker134.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Peet's Coffee"
+            +'</div>'}).open(map, marker134);});
+
+            
+
+
+            var marker135 = new google.maps.Marker({
+            position: {lat: 41.8856, lng: -87.6363},
+            map: map,
+            icon : peets,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Peet's Coffee)"
+            });
+
+            marker135.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Peet's Coffee"
+            +'</div>'}).open(map, marker135);});
+
+            
+
+
+            var marker136 = new google.maps.Marker({
+            position: {lat: 41.880566, lng: -87.641724},
+            map: map,
+            icon : peets,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Peet's Coffee)"
+            });
+
+            marker136.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Peet's Coffee"
+            +'</div>'}).open(map, marker136);});
+
+            
+
+
+            var marker137 = new google.maps.Marker({
+            position: {lat: 41.88551, lng: -87.618574},
+            map: map,
+            icon : peets,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Peet's Coffee)"
+            });
+
+            marker137.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Peet's Coffee"
+            +'</div>'}).open(map, marker137);});
+
+            
+
+
+            var marker138 = new google.maps.Marker({
+            position: {lat: 41.8893, lng: -87.6251},
+            map: map,
+            icon : peets,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Peet's Coffee)"
+            });
+
+            marker138.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Peet's Coffee"
+            +'</div>'}).open(map, marker138);});
+
+            
+
+
+            var marker139 = new google.maps.Marker({
+            position: {lat: 41.882485, lng: -87.644599},
+            map: map,
+            icon : peets,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Peet's Coffee)"
+            });
+
+            marker139.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Peet's Coffee"
+            +'</div>'}).open(map, marker139);});
+
+            
+
+
+            var marker140 = new google.maps.Marker({
+            position: {lat: 41.865003, lng: -87.639174},
+            map: map,
+            icon : peets,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Peet's Coffee)"
+            });
+
+            marker140.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Peet's Coffee"
+            +'</div>'}).open(map, marker140);});
+
+            
+
+
+            var marker141 = new google.maps.Marker({
+            position: {lat: 41.89087, lng: -87.617121},
+            map: map,
+            icon : peets,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Peet's Coffee)"
+            });
+
+            marker141.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Peet's Coffee"
+            +'</div>'}).open(map, marker141);});
+
+            
+
+
+            var marker142 = new google.maps.Marker({
+            position: {lat: 41.893, lng: -87.6413},
+            map: map,
+            icon : peets,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Peet's Coffee)"
+            });
+
+            marker142.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Peet's Coffee"
+            +'</div>'}).open(map, marker142);});
+
+            
+
+
+            var marker143 = new google.maps.Marker({
+            position: {lat: 41.859943, lng: -87.63025},
+            map: map,
+            icon : peets,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Peet's Coffee)"
+            });
+
+            marker143.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Peet's Coffee"
+            +'</div>'}).open(map, marker143);});
+
+            
+
+
+            var marker144 = new google.maps.Marker({
+            position: {lat: 41.8646, lng: -87.6471},
+            map: map,
+            icon : peets,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Peet's Coffee)"
+            });
+
+            marker144.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Peet's Coffee"
+            +'</div>'}).open(map, marker144);});
+
+            
+
+
+            var marker145 = new google.maps.Marker({
+            position: {lat: 41.8954, lng: -87.6183},
+            map: map,
+            icon : peets,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Peet's Coffee)"
+            });
+
+            marker145.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Peet's Coffee"
+            +'</div>'}).open(map, marker145);});
+
+            
+
+
+            var marker146 = new google.maps.Marker({
+            position: {lat: 41.8965, lng: -87.6216},
+            map: map,
+            icon : peets,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Peet's Coffee)"
+            });
+
+            marker146.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Peet's Coffee"
+            +'</div>'}).open(map, marker146);});
+
+            
+
+
+            var marker147 = new google.maps.Marker({
+            position: {lat: 41.8977413, lng: -87.6243853},
+            map: map,
+            icon : peets,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Peet's Coffee)"
+            });
+
+            marker147.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Peet's Coffee"
+            +'</div>'}).open(map, marker147);});
+
+            
+
+
+            var marker148 = new google.maps.Marker({
+            position: {lat: 41.8981, lng: -87.6272},
+            map: map,
+            icon : peets,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Peet's Coffee)"
+            });
+
+            marker148.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Peet's Coffee"
+            +'</div>'}).open(map, marker148);});
+
+            
+
+
+            var marker149 = new google.maps.Marker({
+            position: {lat: 41.903828, lng: -87.639514},
+            map: map,
+            icon : peets,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Peet's Coffee)"
+            });
+
+            marker149.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Peet's Coffee"
+            +'</div>'}).open(map, marker149);});
+
+            
+
+
+            var marker150 = new google.maps.Marker({
+            position: {lat: 41.904886, lng: -87.634506},
+            map: map,
+            icon : peets,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Peet's Coffee)"
+            });
+
+            marker150.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Peet's Coffee"
+            +'</div>'}).open(map, marker150);});
+
+            
+
+
+            var marker151 = new google.maps.Marker({
+            position: {lat: 41.90372, lng: -87.643199},
+            map: map,
+            icon : peets,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Peet's Coffee)"
+            });
+
+            marker151.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Peet's Coffee"
+            +'</div>'}).open(map, marker151);});
+
+            
+
+
+            var marker152 = new google.maps.Marker({
+            position: {lat: 41.908241, lng: -87.646727},
+            map: map,
+            icon : peets,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Peet's Coffee)"
+            });
+
+            marker152.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Peet's Coffee"
+            +'</div>'}).open(map, marker152);});
+
+            
+
+
+            var marker153 = new google.maps.Marker({
+            position: {lat: 41.84429, lng: -87.629799},
+            map: map,
+            icon : peets,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Peet's Coffee)"
+            });
+
+            marker153.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Peet's Coffee"
+            +'</div>'}).open(map, marker153);});
+
+            
+
+
+            var marker154 = new google.maps.Marker({
+            position: {lat: 41.9109, lng: -87.6532},
+            map: map,
+            icon : peets,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Peet's Coffee)"
+            });
+
+            marker154.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Peet's Coffee"
+            +'</div>'}).open(map, marker154);});
+
+            
+
+
+            var marker155 = new google.maps.Marker({
+            position: {lat: 41.89593, lng: -87.67796},
+            map: map,
+            icon : peets,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Peet's Coffee)"
+            });
+
+            marker155.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Peet's Coffee"
+            +'</div>'}).open(map, marker155);});
+
+            
+
+
+            var marker156 = new google.maps.Marker({
+            position: {lat: 41.850875, lng: -87.669655},
+            map: map,
+            icon : peets,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Peet's Coffee)"
+            });
+
+            marker156.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Peet's Coffee"
+            +'</div>'}).open(map, marker156);});
+
+            
+
+
+            var marker157 = new google.maps.Marker({
+            position: {lat: 41.850875, lng: -87.669655},
+            map: map,
+            icon : peets,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Peet's Coffee)"
+            });
+
+            marker157.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Peet's Coffee"
+            +'</div>'}).open(map, marker157);});
+
+            
+
+
+            var marker158 = new google.maps.Marker({
+            position: {lat: 41.903005, lng: -87.686729},
+            map: map,
+            icon : peets,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Peet's Coffee)"
+            });
+
+            marker158.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Peet's Coffee"
+            +'</div>'}).open(map, marker158);});
+
+            
+
+
+            var marker159 = new google.maps.Marker({
+            position: {lat: 41.836817, lng: -87.66565},
+            map: map,
+            icon : peets,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Peet's Coffee)"
+            });
+
+            marker159.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Peet's Coffee"
+            +'</div>'}).open(map, marker159);});
+
+            
+
+
+            var marker160 = new google.maps.Marker({
+            position: {lat: 41.920702, lng: -87.668539},
+            map: map,
+            icon : peets,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Peet's Coffee)"
+            });
+
+            marker160.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Peet's Coffee"
+            +'</div>'}).open(map, marker160);});
+
+            
+
+
+            var marker161 = new google.maps.Marker({
+            position: {lat: 41.851985, lng: -87.689381},
+            map: map,
+            icon : peets,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Peet's Coffee)"
+            });
+
+            marker161.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Peet's Coffee"
+            +'</div>'}).open(map, marker161);});
+
+            
+
+
+            var marker162 = new google.maps.Marker({
+            position: {lat: 41.931178, lng: -87.644628},
+            map: map,
+            icon : peets,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Peet's Coffee)"
+            });
+
+            marker162.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Peet's Coffee"
+            +'</div>'}).open(map, marker162);});
+
+            
+
+
+            var marker163 = new google.maps.Marker({
+            position: {lat: 41.834071, lng: -87.674089},
+            map: map,
+            icon : peets,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Peet's Coffee)"
+            });
+
+            marker163.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Peet's Coffee"
+            +'</div>'}).open(map, marker163);});
+
+            
+
+
+            var marker164 = new google.maps.Marker({
+            position: {lat: 41.934125, lng: -87.644348},
+            map: map,
+            icon : peets,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Peet's Coffee)"
+            });
+
+            marker164.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Peet's Coffee"
+            +'</div>'}).open(map, marker164);});
+
+            
+
+
+            var marker165 = new google.maps.Marker({
+            position: {lat: 41.92777, lng: -87.67294},
+            map: map,
+            icon : peets,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Peet's Coffee)"
+            });
+
+            marker165.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Peet's Coffee"
+            +'</div>'}).open(map, marker165);});
+
+            
+
+
+            var marker166 = new google.maps.Marker({
+            position: {lat: 41.937612, lng: -87.644338},
+            map: map,
+            icon : peets,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Peet's Coffee)"
+            });
+
+            marker166.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Peet's Coffee"
+            +'</div>'}).open(map, marker166);});
+
+            
+
+
+            var marker167 = new google.maps.Marker({
+            position: {lat: 41.9372, lng: -87.6482},
+            map: map,
+            icon : peets,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Peet's Coffee)"
+            });
+
+            marker167.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Peet's Coffee"
+            +'</div>'}).open(map, marker167);});
+
+            
+
+
+            var marker168 = new google.maps.Marker({
+            position: {lat: 41.93892, lng: -87.656414},
+            map: map,
+            icon : peets,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Peet's Coffee)"
+            });
+
+            marker168.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Peet's Coffee"
+            +'</div>'}).open(map, marker168);});
+
+            
+
+
+            var marker169 = new google.maps.Marker({
+            position: {lat: 41.929248, lng: -87.683503},
+            map: map,
+            icon : peets,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Peet's Coffee)"
+            });
+
+            marker169.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Peet's Coffee"
+            +'</div>'}).open(map, marker169);});
+
+            
+
+
+            var marker170 = new google.maps.Marker({
+            position: {lat: 41.930314, lng: -87.685123},
+            map: map,
+            icon : peets,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Peet's Coffee)"
+            });
+
+            marker170.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Peet's Coffee"
+            +'</div>'}).open(map, marker170);});
+
+            
+
+
+            var marker171 = new google.maps.Marker({
+            position: {lat: 41.879805, lng: -87.721969},
+            map: map,
+            icon : peets,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Peet's Coffee)"
+            });
+
+            marker171.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Peet's Coffee"
+            +'</div>'}).open(map, marker171);});
+
+            
+
+
+            var marker172 = new google.maps.Marker({
+            position: {lat: 41.9457, lng: -87.6497},
+            map: map,
+            icon : peets,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Peet's Coffee)"
+            });
+
+            marker172.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Peet's Coffee"
+            +'</div>'}).open(map, marker172);});
+
+            
+
+
+            var marker173 = new google.maps.Marker({
+            position: {lat: 41.808846, lng: -87.606541},
+            map: map,
+            icon : peets,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Peet's Coffee)"
+            });
+
+            marker173.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Peet's Coffee"
+            +'</div>'}).open(map, marker173);});
+
+            
+
+
+            var marker174 = new google.maps.Marker({
+            position: {lat: 41.808644, lng: -87.661061},
+            map: map,
+            icon : peets,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Peet's Coffee)"
+            });
+
+            marker174.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Peet's Coffee"
+            +'</div>'}).open(map, marker174);});
+
+            
+
+
+            var marker175 = new google.maps.Marker({
+            position: {lat: 41.942639, lng: -87.688159},
+            map: map,
+            icon : peets,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Peet's Coffee)"
+            });
+
+            marker175.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Peet's Coffee"
+            +'</div>'}).open(map, marker175);});
+
+            
+
+
+            var marker176 = new google.maps.Marker({
+            position: {lat: 41.954436, lng: -87.658254},
+            map: map,
+            icon : peets,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Peet's Coffee)"
+            });
+
+            marker176.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Peet's Coffee"
+            +'</div>'}).open(map, marker176);});
+
+            
+
+
+            var marker177 = new google.maps.Marker({
+            position: {lat: 41.954436, lng: -87.658254},
+            map: map,
+            icon : peets,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Peet's Coffee)"
+            });
+
+            marker177.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Peet's Coffee"
+            +'</div>'}).open(map, marker177);});
+
+            
+
+
+            var marker178 = new google.maps.Marker({
+            position: {lat: 41.962948, lng: -87.65578},
+            map: map,
+            icon : peets,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Peet's Coffee)"
+            });
+
+            marker178.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Peet's Coffee"
+            +'</div>'}).open(map, marker178);});
+
+            
+
+
+            var marker179 = new google.maps.Marker({
+            position: {lat: 41.946646, lng: -87.701952},
+            map: map,
+            icon : peets,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Peet's Coffee)"
+            });
+
+            marker179.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Peet's Coffee"
+            +'</div>'}).open(map, marker179);});
+
+            
+
+
+            var marker180 = new google.maps.Marker({
+            position: {lat: 41.94758, lng: -87.702939},
+            map: map,
+            icon : peets,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Peet's Coffee)"
+            });
+
+            marker180.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Peet's Coffee"
+            +'</div>'}).open(map, marker180);});
+
+            
+
+
+            var marker181 = new google.maps.Marker({
+            position: {lat: 41.7906, lng: -87.6052},
+            map: map,
+            icon : peets,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Peet's Coffee)"
+            });
+
+            marker181.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Peet's Coffee"
+            +'</div>'}).open(map, marker181);});
+
+            
+
+
+            var marker182 = new google.maps.Marker({
+            position: {lat: 41.909675, lng: -87.742759},
+            map: map,
+            icon : peets,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Peet's Coffee)"
+            });
+
+            marker182.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Peet's Coffee"
+            +'</div>'}).open(map, marker182);});
+
+            
+
+
+            var marker183 = new google.maps.Marker({
+            position: {lat: 41.840112, lng: -87.743871},
+            map: map,
+            icon : peets,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Peet's Coffee)"
+            });
+
+            marker183.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Peet's Coffee"
+            +'</div>'}).open(map, marker183);});
+
+            
+
+
+            var marker184 = new google.maps.Marker({
+            position: {lat: 41.812698, lng: -87.723788},
+            map: map,
+            icon : peets,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Peet's Coffee)"
+            });
+
+            marker184.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Peet's Coffee"
+            +'</div>'}).open(map, marker184);});
+
+            
+
+
+            var marker185 = new google.maps.Marker({
+            position: {lat: 41.96879, lng: -87.675037},
+            map: map,
+            icon : peets,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Peet's Coffee)"
+            });
+
+            marker185.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Peet's Coffee"
+            +'</div>'}).open(map, marker185);});
+
+            
+
+
+            var marker186 = new google.maps.Marker({
+            position: {lat: 41.97263, lng: -87.662869},
+            map: map,
+            icon : peets,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Peet's Coffee)"
+            });
+
+            marker186.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Peet's Coffee"
+            +'</div>'}).open(map, marker186);});
+
+            
+
+
+            var marker187 = new google.maps.Marker({
+            position: {lat: 41.97263, lng: -87.662869},
+            map: map,
+            icon : peets,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Peet's Coffee)"
+            });
+
+            marker187.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Peet's Coffee"
+            +'</div>'}).open(map, marker187);});
+
+            
+
+
+            var marker188 = new google.maps.Marker({
+            position: {lat: 41.931599, lng: -87.74212},
+            map: map,
+            icon : peets,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Peet's Coffee)"
+            });
+
+            marker188.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Peet's Coffee"
+            +'</div>'}).open(map, marker188);});
+
+            
+
+
+            var marker189 = new google.maps.Marker({
+            position: {lat: 41.830953, lng: -87.747397},
+            map: map,
+            icon : peets,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Peet's Coffee)"
+            });
+
+            marker189.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Peet's Coffee"
+            +'</div>'}).open(map, marker189);});
+
+            
+
+
+            var marker190 = new google.maps.Marker({
+            position: {lat: 41.976936, lng: -87.655023},
+            map: map,
+            icon : peets,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Peet's Coffee)"
+            });
+
+            marker190.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Peet's Coffee"
+            +'</div>'}).open(map, marker190);});
+
+            
+
+
+            var marker191 = new google.maps.Marker({
+            position: {lat: 41.92135, lng: -87.757279},
+            map: map,
+            icon : peets,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Peet's Coffee)"
+            });
+
+            marker191.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Peet's Coffee"
+            +'</div>'}).open(map, marker191);});
+
+            
+
+
+            var marker192 = new google.maps.Marker({
+            position: {lat: 41.9753, lng: -87.6996},
+            map: map,
+            icon : peets,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Peet's Coffee)"
+            });
+
+            marker192.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Peet's Coffee"
+            +'</div>'}).open(map, marker192);});
+
+            
+
+
+            var marker193 = new google.maps.Marker({
+            position: {lat: 41.94746, lng: -87.747124},
+            map: map,
+            icon : peets,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Peet's Coffee)"
+            });
+
+            marker193.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Peet's Coffee"
+            +'</div>'}).open(map, marker193);});
+
+            
+
+
+            var marker194 = new google.maps.Marker({
+            position: {lat: 41.990635, lng: -87.682525},
+            map: map,
+            icon : peets,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Peet's Coffee)"
+            });
+
+            marker194.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Peet's Coffee"
+            +'</div>'}).open(map, marker194);});
+
+            
+
+
+            var marker195 = new google.maps.Marker({
+            position: {lat: 41.87163, lng: -87.789679},
+            map: map,
+            icon : peets,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Peet's Coffee)"
+            });
+
+            marker195.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Peet's Coffee"
+            +'</div>'}).open(map, marker195);});
+
+            
+
+
+            var marker196 = new google.maps.Marker({
+            position: {lat: 41.896305, lng: -87.790589},
+            map: map,
+            icon : peets,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Peet's Coffee)"
+            });
+
+            marker196.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Peet's Coffee"
+            +'</div>'}).open(map, marker196);});
+
+            
+
+
+            var marker197 = new google.maps.Marker({
+            position: {lat: 41.757207, lng: -87.663553},
+            map: map,
+            icon : peets,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Peet's Coffee)"
+            });
+
+            marker197.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Peet's Coffee"
+            +'</div>'}).open(map, marker197);});
+
+            
+
+
+            var marker198 = new google.maps.Marker({
+            position: {lat: 41.837795, lng: -87.791089},
+            map: map,
+            icon : peets,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Peet's Coffee)"
+            });
+
+            marker198.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Peet's Coffee"
+            +'</div>'}).open(map, marker198);});
+
+            
+
+
+            var marker199 = new google.maps.Marker({
+            position: {lat: 41.930947, lng: -87.788654},
+            map: map,
+            icon : peets,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Peet's Coffee)"
+            });
+
+            marker199.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Peet's Coffee"
+            +'</div>'}).open(map, marker199);});
+
+            
+
+
+            var marker200 = new google.maps.Marker({
+            position: {lat: 41.85041, lng: -87.801656},
+            map: map,
+            icon : peets,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Peet's Coffee)"
+            });
+
+            marker200.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Peet's Coffee"
+            +'</div>'}).open(map, marker200);});
+
+            
+
+
+            var marker201 = new google.maps.Marker({
+            position: {lat: 41.97155, lng: -87.758079},
+            map: map,
+            icon : peets,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Peet's Coffee)"
+            });
+
+            marker201.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Peet's Coffee"
+            +'</div>'}).open(map, marker201);});
+
+            
+
+
+            var marker202 = new google.maps.Marker({
+            position: {lat: 41.97155, lng: -87.758079},
+            map: map,
+            icon : peets,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Peet's Coffee)"
+            });
+
+            marker202.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Peet's Coffee"
+            +'</div>'}).open(map, marker202);});
+
+            
+
+
+            var marker203 = new google.maps.Marker({
+            position: {lat: 41.742353, lng: -87.634072},
+            map: map,
+            icon : peets,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Peet's Coffee)"
+            });
+
+            marker203.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Peet's Coffee"
+            +'</div>'}).open(map, marker203);});
+
+            
+
+
+            var marker204 = new google.maps.Marker({
+            position: {lat: 41.787115, lng: -87.768769},
+            map: map,
+            icon : peets,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Peet's Coffee)"
+            });
+
+            marker204.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Peet's Coffee"
+            +'</div>'}).open(map, marker204);});
+
+            
+
+
+            var marker205 = new google.maps.Marker({
+            position: {lat: 41.978838, lng: -87.75756},
+            map: map,
+            icon : peets,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Peet's Coffee)"
+            });
+
+            marker205.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Peet's Coffee"
+            +'</div>'}).open(map, marker205);});
+
+            
+
+
+            var marker206 = new google.maps.Marker({
+            position: {lat: 41.739575, lng: -87.652829},
+            map: map,
+            icon : peets,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Peet's Coffee)"
+            });
+
+            marker206.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Peet's Coffee"
+            +'</div>'}).open(map, marker206);});
+
+            
+
+
+            var marker207 = new google.maps.Marker({
+            position: {lat: 41.739575, lng: -87.652829},
+            map: map,
+            icon : peets,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Peet's Coffee)"
+            });
+
+            marker207.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Peet's Coffee"
+            +'</div>'}).open(map, marker207);});
+
+            
+
+
+            var marker208 = new google.maps.Marker({
+            position: {lat: 41.89402, lng: -87.816489},
+            map: map,
+            icon : peets,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Peet's Coffee)"
+            });
+
+            marker208.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Peet's Coffee"
+            +'</div>'}).open(map, marker208);});
+
+            
+
+
+            var marker209 = new google.maps.Marker({
+            position: {lat: 41.73921, lng: -87.604908},
+            map: map,
+            icon : peets,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Peet's Coffee)"
+            });
+
+            marker209.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Peet's Coffee"
+            +'</div>'}).open(map, marker209);});
+
+            
+
+
+            var marker210 = new google.maps.Marker({
+            position: {lat: 41.764774, lng: -87.742438},
+            map: map,
+            icon : peets,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Peet's Coffee)"
+            });
+
+            marker210.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Peet's Coffee"
+            +'</div>'}).open(map, marker210);});
+
+            
+
+
+            var marker211 = new google.maps.Marker({
+            position: {lat: 41.76407, lng: -87.741906},
+            map: map,
+            icon : peets,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Peet's Coffee)"
+            });
+
+            marker211.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Peet's Coffee"
+            +'</div>'}).open(map, marker211);});
+
+            
+
+
+            var marker212 = new google.maps.Marker({
+            position: {lat: 41.864693, lng: -87.819315},
+            map: map,
+            icon : peets,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Peet's Coffee)"
+            });
+
+            marker212.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Peet's Coffee"
+            +'</div>'}).open(map, marker212);});
+
+            
+
+
+            var marker213 = new google.maps.Marker({
+            position: {lat: 41.862662, lng: -87.819036},
+            map: map,
+            icon : peets,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Peet's Coffee)"
+            });
+
+            marker213.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Peet's Coffee"
+            +'</div>'}).open(map, marker213);});
+
+            
+
+
+            var marker214 = new google.maps.Marker({
+            position: {lat: 41.945395, lng: -87.799979},
+            map: map,
+            icon : peets,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Peet's Coffee)"
+            });
+
+            marker214.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Peet's Coffee"
+            +'</div>'}).open(map, marker214);});
+
+            
+
+
+            var marker215 = new google.maps.Marker({
+            position: {lat: 42.019397, lng: -87.674817},
+            map: map,
+            icon : peets,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Peet's Coffee)"
+            });
+
+            marker215.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Peet's Coffee"
+            +'</div>'}).open(map, marker215);});
+
+            
+
+
+            var marker216 = new google.maps.Marker({
+            position: {lat: 42.011852, lng: -87.713051},
+            map: map,
+            icon : peets,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Peet's Coffee)"
+            });
+
+            marker216.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Peet's Coffee"
+            +'</div>'}).open(map, marker216);});
+
+            
+
+
+            var marker217 = new google.maps.Marker({
+            position: {lat: 41.95429723904385, lng: -87.66567212845052},
+            map: map,
+            icon : misc,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Asado Coffee Co)"
+            });
+
+            marker217.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Asado Coffee Co"
+            +'</div>'}).open(map, marker217);});
+
+            
+
+
+            var marker218 = new google.maps.Marker({
+            position: {lat: 41.85776393218049, lng: -87.66788255268537},
+            map: map,
+            icon : misc,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Bow Truss)"
+            });
+
+            marker218.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Bow Truss"
+            +'</div>'}).open(map, marker218);});
+
+            
+
+
+            var marker219 = new google.maps.Marker({
+            position: {lat: 41.837819046013585, lng: -87.65089988708496},
+            map: map,
+            icon : misc,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Bridgeport Coffee Company)"
+            });
+
+            marker219.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Bridgeport Coffee Company"
+            +'</div>'}).open(map, marker219);});
+
+            
+
+
+            var marker220 = new google.maps.Marker({
+            position: {lat: 41.911802964476955, lng: -87.67755611064548},
+            map: map,
+            icon : misc,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Buzz:  Killer Espresso)"
+            });
+
+            marker220.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Buzz:  Killer Espresso"
+            +'</div>'}).open(map, marker220);});
+
+            
+
+
+            var marker221 = new google.maps.Marker({
+            position: {lat: 41.89933841608284, lng: -87.69694037449544},
+            map: map,
+            icon : misc,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(C. C. Ferns)"
+            });
+
+            marker221.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "C. C. Ferns"
+            +'</div>'}).open(map, marker221);});
+
+            
+
+
+            var marker222 = new google.maps.Marker({
+            position: {lat: 41.85782842, lng: -87.662693},
+            map: map,
+            icon : misc,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Cafe Jumping Bean)"
+            });
+
+            marker222.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Cafe Jumping Bean"
+            +'</div>'}).open(map, marker222);});
+
+            
+
+
+            var marker223 = new google.maps.Marker({
+            position: {lat: 41.98440371800061, lng: -87.6689564237973},
+            map: map,
+            icon : misc,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(The Coffee Studio)"
+            });
+
+            marker223.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "The Coffee Studio"
+            +'</div>'}).open(map, marker223);});
+
+            
+
+
+            var marker224 = new google.maps.Marker({
+            position: {lat: 41.903265, lng: -87.672027},
+            map: map,
+            icon : misc,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Caffe Streets)"
+            });
+
+            marker224.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Caffe Streets"
+            +'</div>'}).open(map, marker224);});
+
+            
+
+
+            var marker225 = new google.maps.Marker({
+            position: {lat: 41.91537991117461, lng: -87.63433904146305},
+            map: map,
+            icon : misc,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Elaine's Coffee Call)"
+            });
+
+            marker225.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Elaine's Coffee Call"
+            +'</div>'}).open(map, marker225);});
+
+            
+
+
+            var marker226 = new google.maps.Marker({
+            position: {lat: 41.92463824130048, lng: -87.70000105251376},
+            map: map,
+            icon : misc,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Gaslight Coffee Roasters)"
+            });
+
+            marker226.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Gaslight Coffee Roasters"
+            +'</div>'}).open(map, marker226);});
+
+            
+
+
+            var marker227 = new google.maps.Marker({
+            position: {lat: 41.96533929086054, lng: -87.66338935559838},
+            map: map,
+            icon : misc,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Heritage Outpost)"
+            });
+
+            marker227.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Heritage Outpost"
+            +'</div>'}).open(map, marker227);});
+
+            
+
+
+            var marker228 = new google.maps.Marker({
+            position: {lat: 41.903506157937905, lng: -87.66791626202881},
+            map: map,
+            icon : misc,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Intelligentsia Coffee Wicker Park Coffeebar)"
+            });
+
+            marker228.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Intelligentsia Coffee Wicker Park Coffeebar"
+            +'</div>'}).open(map, marker228);});
+
+            
+
+
+            var marker229 = new google.maps.Marker({
+            position: {lat: 41.91856770966014, lng: -87.68741534291145},
+            map: map,
+            icon : misc,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Ipsento Coffee House)"
+            });
+
+            marker229.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Ipsento Coffee House"
+            +'</div>'}).open(map, marker229);});
+
+            
+
+
+            var marker230 = new google.maps.Marker({
+            position: {lat: 41.89344431287473, lng: -87.62218349280653},
+            map: map,
+            icon : misc,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Julius Meinl)"
+            });
+
+            marker230.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Julius Meinl"
+            +'</div>'}).open(map, marker230);});
+
+            
+
+
+            var marker231 = new google.maps.Marker({
+            position: {lat: 41.83620251400525, lng: -87.64583130188599},
+            map: map,
+            icon : misc,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Jackalope Coffee& Tea)"
+            });
+
+            marker231.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Jackalope Coffee& Tea"
+            +'</div>'}).open(map, marker231);});
+
+            
+
+
+            var marker232 = new google.maps.Marker({
+            position: {lat: 42.046894409648445, lng: -87.67927970468982},
+            map: map,
+            icon : misc,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Kafein)"
+            });
+
+            marker232.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Kafein"
+            +'</div>'}).open(map, marker232);});
+
+            
+
+
+            var marker233 = new google.maps.Marker({
+            position: {lat: 41.9761300945845, lng: -87.66852784150055},
+            map: map,
+            icon : misc,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(La Colombe Coffee Roasters)"
+            });
+
+            marker233.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "La Colombe Coffee Roasters"
+            +'</div>'}).open(map, marker233);});
+
+            
+
+
+            var marker234 = new google.maps.Marker({
+            position: {lat: 41.89176559448242, lng: -87.62346649169922},
+            map: map,
+            icon : misc,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Labriola)"
+            });
+
+            marker234.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Labriola"
+            +'</div>'}).open(map, marker234);});
+
+            
+
+
+            var marker235 = new google.maps.Marker({
+            position: {lat: 41.939886, lng: -87.657373},
+            map: map,
+            icon : misc,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(Osmium Coffee Bar)"
+            });
+
+            marker235.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "Osmium Coffee Bar"
+            +'</div>'}).open(map, marker235);});
+
+            
+
+
+            var marker236 = new google.maps.Marker({
+            position: {lat: 41.90854285031249, lng: -87.6745757759392},
+            map: map,
+            icon : misc,
+            size: new google.maps.Size(1, 2),
+            title: "name jklasdjf(The Wormhole Coffee)"
+            });
+
+            marker236.addListener('click', function () {
+            new google.maps.InfoWindow({content: '<div id="content">'
+            + 'name: ' + "The Wormhole Coffee"
+            +'</div>'}).open(map, marker236);});
+
+            
+                        }
+                    </script>
+                    <script async defer
+                        src="https://maps.googleapis.com/maps/api/js?key=&signed_in=true&callback=initMap"></script>
+            </body>
+            </html>
+            
