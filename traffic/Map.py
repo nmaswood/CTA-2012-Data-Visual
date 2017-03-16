@@ -3,7 +3,7 @@ from googlemaps import Client
 from sys import exit
 from Color import Colors
 from data_prime import all_data
-
+from process import read_data
 
 class Map(object):
 
@@ -115,6 +115,9 @@ class Map(object):
     def marker_map(self):
 
         a = all_data()
+        df = read_data()
+
+        print (df.as_matrix())
 
         html_dom_dict = self.gen_html_dom()
         html_body = self.gen_html_body()
