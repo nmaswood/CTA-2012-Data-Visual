@@ -7,12 +7,7 @@ from data_prime import all_data
 
 class Map(object):
 
-    def __init__(self):
-
-        self.html_body = self.html_body()
-        self.html_dom = self.html_dom()
-
-    def html_body(self):
+    def gen_html_body(self):
 
         return  """
         <!DOCTYPE html>
@@ -49,7 +44,7 @@ class Map(object):
             </html>
             """
 
-    def html_dom(self):
+    def gen_html_dom(self):
         return {
         "heat_map_dom": "new google.maps.LatLng({lat}, {lon})",
 
@@ -115,20 +110,23 @@ class Map(object):
     </style>"""
         }
 
+
+
     def marker_map(self):
 
-
         a = all_data()
+
+        html_dom_dict = self.gen_html_dom()
+        html_body = self.gen_html_body()
 
         center_lat_prime = sum((x[1] for x in a)) / len(a)
         center_lon_prime = sum((x[2] for x in a)) / len(a)
 
-        colors = self.html_dom["marker_map_colors"]
+        colors = html_dom_dict["marker_map_colors"]
         print (colors)
-        print (a)
 
         map_points_prime = "\n".join(
-            [self.html_dom["marker_map_dom_prime"]
+            [html_dom_dict["marker_map_dom_prime"]
             .format(
                 idx = idx,
                 lat = agg[1],
@@ -137,13 +135,13 @@ class Map(object):
                 icon = agg[3],
                 ) for idx,agg in enumerate(a)])
 
-        print (center_lat_prime, center_lon_prime)
-        return self.html_body.format(
+
+        return html_body.format(
             map_points=map_points_prime,
             center_lat=center_lat_prime,
             center_lon=center_lon_prime,
             colors = colors,
-            style=self.html_dom["style"])
+            style=html_dom_dict["style"])
 
     def create_map(self):
 
@@ -151,3 +149,4 @@ class Map(object):
 
         with open('gmaps/marker_map.html', "w") as out:
             out.write(html)
+
