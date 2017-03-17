@@ -39,7 +39,7 @@ class Map(object):
                         }}
                     </script>
                     <script async defer
-                        src="https://maps.googleapis.com/maps/api/js?key=&signed_in=true&callback=initMap"></script>
+                        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCQ11AadaWAYfPIKNYXmPZZh90FTWA9n18&signed_in=true&callback=initMap"></script>
             </body>
             </html>
             """
@@ -100,8 +100,9 @@ class Map(object):
             }});
 
             marker{idx}.addListener('click', function () {{
-            new google.maps.InfoWindow({{content: '<div id="content">'
-            + 'Street Name: ' + \"{name}\"
+            new google.maps.InfoWindow({{content:
+            '<div id="content">'
+            + \"{name}\"
             + '<br>'
             + 'Number of Vehicles: ' + \"{volume}\"
             +'</div>'}}).open(map, marker{idx});}});
