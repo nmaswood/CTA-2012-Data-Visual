@@ -15,7 +15,7 @@ class Map(object):
             <head>
                 <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
                 <meta charset="utf-8">
-                <title>Coffee Map</title>
+                <title>Traffic Map</title>
                 {style}
             </head>
             <body>
@@ -23,7 +23,7 @@ class Map(object):
 
                     <b>Rainbow Push Traffic Guide</b>
                     <br>
-                    What are the most congested streets in Chicago?
+                    What are streets are good to drive in Chicago?
 
                 </div>
                 <div id="map"></div>
@@ -31,7 +31,7 @@ class Map(object):
 
                         function initMap() {{
                         var map = new google.maps.Map(document.getElementById('map'), {{
-                        zoom: 12,
+                        zoom: 13,
                         center: {{lat: {center_lat}, lng: {center_lon}}}
                         }});
                         {colors}
@@ -71,6 +71,21 @@ class Map(object):
                 var heavy2 = new google.maps.MarkerImage("heavy/heavy_untouched_2.png");
                 var heavy3 = new google.maps.MarkerImage("heavy/heavy_untouched_3.png");
                 var heavy4 = new google.maps.MarkerImage("heavy/heavy_untouched_4.png");
+
+                var star =  new google.maps.MarkerImage("star_prime.png");
+
+                var markerpush = new google.maps.Marker({
+                    position: {lat: 41.804447, lng: -87.603043},
+                    map: map,
+                    icon : star,
+                    size: new google.maps.Size(1, 2),
+                    title: \"name (Rainbow Push HQ)\"
+                    });
+
+                markerpush.addListener('click', function () {
+                new google.maps.InfoWindow({content: '<div id="content">'
+                + 'Rainbow Push HQ'
+                +'</div>'}).open(map, markerpush);});
 
                 """,
 
@@ -189,20 +204,54 @@ class Map(object):
 
         return '\n'.join(map_points)
 
+    @staticmethod
+    def process_data():
+
+        df = read_data()
+        map_data = [[str(y) for y in x[1]] for x in df.iterrows()]
+
+        d = {}
+        k = {}
+
+        for street, number, lat, lon in map_data:
+
+            num = int(number)
+
+            if street in d:
+                if num > d[street]:
+                    d[street] = num
+                    k[street] = [street, num, lat, lon]
+            else:
+
+                d[street] = num
+                k[street] = [street, num, lat, lon]
+
+
+        sorted_map_data = sorted(map_data, key = lambda x: x[1])
+
+        return sorted_map_data
+
+
     def marker_map(self):
 
         a = all_data()
         df = read_data()
 
+
         html_dom_dict = self.gen_html_dom()
         html_body = self.gen_html_body()
 
-        center_lat_prime = df['Latitude'].mean()
-        center_lon_prime = df['Longitude'].mean()
+        center_lat_prime = 41.7943 #df['Latitude'].mean()
+        center_lon_prime = -87.5907# df['Longitude'].mean()
+
+        #41.7943° N, 87.5907° W
+
+        print (center_lat_prime, center_lon_prime)
 
         colors = html_dom_dict["marker_map_colors"]
 
-        map_data = [[str(y) for y in x[1]] for x in df.iterrows()]
+        map_data =Map.process_data()
+
         points = Map.create_map_points(html_dom_dict, map_data)
 
         return html_body.format(
