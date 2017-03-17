@@ -23,7 +23,7 @@ class Map(object):
 
                     <b>Rainbow Push Traffic Guide</b>
                     <br>
-                    So you'd like to get a cup of coffee down town?
+                    What are the most congested streets in Chicago?
 
                 </div>
                 <div id="map"></div>
@@ -49,12 +49,29 @@ class Map(object):
         "heat_map_dom": "new google.maps.LatLng({lat}, {lon})",
 
         "marker_map_colors"  : """
-                var dunkin = new google.maps.MarkerImage("d.png");
-                var starbucks = new google.maps.MarkerImage("s.png");
-                var misc = new google.maps.MarkerImage("m.png");
-                var peets = new google.maps.MarkerImage("p.png");
-                var argos = new google.maps.MarkerImage("a.png");
-                var argo = new google.maps.MarkerImage("a.png");
+
+                var heavy = new google.maps.MarkerImage("heavy/heavy_untouched_0.png");
+                var medium = new google.maps.MarkerImage("heavy/heavy_untouched_1.png");
+                var easy = new google.maps.MarkerImage("heavy/heavy_untouched_2.png");
+
+                var easy0 = new google.maps.MarkerImage("easy/easy_untouched_0.png");
+                var easy1 = new google.maps.MarkerImage("easy/easy_untouched_1.png");
+                var easy2 = new google.maps.MarkerImage("easy/easy_untouched_2.png");
+                var easy3 = new google.maps.MarkerImage("easy/easy_untouched_3.png");
+                var easy4 = new google.maps.MarkerImage("easy/easy_untouched_4.png");
+
+                var medium0 = new google.maps.MarkerImage("medium/medium_untouched_1.png");
+                var medium1 = new google.maps.MarkerImage("medium/medium_untouched_1.png");
+                var medium2 = new google.maps.MarkerImage("medium/medium_untouched_1.png");
+                var medium3 = new google.maps.MarkerImage("medium/medium_untouched_1.png");
+                var medium4 = new google.maps.MarkerImage("medium/medium_untouched_1.png");
+
+                var heavy0 = new google.maps.MarkerImage("heavy/heavy_untouched_0.png");
+                var heavy1 = new google.maps.MarkerImage("heavy/heavy_untouched_1.png");
+                var heavy2 = new google.maps.MarkerImage("heavy/heavy_untouched_2.png");
+                var heavy3 = new google.maps.MarkerImage("heavy/heavy_untouched_3.png");
+                var heavy4 = new google.maps.MarkerImage("heavy/heavy_untouched_4.png");
+
                 """,
 
             "marker_map_dom_prime" : """
@@ -64,12 +81,14 @@ class Map(object):
             map: map,
             icon : {icon},
             size: new google.maps.Size(1, 2),
-            title: \"name jklasdjf({name})\"
+            title: \"name ({name})\"
             }});
 
             marker{idx}.addListener('click', function () {{
             new google.maps.InfoWindow({{content: '<div id="content">'
-            + 'name: ' + \"{name}\"
+            + 'Street Name: ' + \"{name}\"
+            + '<br>'
+            + 'Number of Vehicles: ' + \"{volume}\"
             +'</div>'}}).open(map, marker{idx});}});
 
             """,
@@ -110,37 +129,84 @@ class Map(object):
     </style>"""
         }
 
+    @staticmethod
+    def assign_icon(number):
 
+        if number > 38000:
+            return "heavy4"
+        elif number > 35000 :
+            return "heavy4"
+        elif number > 32000 :
+            return "heavy4"
+        elif number > 29000 :
+            return "heavy3"
+        elif number > 26000:
+            return "heavy2"
+        elif number > 23000:
+            return "heavy1"
+        elif number > 20000:
+            return "medium4"
+        elif number > 17000:
+            return "medium3"
+        elif number > 14000:
+            return "medium2"
+        elif number > 11000:
+            return "medium1"
+        elif number > 8000:
+            return "medium0"
+        elif number > 5000:
+            return "easy4"
+        elif number > 2000:
+            return "easy3"
+        elif number > 1500:
+            return "easy2"
+        elif number > 1000:
+            return "easy1"
+
+        return "easy0"
+
+
+    @staticmethod
+    def create_map_point(html_dom_dict, idx,street_name, traffic_data, lat, lon):
+
+        return html_dom_dict["marker_map_dom_prime"].format(
+                    idx = idx,
+                    lat = lat,
+                    lon = lon,
+                    name = street_name,
+                    volume = traffic_data,
+                    icon = Map.assign_icon(int(traffic_data))
+        )
+
+    @staticmethod
+    def create_map_points(html_dom_dict, map_data):
+
+
+        map_points = [
+                Map.create_map_point(html_dom_dict, idx, street_name, _lat, _long, traffic) for
+                idx, (street_name, _lat, _long, traffic) in enumerate(map_data)
+        ]
+
+        return '\n'.join(map_points)
 
     def marker_map(self):
 
         a = all_data()
         df = read_data()
 
-        print (df.as_matrix())
-
         html_dom_dict = self.gen_html_dom()
         html_body = self.gen_html_body()
 
-        center_lat_prime = sum((x[1] for x in a)) / len(a)
-        center_lon_prime = sum((x[2] for x in a)) / len(a)
+        center_lat_prime = df['Latitude'].mean()
+        center_lon_prime = df['Longitude'].mean()
 
         colors = html_dom_dict["marker_map_colors"]
-        print (colors)
 
-        map_points_prime = "\n".join(
-            [html_dom_dict["marker_map_dom_prime"]
-            .format(
-                idx = idx,
-                lat = agg[1],
-                lon = agg[2],
-                name = agg[0],
-                icon = agg[3],
-                ) for idx,agg in enumerate(a)])
-
+        map_data = [[str(y) for y in x[1]] for x in df.iterrows()]
+        points = Map.create_map_points(html_dom_dict, map_data)
 
         return html_body.format(
-            map_points=map_points_prime,
+            map_points=points,#map_points_prime,
             center_lat=center_lat_prime,
             center_lon=center_lon_prime,
             colors = colors,
@@ -152,4 +218,3 @@ class Map(object):
 
         with open('gmaps/marker_map.html', "w") as out:
             out.write(html)
-

@@ -26,6 +26,11 @@ def read_data():
 
     data_dropped = data_prime.drop(cols_to_remove, axis =1)
 
-    data_dropped['Street'] = all_d['Street'].apply(_common_replacements)
+    data_dropped['Street'] = data_dropped['Street'].apply(_common_replacements)
+    data_prime_prime = data_dropped.sort_values(
+        by = ['Total Passing Vehicle Volume'],
+        ascending = False).reset_index()
 
-    return data_dropped
+    data_prime_prime_prime = data_prime_prime.drop([data_prime_prime.columns[0]], axis = 1)
+
+    return data_prime_prime_prime
